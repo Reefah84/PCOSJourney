@@ -1,0 +1,14 @@
+#mentalHealth, #fertility, #exercise, #diet, #gynae, #hospital,#Mental,#fertile,#fit,#nutrition,#gy,#hos{
+    -fx-font-size: 22px; /* Change the font size */
+    -fx-text-fill: #ff1d6c; /* Change the font color */
+}
+
+#mentalHealth:hover, #fertility:hover, #exercise:hover, #diet:hover, #gynae:hover, #hospital:hover,#Mental:hover,#fertile:hover,#fit:hover,#nutrition:hover,#gy:hover,#hos:hover{
+    -fx-background: #FF1D6C; /* Change the hover color */
+    -fx-text-fill: white; /* Change the text color on hover */
+}
+
+#mentalHealth:selected, #fertility:selected, #exercise:selected, #diet:selected ,#gynae:selected, #hospital:selected,#Mental:selected,#fertile:selected,#fit:selected,#nutrition:selected,#gy:selected,#hos:selected{
+    -fx-background: #B74767; /* Change the selection color */
+    -fx-text-fill: white; /* Change the text color on selection */
+}

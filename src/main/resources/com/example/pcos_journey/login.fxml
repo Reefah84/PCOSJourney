@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -35,7 +36,7 @@
    <right>
       <AnchorPane prefHeight="1080.0" prefWidth="1061.0" style="-fx-background-color: #ffdde8;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="328.0" layoutY="92.0" prefHeight="111.0" prefWidth="222.0" text="LOGIN" textFill="#d400aa">
+            <Label layoutX="338.0" layoutY="49.0" prefHeight="111.0" prefWidth="222.0" text="LOGIN" textFill="#d400aa">
                <font>
                   <Font name="Arial Rounded MT Bold" size="65.0" />
                </font>
@@ -45,24 +46,24 @@
                   <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
                </image>
             </ImageView>
-            <TextField fx:id="username" layoutX="73.0" layoutY="293.0" prefHeight="49.0" prefWidth="706.0" />
-            <PasswordField fx:id="password" layoutX="73.0" layoutY="460.0" prefHeight="49.0" prefWidth="706.0" />
-            <Label layoutX="73.0" layoutY="232.0" prefHeight="50.0" prefWidth="195.0" text="USERNAME:">
+            <TextField fx:id="username" layoutX="73.0" layoutY="319.0" prefHeight="49.0" prefWidth="706.0" />
+            <PasswordField fx:id="password" layoutX="73.0" layoutY="422.0" prefHeight="49.0" prefWidth="706.0" />
+            <Label layoutX="73.0" layoutY="260.0" prefHeight="50.0" prefWidth="195.0" text="USERNAME:">
                <font>
-                  <Font name="Arial" size="31.0" />
+                  <Font name="Arial" size="27.0" />
                </font>
             </Label>
-            <Label layoutX="73.0" layoutY="403.0" prefHeight="50.0" prefWidth="208.0" text="PASSWORD:">
+            <Label layoutX="73.0" layoutY="367.0" prefHeight="50.0" prefWidth="208.0" text="PASSWORD:">
                <font>
-                  <Font name="Arial" size="31.0" />
+                  <Font name="Arial" size="27.0" />
                </font>
             </Label>
-            <Button fx:id="loginbutton" layoutX="366.0" layoutY="529.0" mnemonicParsing="false" onAction="#setLoginbutton" style="-fx-background-color: #ff91a6; -fx-border-color: #ff2d6a;" text="LOGIN">
+            <Button fx:id="loginbutton" layoutX="373.0" layoutY="538.0" mnemonicParsing="false" onAction="#setLoginbutton" style="-fx-background-color: #ff91a6; -fx-border-color: #ff2d6a;" text="LOGIN">
                <font>
                   <Font size="26.0" />
                </font>
             </Button>
-            <Button fx:id="signupbutton" layoutX="515.0" layoutY="608.0" mnemonicParsing="false" style="-fx-background-color: #ffdde8;" text="Sign Up" textFill="#0f26d4">
+            <Button fx:id="signupbutton" layoutX="515.0" layoutY="608.0" mnemonicParsing="false" onAction="#setSignupbutton" style="-fx-background-color: #ffdde8;" text="Sign Up" textFill="#0f26d4">
                <font>
                   <Font size="26.0" />
                </font>
@@ -72,11 +73,32 @@
                   <Font name="Arial" size="28.0" />
                </font>
             </Label>
-            <Button fx:id="forgotpasswordbutton" layoutX="307.0" layoutY="668.0" mnemonicParsing="false" style="-fx-background-color: #ffdde8;" text="Forgot Password?" textFill="#d400aa">
+            <Button fx:id="forgotpasswordbutton" layoutX="307.0" layoutY="668.0" mnemonicParsing="false" onAction="#setForgotpasswordbutton" style="-fx-background-color: #ffdde8;" text="Forgot Password?" textFill="#d400aa">
                <font>
                   <Font size="28.0" />
                </font>
             </Button>
+            <Label layoutX="412.0" layoutY="480.0" />
+            <Label fx:id="emptyusername" layoutX="73.0" layoutY="485.0" text="Please enter username and password first" textFill="#ff0b0b" visible="false">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="doctorcheck" layoutX="550.0" layoutY="195.0" mnemonicParsing="false" text="Doctor user">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="usercheck" layoutX="430.0" layoutY="195.0" mnemonicParsing="false" text="User">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="73.0" layoutY="195.0" text="Are you doctor or patient?">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="27.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </right>
