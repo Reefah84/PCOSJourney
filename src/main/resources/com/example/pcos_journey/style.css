@@ -12,3 +12,15 @@
     -fx-background: #B74767; /* Change the selection color */
     -fx-text-fill: white; /* Change the text color on selection */
 }
+.loginbutton, .forgotpasswordbutton, .signupbutton {
+    -fx-background-color: #ff91a6;
+    -fx-text-fill: black;
+}
+
+.loginbutton:pressed, .forgotpasswordbutton:pressed, .signupbutton:pressed {
+    -fx-background-color: linear-gradient(#f0f0f0, #e0e0e0);
+    -fx-background-insets: 0, 1, 1;
+    -fx-background-radius: 5, 4, 3;
+    -fx-text-fill: black;
+}
+

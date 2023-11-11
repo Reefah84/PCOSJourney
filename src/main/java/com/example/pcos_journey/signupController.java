@@ -1,17 +1,17 @@
 package com.example.pcos_journey;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Date;
 
 
 public class signupController {
@@ -25,6 +25,7 @@ public class signupController {
     public Label errorlabel;
     public CheckBox doctorcheck;
     public CheckBox usercheck;
+    public ImageView homepage;
 
     private void showError(String errorMessage) {
         errorlabel.setText(errorMessage);
@@ -41,17 +42,21 @@ public class signupController {
             showError("Please check terms and conditions.");
         } else if (!usercheck.isSelected() && !doctorcheck.isSelected()) {
             showError("Please select one type of user.");
-        } else {
+        }
+        else if (!email.endsWith("@gmail.com")){
+            showError("Invalid email. Please provide a correct Gmail address.");
+        }else {
             // Determine the file name based on the selected checkbox
-            String userFileName = usercheck.isSelected() ? "USER" : "DR";
+            String userFolderName = usercheck.isSelected() ? "UserData" : "DRData";
 
             // Create a folder with the user's email
             String dob = DOB.toString();
-            String userFolderPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + email;
+            String userFolderPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\" + userFolderName + "\\" + email;
             File userFolder = new File(userFolderPath);
             userFolder.mkdir();
 
             // Create a file within the folder to store the user's information
+            String userFileName = usercheck.isSelected() ? "USER" : "DR";
             File userInfoFile = new File(userFolder, userFileName + "_info.txt");
 
             try (FileWriter writer = new FileWriter(userInfoFile)) {
@@ -68,19 +73,15 @@ public class signupController {
             showError("User account is created");
         }
     }
-    public void setLoginbutton(ActionEvent event)
-    {
+    public void setLoginbutton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load(), 1540, 790);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        Stage stage=new Stage();
-        stage.setTitle("SignUp");
-        stage.setResizable(false);
+        Parent root = fxmlLoader.load();
+
+// Get the current stage (window)
+        Stage stage = (Stage)loginbutton.getScene().getWindow();
+
+// Set the new content in the same window
+        Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.show();
     }
 }

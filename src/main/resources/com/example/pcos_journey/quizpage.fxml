@@ -7,75 +7,97 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="492.0" style="-fx-background-color: #ffdde8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_j.SwitchScenes">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.SwitchScene">
    <children>
-      <ImageView fitHeight="538.0" fitWidth="459.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="717.0" fitWidth="401.0" layoutX="2.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Picture1.png" />
+            <Image url="@../quizpage_flower_1_5.png" />
          </image>
       </ImageView>
-      <Label layoutX="172.0" layoutY="100.0" prefHeight="34.0" prefWidth="176.0" text="Self Assessment Quiz" textFill="#c225ad">
+      <ImageView fitHeight="905.0" fitWidth="387.0" layoutX="1152.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../quizpage_flower_1_9.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="805.0" fitWidth="651.0" layoutX="475.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../quizbackground.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="657.0" layoutY="154.0" prefHeight="36.0" prefWidth="325.0" text="Self Assessment Quiz" textFill="#c225ad">
          <font>
-            <Font name="Arial Bold Italic" size="16.0" />
+            <Font name="Arial Bold Italic" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="93.0" layoutY="135.0" prefHeight="34.0" prefWidth="314.0" text="Your Age: ">
+      <Label layoutX="625.0" layoutY="202.0" prefHeight="34.0" prefWidth="369.0" text="Your Age: ">
          <font>
-            <Font name="Georgia Bold" size="12.0" />
+            <Font name="Georgia Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="93.0" layoutY="162.0" prefHeight="55.0" prefWidth="167.0" text="1. Do you experience irregular menstrual cycles (periods)?" wrapText="true" />
-      <Button fx:id="yesButton1" layoutX="284.0" layoutY="177.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="Yes">
+      <Label layoutX="625.0" layoutY="250.0" prefHeight="55.0" prefWidth="218.0" text="1. Do you experience irregular menstrual cycles (periods)?" wrapText="true">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font size="16.0" />
+         </font></Label>
+      <Button fx:id="yesButton1" layoutX="870.0" layoutY="260.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="Yes">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="noButton1" layoutX="339.0" layoutY="177.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="No">
+      <Button fx:id="noButton1" layoutX="950.0" layoutY="261.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="No">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="93.0" layoutY="225.0" prefHeight="55.0" prefWidth="167.0" text="2. Have you noticed increased facial or body hair growth (hirsutism)?" wrapText="true" />
-      <Button fx:id="yesButton2" layoutX="284.0" layoutY="240.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="Yes">
+      <Label layoutX="625.0" layoutY="316.0" prefHeight="102.0" prefWidth="218.0" text="2. Have you noticed increased facial or body hair growth (hirsutism)?" wrapText="true">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font size="16.0" />
+         </font></Label>
+      <Button fx:id="yesButton2" layoutX="870.0" layoutY="350.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="Yes">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="noButton2" layoutX="339.0" layoutY="240.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="No">
+      <Button fx:id="noButton2" layoutX="950.0" layoutY="350.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="No">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="93.0" layoutY="294.0" prefHeight="55.0" prefWidth="167.0" text="3.Have you experienced unexplained weight gain or difficulty losing weight?" wrapText="true" />
-      <Button fx:id="yesButton3" layoutX="284.0" layoutY="302.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="Yes">
+      <Label layoutX="625.0" layoutY="418.0" prefHeight="106.0" prefWidth="218.0" text="3.Have you experienced unexplained weight gain or difficulty losing weight?" wrapText="true">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font size="16.0" />
+         </font></Label>
+      <Button fx:id="yesButton3" layoutX="870.0" layoutY="453.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="Yes">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="noButton3" layoutX="339.0" layoutY="302.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="No">
+      <Button fx:id="noButton3" layoutX="950.0" layoutY="454.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="No">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="93.0" layoutY="364.0" prefHeight="26.0" prefWidth="154.0" text="4. Do you have severe acne?" wrapText="true" />
-      <Button fx:id="yesButton4" layoutX="284.0" layoutY="364.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="Yes">
+      <Label layoutX="625.0" layoutY="551.0" prefHeight="26.0" prefWidth="217.0" text="4. Do you have severe acne?" wrapText="true">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font size="16.0" />
+         </font></Label>
+      <Button fx:id="yesButton4" layoutX="870.0" layoutY="549.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="Yes">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="54.0" layoutY="539.0" mnemonicParsing="false" onAction="#switchToScene1" style="-fx-background-color: #fa9bb0;" text="Go Back">
+      <Button layoutX="320.0" layoutY="387.0" mnemonicParsing="false" onAction="#switchToScene1" style="-fx-background-color: #fa9bb0;" text="Go Back">
          <font>
-            <Font name="System Bold Italic" size="12.0" />
+            <Font name="System Bold Italic" size="25.0" />
          </font>
       </Button>
-      <Button fx:id="noButton4" layoutX="339.0" layoutY="364.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="No">
+      <Button fx:id="noButton4" layoutX="950.0" layoutY="550.0" mnemonicParsing="false" onAction="#actionPerformed" style="-fx-background-color: #Ffc3ee;" text="No">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="submitButton" layoutX="381.0" layoutY="539.0" mnemonicParsing="false" onAction="#SubmitButton" style="-fx-background-color: #fa9bb0;" text="Submit">
+      <Button fx:id="submitButton" layoutX="1127.0" layoutY="386.0" mnemonicParsing="false" onAction="#SubmitButton" style="-fx-background-color: #fa9bb0;" text="Submit">
          <font>
-            <Font name="System Bold Italic" size="12.0" />
+            <Font name="System Bold Italic" size="25.0" />
          </font>
       </Button>
    </children>

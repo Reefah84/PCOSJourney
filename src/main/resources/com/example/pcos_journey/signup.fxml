@@ -16,7 +16,7 @@
    <right>
       <AnchorPane prefHeight="790.0" prefWidth="674.0" style="-fx-background-color: #eec1eb;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="227.0" fitWidth="219.0" layoutX="31.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="homepage" fitHeight="227.0" fitWidth="219.0" layoutX="31.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Untitled729_20230916213949.png" />
                </image>

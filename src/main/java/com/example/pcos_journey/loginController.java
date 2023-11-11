@@ -1,22 +1,22 @@
 package com.example.pcos_journey;
 
-import com.example.pcos_journey.UserSession;
-import com.example.pcos_journey.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.*;
 import javafx.event.ActionEvent;
 
 import java.io.*;
 import java.util.Objects;
-import java.util.Scanner;
 
 public class loginController {
     public CheckBox doctorcheck;
     public CheckBox usercheck;
+    public ImageView backHome;
     @FXML
     private TextField username;
     @FXML
@@ -26,10 +26,33 @@ public class loginController {
     public  Button loginbutton;
     public Button forgotpasswordbutton;
     public Label emptyusername;
+    public void setBackHome(MouseEvent event) {
+        try {
+            // Load the new FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) backHome.getScene().getWindow();
+
+            // Set the new content in the same window
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     private boolean isAuthenticated(String enteredUsername, String enteredPassword, boolean isUserSelected, boolean isDoctorSelected) {
         // Construct the path to the user's folder
-        String userFolderPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + enteredUsername;
-
+        String userFolderPath;
+        if (isUserSelected) {
+            userFolderPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + enteredUsername;
+        } else if (isDoctorSelected) {
+            userFolderPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\DRData\\" + enteredUsername;
+        } else {
+            // Invalid user type
+            return false;
+        }
         // Check if the user's folder exists
         File userFolder = new File(userFolderPath);
         if (userFolder.exists() && userFolder.isDirectory()) {
@@ -79,7 +102,12 @@ public class loginController {
             emptyusername.setVisible(true);
             return;
         }
-
+        // Check if the email is a valid Gmail address
+        if (!enteredUsername.endsWith("@gmail.com")) {
+            emptyusername.setText("Invalid email. Please provide a correct Gmail address.");
+            emptyusername.setVisible(true);
+            return;
+        }
         // Check the selected checkboxes
         boolean isUserSelected = usercheck.isSelected();
         boolean isDoctorSelected = doctorcheck.isSelected();
@@ -110,22 +138,17 @@ public class loginController {
 
             // Set the logged-in user in the UserSession
             UserSession.setLoggedInUser(loggedInUser);
-
-            // Load the selected dashboard
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(dashboardFxml));
-            Scene scene = null;
+            Parent root = null;
             try {
-                scene = new Scene(fxmlLoader.load(), 1540, 790);
-                scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+                root = fxmlLoader.load();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
-            Stage stage = new Stage();
-            stage.setTitle("Dashboard");
-            stage.setResizable(false);
+            Stage stage = (Stage)loginbutton.getScene().getWindow();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             stage.setScene(scene);
-            stage.show();
         } else {
             emptyusername.setText("Wrong credentials or user type. Please try again or click forgot password.");
             emptyusername.setVisible(true);
@@ -137,31 +160,29 @@ public class loginController {
     public void setSignupbutton(ActionEvent event)
     {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("signup.fxml"));
-        Scene scene = null;
+        Parent root = null;
         try {
-            scene = new Scene(fxmlLoader.load(), 1540, 790);
+            root = fxmlLoader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Stage stage=new Stage();
-        stage.setTitle("Login");
-        stage.setResizable(false);
+        Stage stage = (Stage)signupbutton.getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         stage.setScene(scene);
-        stage.show();
     }
     public void setForgotpasswordbutton(ActionEvent event)
     {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("forgot_password.fxml"));
-        Scene scene = null;
+        Parent root = null;
         try {
-            scene = new Scene(fxmlLoader.load(), 1540, 790);
+            root = fxmlLoader.load();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Stage stage=new Stage();
-        stage.setTitle("Forgot Password");
-        stage.setResizable(false);
+        Stage stage = (Stage)forgotpasswordbutton.getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         stage.setScene(scene);
-        stage.show();
     }
 }

@@ -55,11 +55,6 @@
                   <Image url="@../lock-16.png" />
                </image>
             </ImageView>
-            <Button fx:id="news" layoutX="725.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="News" textFill="#ff1d6c">
-               <font>
-                  <Font name="Arial Bold" size="25.0" />
-               </font>
-            </Button>
             <ImageView fitHeight="165.0" fitWidth="149.0" layoutX="1375.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />

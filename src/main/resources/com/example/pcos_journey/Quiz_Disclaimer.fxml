@@ -5,34 +5,40 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_j.SwitchScenes">
-   <children>
-      <ImageView fitHeight="300.0" fitWidth="450.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@watercolor-background-with-hand-drawn-elements_23-2148867455.jpg" />
-         </image>
-      </ImageView>
-      <Button layoutX="23.0" layoutY="21.0" mnemonicParsing="false" style="-fx-background-color: #fa9bb0;" text="Go Back">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <Button layoutX="357.0" layoutY="248.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: #fa9bb0;" text="I Agree">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <Label layoutX="165.0" layoutY="47.0" text="DISCLAIMER" textFill="#c225ad">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="106.0" layoutY="94.0" prefHeight="93.0" prefWidth="239.0" text="Please be aware this assessment provides general information only rather than a definitive PCOS diagnosis." wrapText="true">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-   </children>
-</AnchorPane>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.SwitchScene">
+   <center>
+      <AnchorPane prefHeight="495.0" prefWidth="685.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="1029.0" fitWidth="1541.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../watercolor-background-with-hand-drawn-elements_23-2148867455.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="603.0" layoutY="268.0" text="DISCLAIMER" textFill="#b823a5">
+               <font>
+                  <Font name="Calibri Bold Italic" size="65.0" />
+               </font>
+            </Label>
+            <Label layoutX="402.0" layoutY="365.0" prefHeight="346.0" prefWidth="747.0" text="Please be aware this assesment provides general information only rather than a definitive PCOS diagnosis" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Label>
+            <Button fx:id="goBackButton" layoutX="74.0" layoutY="176.0" mnemonicParsing="false" onAction="#switchToScene1" style="-fx-background-color: #ee94a8; -fx-border-color: #fa9bb0;" text="Go Back">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="agreeButton" layoutX="1307.0" layoutY="785.0" mnemonicParsing="false" onAction="#switchToScene2" prefWidth="160.0" style="-fx-background-color: #ee94a8; -fx-border-color: #fa9bb0;" text="I Agree">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
