@@ -24,3 +24,16 @@
     -fx-text-fill: black;
 }
 
+.list-view {
+    -fx-background-color: #e6b3d2; /* Replace with your color */
+}
+
+.list-cell {
+    -fx-font-size: 25px;
+    -fx-background-color: #e6b3d2;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #b74767; /* Optional: Color for selected item */
+    -fx-text-fill: #000000; /* Optional: Text color for selected item */
+}

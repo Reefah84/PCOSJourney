@@ -49,5 +49,18 @@ public class dashboardUserController {
             e.printStackTrace();
         }
     }
-
+    public void setSymptomButton(ActionEvent event)
+    {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HormoneTracker.fxml")); // Adjust the path
+        try {
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage)logout.getScene().getWindow();
+            Scene scene = new Scene(root);
+            // If you have a stylesheet
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

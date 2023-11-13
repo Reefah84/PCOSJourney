@@ -49,8 +49,8 @@
                   </MenuButton>
                   <MenuButton fx:id="allDoctors" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
                      <items>
-                        <MenuItem id="gy" mnemonicParsing="false" text="Gynaecologist" />
-                        <MenuItem id="hos" mnemonicParsing="false" text="Hospital" />
+                        <MenuItem fx:id="gy" mnemonicParsing="false" onAction="#showListOfDoctors" text="Gynaecologist" />
+                        <MenuItem fx:id="hos" mnemonicParsing="false" text="Hospital" />
                      </items>
                      <font>
                         <Font name="Arial Bold" size="25.0" />

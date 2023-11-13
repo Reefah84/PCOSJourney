@@ -76,7 +76,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Button fx:id="symptomButton" layoutX="50.0" layoutY="248.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="665.0" style="-fx-background-color: #d4d4ff; -fx-border-color: #dca4ee; -fx-border-radius: 10; -fx-background-radius: 10;" text="Symptom Tracker">
+            <Button fx:id="symptomButton" layoutX="50.0" layoutY="248.0" mnemonicParsing="false" onAction="#setSymptomButton" prefHeight="45.0" prefWidth="665.0" style="-fx-background-color: #d4d4ff; -fx-border-color: #dca4ee; -fx-border-radius: 10; -fx-background-radius: 10;" text="Hormone Tracker">
                <font>
                   <Font size="35.0" />
                </font>

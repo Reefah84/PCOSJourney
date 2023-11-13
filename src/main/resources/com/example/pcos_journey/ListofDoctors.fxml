@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1710.0" prefWidth="1540.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.ListofDoctors">
+    <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1710.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;">
+            <children>
+                <AnchorPane layoutX="-8.0" layoutY="-2.0" prefHeight="196.0" prefWidth="1540.0" style="-fx-background-color: #ffffff;">
+                    <children>
+                        <ImageView fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../resized%20home2.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="93.0" fitWidth="548.0" layoutX="192.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../white%20banground%20writing.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="LoginButton" layoutX="1165.0" layoutY="73.0" mnemonicParsing="false" onAction="#setLoginButton" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #b74767;" text="LOG IN  " textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="27.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="42.0" fitWidth="34.0" layoutX="1313.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../lock-16.png" />
+                            </image>
+                        </ImageView>
+                        <MenuButton fx:id="Health" layoutX="220.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Health" textFill="#ff1d6c">
+                            <items>
+                                <MenuItem id="Mental" mnemonicParsing="false" text="Mental Health" />
+                                <MenuItem id="fertile" mnemonicParsing="false" text="Fertility" />
+                                <MenuItem id="fit" mnemonicParsing="false" text="Exercise and Fitness" />
+                                <MenuItem id="nutrition" mnemonicParsing="false" text="Diet and Nutrition" />
+                            </items>
+                            <font>
+                                <Font name="Arial Bold" size="25.0" />
+                            </font>
+                        </MenuButton>
+                        <MenuButton fx:id="allDoctors" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
+                            <items>
+                                <MenuItem id="gy" mnemonicParsing="false" text="Gynaecologist" />
+                                <MenuItem id="hos" mnemonicParsing="false" text="Hospital" />
+                            </items>
+                            <font>
+                                <Font name="Arial Bold" size="25.0" />
+                            </font>
+                        </MenuButton>
+                        <ImageView fitHeight="165.0" fitWidth="149.0" layoutX="1377.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <ImageView fitHeight="1250.0" fitWidth="919.0" layoutX="742.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../quizpage_flower2.png" />
+                    </image>
+                </ImageView>
+                <AnchorPane layoutX="-1.0" layoutY="1495.0" prefHeight="212.0" prefWidth="1540.0" style="-fx-background-color: #ff7aa1;">
+                    <children>
+                        <Label layoutX="1219.0" layoutY="32.0" prefHeight="31.0" prefWidth="277.0" text="Email us for any concerns:" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="1219.0" layoutY="67.0" text="pcos220journeyg@mail.com" textFill="WHITE">
+                            <font>
+                                <Font name="System Italic" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="111.0" layoutY="14.0" text="DISCLAIMER:" textFill="#fff9f9">
+                            <font>
+                                <Font name="System Bold" size="22.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="111.0" layoutY="36.0" prefHeight="146.0" prefWidth="944.0" text="This content is for educational purposes and does not offer personalized medical advice or replace professional healthcare guidance. Medical information evolves rapidly, and we cannot ensure comprehensive coverage of all treatment aspects. Your use of information from this source is at your own risk, and neither we nor our authors accept liability for any harm, including fatalities, resulting from product use, information application, or services provided.     All rights reserved © 2023" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </children></AnchorPane>
+            <ListView fx:id="doctorsListView" layoutX="90.0" layoutY="347.0" prefHeight="1136.0" prefWidth="728.0" onMouseClicked="#handleDoctorSelection"/>
+            <Label layoutX="104.0" layoutY="261.0" text="List of Doctors in this site:">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+            </children></AnchorPane>
+    </content>
+</ScrollPane>
