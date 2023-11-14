@@ -22,6 +22,10 @@ public class homePageController {
     public Button symptomTrack;
     public MenuItem gy;
     public MenuItem hos;
+    public MenuItem nutrition;
+    public MenuItem fertile;
+    public MenuItem fit;
+    public MenuItem Mental;
 
     public void setLoginButton(ActionEvent event) throws IOException {
         // Load the FXML file
@@ -52,6 +56,22 @@ public class homePageController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ListofDoctors.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) gy.getParentPopup().getOwnerWindow();
+
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception
+        }
+    }
+    public void setNutrition(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("baseDiet.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) nutrition.getParentPopup().getOwnerWindow();
 
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
