@@ -21,7 +21,6 @@ public class ListofDoctors {
 
     public Button LoginButton;
     public MenuButton Health;
-    public MenuButton allDoctors;
     public ImageView home;
     public Button gy;
     @FXML
@@ -67,7 +66,7 @@ public class ListofDoctors {
         if (selectedDoctor != null) {
             try {
                 // Load the new FXML (e.g., DoctorDetails.fxml)
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard_doctor.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("sendMailPopupUser.fxml"));
                 Parent root = loader.load();
 
                 // Create a new Stage for the Doctor Details window
