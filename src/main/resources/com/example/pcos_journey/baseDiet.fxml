@@ -119,15 +119,6 @@
                         <Font name="Arial Bold" size="25.0" />
                      </font>
                   </MenuButton>
-                  <MenuButton layoutX="400.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Gynaecologist" />
-                        <MenuItem mnemonicParsing="false" text="Hospital" />
-                     </items>
-                     <font>
-                        <Font name="Arial Bold" size="25.0" />
-                     </font>
-                  </MenuButton>
                   <Button layoutX="375.0" layoutY="101.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="News" textFill="#ff1d6c">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
@@ -138,7 +129,7 @@
                         <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="home" fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" onMouseClicked="#setHome" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resized%20home2.png" />
                      </image>
@@ -153,6 +144,11 @@
                         <Image url="@../lock-16.png" />
                      </image>
                   </ImageView>
+                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
             </children></AnchorPane>

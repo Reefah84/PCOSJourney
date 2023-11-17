@@ -47,20 +47,16 @@
                         <Font name="Arial Bold" size="25.0" />
                      </font>
                   </MenuButton>
-                  <MenuButton fx:id="allDoctors" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
-                     <items>
-                        <MenuItem fx:id="gy" mnemonicParsing="false" onAction="#showListOfDoctors" text="Gynaecologist" />
-                        <MenuItem fx:id="hos" mnemonicParsing="false" text="Hospital" />
-                     </items>
-                     <font>
-                        <Font name="Arial Bold" size="25.0" />
-                     </font>
-                  </MenuButton>
                   <ImageView fitHeight="165.0" fitWidth="149.0" layoutX="1377.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
                      </image>
                   </ImageView>
+                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
             <ImageView fitHeight="545.0" fitWidth="540.0" layoutX="18.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
@@ -103,12 +99,12 @@
                   <Font name="Georgia" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="doctorList" layoutX="1053.0" layoutY="1405.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="260.0" style="-fx-background-color: #ffffff; -fx-border-color: #c200a2;" text="Medical Specialists" textFill="#c200a2">
+            <Button fx:id="doctorList" layoutX="1053.0" layoutY="1405.0" mnemonicParsing="false" onAction="#showListOfDoctors" prefHeight="50.0" prefWidth="260.0" style="-fx-background-color: #ffffff; -fx-border-color: #c200a2;" text="Medical Specialists" textFill="#c200a2">
                <font>
                   <Font name="Georgia" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="symptomTrack" layoutX="265.0" layoutY="1405.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="258.0" style="-fx-background-color: #ffffff; -fx-border-color: #c200a2;" text="Symptom Tracker" textFill="#c200a2">
+            <Button fx:id="symptomTrack" layoutX="265.0" layoutY="1405.0" mnemonicParsing="false" onAction="#setSymptomTrack" prefHeight="50.0" prefWidth="258.0" style="-fx-background-color: #ffffff; -fx-border-color: #c200a2;" text="Symptom Tracker" textFill="#c200a2">
                <font>
                   <Font name="Georgia" size="25.0" />
                </font>

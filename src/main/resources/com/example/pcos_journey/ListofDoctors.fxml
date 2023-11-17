@@ -17,7 +17,7 @@
             <children>
                 <AnchorPane layoutX="-8.0" layoutY="-2.0" prefHeight="196.0" prefWidth="1540.0" style="-fx-background-color: #ffffff;">
                     <children>
-                        <ImageView fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="home" fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" onMouseClicked="#setHome" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../resized%20home2.png" />
                             </image>
@@ -92,7 +92,7 @@
                             </font>
                         </Label>
                     </children></AnchorPane>
-            <ListView fx:id="doctorsListView" layoutX="90.0" layoutY="347.0" prefHeight="1136.0" prefWidth="728.0" onMouseClicked="#handleDoctorSelection"/>
+            <ListView fx:id="doctorsListView" layoutX="90.0" layoutY="347.0" onMouseClicked="#handleDoctorSelection" prefHeight="1136.0" prefWidth="728.0" />
             <Label layoutX="104.0" layoutY="261.0" text="List of Doctors in this site:">
                <font>
                   <Font size="38.0" />
