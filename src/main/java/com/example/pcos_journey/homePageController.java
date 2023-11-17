@@ -10,22 +10,21 @@ import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class homePageController {
 
     public Button LoginButton;
     public MenuButton Health;
-    public MenuButton allDoctors;
-    public Button News;
+
     public Button quiz;
     public Button doctorList;
     public Button symptomTrack;
-    public MenuItem gy;
-    public MenuItem hos;
     public MenuItem nutrition;
     public MenuItem fertile;
     public MenuItem fit;
     public MenuItem Mental;
+    public Button gy;
 
     public void setLoginButton(ActionEvent event) throws IOException {
         // Load the FXML file
@@ -55,13 +54,13 @@ public class homePageController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ListofDoctors.fxml"));
             Parent root = loader.load();
-            Stage stage = (Stage) gy.getParentPopup().getOwnerWindow();
 
+            // Get the current stage
+            Stage stage = (Stage) gy.getScene().getWindow();
+
+            // Set the new content in the same window
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-
             stage.setScene(scene);
-            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
             // Handle the exception
@@ -81,6 +80,20 @@ public class homePageController {
         } catch (IOException e) {
             e.printStackTrace();
             // Handle the exception
+        }
+    }
+
+    public void setSymptomTrack(ActionEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HormoneTracker.fxml")); // Adjust the path
+        try {
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) symptomTrack.getScene().getWindow();
+            Scene scene = new Scene(root);
+            // If you have a stylesheet
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

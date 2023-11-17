@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -20,6 +22,8 @@ public class ListofDoctors {
     public Button LoginButton;
     public MenuButton Health;
     public MenuButton allDoctors;
+    public ImageView home;
+    public Button gy;
     @FXML
     private ListView<String> doctorsListView;
 
@@ -75,6 +79,39 @@ public class ListofDoctors {
                 e.printStackTrace();
                 // Handle exception (e.g., show an error message)
             }
+        }
+    }
+
+    public void setHome(MouseEvent mouseEvent) {
+        try {
+            // Load the new FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) home.getScene().getWindow();
+
+            // Set the new content in the same window
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void showListOfDoctors(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListofDoctors.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) gy.getScene().getWindow();
+
+            // Set the new content in the same window
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception
         }
     }
 }
