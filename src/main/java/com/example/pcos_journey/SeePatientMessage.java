@@ -21,16 +21,21 @@ public class SeePatientMessage {
         message.setText(messageContent);
         message.setVisible(true);
     }
+    private String userEmail;
+
+    // ... [other methods]
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
     public void handleReplyAction(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("SendMailPopupUser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("sendMailPopupUser.fxml"));
             Parent root = loader.load();
 
-            SendMailPopupUser controller = loader.getController();
+            SendMailPopupUser sendMailController = loader.getController();
+            sendMailController.setUserEmail(userEmail); // Pass the extracted user email to the SendMailPopupUser controller
 
             Stage currentStage = (Stage) reply.getScene().getWindow();
-            controller.setStage(currentStage); // Pass the current stage to the controller
-
             currentStage.setScene(new Scene(root));
         } catch (IOException e) {
             e.printStackTrace();

@@ -21,6 +21,7 @@ public class ListofDoctors {
 
     public Button LoginButton;
     public MenuButton Health;
+    public MenuButton allDoctors;
     public ImageView home;
     public Button gy;
     @FXML
@@ -65,20 +66,33 @@ public class ListofDoctors {
         String selectedDoctor = doctorsListView.getSelectionModel().getSelectedItem();
         if (selectedDoctor != null) {
             try {
-                // Load the new FXML (e.g., DoctorDetails.fxml)
+                // Extract doctor email from the selected item
+                String doctorEmail = extractEmailFromName(selectedDoctor);
+
+                // Load SendMailPopupUser FXML and pass the doctor email
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("sendMailPopupUser.fxml"));
                 Parent root = loader.load();
 
-                // Create a new Stage for the Doctor Details window
+                SendMailPopupUser controller = loader.getController();
+                controller.initialize(doctorEmail); // Pass the extracted doctor email
+
+                // Show the new stage
                 Stage stage = new Stage();
-                stage.setTitle(selectedDoctor); // Optional: Set title to doctor's name
+                stage.setTitle(selectedDoctor);
                 stage.setScene(new Scene(root));
                 stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
-                // Handle exception (e.g., show an error message)
+                // Handle exception
             }
         }
+    }
+    private String extractEmailFromName(String doctorName) {
+        // Assuming doctorName is in the format "Dr FirstNameLastName"
+        if (doctorName.startsWith("Dr ")) {
+            doctorName = doctorName.substring(3); // Remove "Dr " prefix
+        }
+        return doctorName.replaceAll("\\s+", "") + "@gmail.com"; // Replace spaces and append "@gmail.com"
     }
 
     public void setHome(MouseEvent mouseEvent) {

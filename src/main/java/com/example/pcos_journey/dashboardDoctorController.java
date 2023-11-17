@@ -16,8 +16,11 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class dashboardDoctorController {
@@ -109,6 +112,12 @@ public class dashboardDoctorController {
             String messageContent = new String(Files.readAllBytes(Paths.get(filePath)));
             controller.setMessage(messageContent);
 
+            // Extract user email if needed
+            if (!isReply) {
+                String userEmail = extractUserEmailFromMessage(Paths.get(filePath));
+                controller.setUserEmail(userEmail); // Assuming you have a method in SeePatientMessage to set user email
+            }
+
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Patient Message");
@@ -118,20 +127,32 @@ public class dashboardDoctorController {
             e.printStackTrace();
         }
     }
+
+    private String extractUserEmailFromMessage(Path filePath) throws IOException {
+        String content = new String(Files.readAllBytes(filePath));
+        Pattern emailPattern = Pattern.compile("User Email: (.+)");
+        Matcher matcher = emailPattern.matcher(content);
+        if (matcher.find()) {
+            return matcher.group(1).trim();
+        }
+        return "";
+    }
     public void setLogout(ActionEvent event)
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("homepage_attempt2.fxml"));
-        Scene scene = null;
         try {
-            scene = new Scene(fxmlLoader.load(), 1540, 790);
+            // Load the new FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) logout.getScene().getWindow();
+
+            // Set the new content in the same window
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
-        Stage stage=new Stage();
-        stage.setTitle("homepage");
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
     }
     public void setBackHome(MouseEvent event) {
         try {

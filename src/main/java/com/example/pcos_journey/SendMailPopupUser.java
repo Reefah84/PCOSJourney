@@ -33,6 +33,10 @@ public class SendMailPopupUser {
     public void initialize(String doctorEmail) {
         this.doctorEmail = doctorEmail;
     }
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+        this.user.setText(userEmail); // Automatically fill the user email field
+    }
     private Stage stage;
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -107,12 +111,14 @@ public class SendMailPopupUser {
     }
     @FXML
     private void handleSendButtonAction(ActionEvent event) throws IOException {
-        // Add your logic to send the message here
         userMessage = message.getText();
         userEmail = user.getText();
+
+        // Define the folder paths for doctor and user
         String doctorFolder = "E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/DRData/" + doctorEmail;
         String userFolder = "E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/UserData/" + userEmail;
 
+        // Check if the directories exist
         File doctorDir = new File(doctorFolder);
         File userDir = new File(userFolder);
 
@@ -120,24 +126,31 @@ public class SendMailPopupUser {
             errorMessage.setText("Please login or signup first.");
             return;
         }
-        String Subject="You received a new mail from the user "+userEmail;
-        if(sendEmail(userMessage,Subject,doctorEmail,"pcosjourney220@gmail.com"))
-        {
+
+        String subject = "You received a new mail from the user " + userEmail;
+
+        // Send the email and store the message
+        if (sendEmail(userMessage, subject, doctorEmail, "pcosjourney220@gmail.com")) {
             if (storeMessage(userMessage, userEmail, doctorEmail)) {
                 File repliedToFile = new File(doctorFolder + "/replied_to_" + userEmail + ".txt");
+                System.out.println("Sent mail and storing message");
+
                 if (writeToFile(repliedToFile, "Replied to " + userEmail + "\nMessage: " + userMessage)) {
-                    // Close the popup window after sending the message
+                    System.out.println("Stored mail and closing popup");
                     if (stage != null) {
                         stage.close();
+                    } else {
+                        System.out.println("Stage is null, cannot close the window");
                     }
                 } else {
                     errorMessage.setText("Failed to store the reply. Try again.");
                 }
             }
-
+        } else {
+            System.out.println("Error in sending mail");
         }
-        System.out.println("Error in sending mail");
     }
+
     @FXML
     private void handleGoBackButtonAction(ActionEvent event) {
         if (stage != null) {
