@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -25,6 +26,7 @@ public class dashboardUserController {
     public Button DoctorButton;
     public Button gy;
     public ImageView home;
+    public ListView <String> messageFrom;
 
     public void initialize() {
         // Access the logged-in user from UserSession
@@ -55,7 +57,7 @@ public class dashboardUserController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HormoneTracker.fxml")); // Adjust the path
         try {
             Parent root = fxmlLoader.load();
-            Stage stage = (Stage)logout.getScene().getWindow();
+            Stage stage = (Stage)symptomButton.getScene().getWindow();
             Scene scene = new Scene(root);
             // If you have a stylesheet
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());

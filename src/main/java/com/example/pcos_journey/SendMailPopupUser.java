@@ -15,6 +15,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
 public class SendMailPopupUser {
@@ -69,13 +71,20 @@ public class SendMailPopupUser {
             return false;
         }
     }
+    private String getTimestampedFilename(String prefix, String userEmail, String doctorEmail) {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH_mm_ss");
+        String timestamp = now.format(formatter);
+
+        return prefix + userEmail + "_" + timestamp + ".txt";
+    }
     private boolean storeMessage(String message, String userEmail, String doctorEmail) {
         // Doctor's message file path
-        File doctorMessageFile = new File("E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/DRData/" + doctorEmail + "/message_from_" + userEmail + ".txt");
+        String timestampedDoctorFilename = getTimestampedFilename("message_from_", userEmail, doctorEmail);
+        String timestampedUserFilename = getTimestampedFilename("sent_mail_to_", doctorEmail, userEmail);
 
-        // User's sent file path
-        File userSentFile = new File("E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/UserData/" + userEmail + "/sent_mail_to_" + doctorEmail + ".txt");
-
+        File doctorMessageFile = new File("E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/DRData/" + doctorEmail + "/" + timestampedDoctorFilename);
+        File userSentFile = new File("E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/UserData/" + userEmail + "/" + timestampedUserFilename);
         // Message for doctor's file
         String messageForDoctor = "User Email: " + userEmail + "\nMessage: " + message;
 

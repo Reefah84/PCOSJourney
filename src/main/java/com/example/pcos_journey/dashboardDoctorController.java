@@ -64,7 +64,7 @@ public class dashboardDoctorController {
         String doctorDirectoryPath = "E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/DRData/" + doctoremail;
         File doctorDirectory = new File(doctorDirectoryPath);
 
-        String[] replies = doctorDirectory.list((dir, name) -> name.startsWith("replied_to_"));
+        String[] replies = doctorDirectory.list((dir, name) -> name.startsWith("reply_to_"));
         if (replies != null) {
             myReply.getItems().addAll(
                     Arrays.stream(replies)
@@ -115,7 +115,7 @@ public class dashboardDoctorController {
             // Extract user email if needed
             if (!isReply) {
                 String userEmail = extractUserEmailFromMessage(Paths.get(filePath));
-                controller.setUserEmail(userEmail); // Assuming you have a method in SeePatientMessage to set user email
+                //controller.setUserEmail(userEmail); // Assuming you have a method in SeePatientMessage to set user email
             }
 
             Stage stage = new Stage();
@@ -139,20 +139,18 @@ public class dashboardDoctorController {
     }
     public void setLogout(ActionEvent event)
     {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("homepage_attempt2.fxml"));
+        Scene scene = null;
         try {
-            // Load the new FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage
-            Stage stage = (Stage) logout.getScene().getWindow();
-
-            // Set the new content in the same window
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            scene = new Scene(fxmlLoader.load(), 1540, 790);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
+        Stage stage=new Stage();
+        stage.setTitle("homepage");
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
     public void setBackHome(MouseEvent event) {
         try {
