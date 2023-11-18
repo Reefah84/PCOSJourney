@@ -101,7 +101,7 @@ public class ReplyMailController {
 
     private boolean storeMessage(String message, String userEmail, String doctorEmail) {
         // Generate a timestamp
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy_MM_dd_HH:mm:ss"));
 
         // File paths for storing the message
         String doctorFilePath = "E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/DRData/" + doctorEmail + "/reply_to_" + userEmail + "_" + timestamp + ".txt";

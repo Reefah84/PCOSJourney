@@ -82,7 +82,7 @@
                   <Font size="35.0" />
                </font>
             </Button>
-            <Button fx:id="DoctorButton" layoutX="50.0" layoutY="472.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="665.0" style="-fx-background-color: #d4d4ff; -fx-border-color: #dca4ee; -fx-border-radius: 10; -fx-background-radius: 10;" text="My Doctors">
+            <Button fx:id="DoctorButton" layoutX="50.0" layoutY="472.0" mnemonicParsing="false" onAction="#setDoctorButton" prefHeight="45.0" prefWidth="665.0" style="-fx-background-color: #d4d4ff; -fx-border-color: #dca4ee; -fx-border-radius: 10; -fx-background-radius: 10;" text="My Doctors">
                <font>
                   <Font size="35.0" />
                </font>
