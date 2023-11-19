@@ -28,7 +28,48 @@ public class ListofDoctors {
     private ListView<String> doctorsListView;
 
     public void initialize() {
+        updateLoginButton();
         loadDoctorsList();
+    }
+
+    private void updateLoginButton() {
+        if (UserSession.getInstance().isUserLoggedIn()) {
+            User loggedInUser = UserSession.getLoggedInUser();
+            if (loggedInUser.isUser()) {
+                LoginButton.setText("USER");
+                LoginButton.setOnAction(this::openDashboardUser);
+            } else if (loggedInUser.isDoctor()) {
+                LoginButton.setText("DOCTOR");
+                LoginButton.setOnAction(this::openDashboardDoctor);
+            }
+        } else {
+            LoginButton.setText("LOGIN");
+            LoginButton.setOnAction(this::openLogin);
+        }
+    }
+
+    private void openDashboardUser(ActionEvent event) {
+        navigateTo("dashboard_user.fxml", event);
+    }
+
+    private void openDashboardDoctor(ActionEvent event) {
+        navigateTo("dashboard_doctor.fxml", event);
+    }
+
+    private void openLogin(ActionEvent event) {
+        navigateTo("login.fxml", event);
+    }
+
+    private void navigateTo(String fxmlFile, ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public void setLoginButton(ActionEvent event) throws IOException {
         // Load the FXML file

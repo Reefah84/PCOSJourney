@@ -92,6 +92,7 @@ public class dashboardUserController {
     }
     public void setLogout(ActionEvent event)
     {
+        UserSession.logout();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml")); // Adjust the path
         try {
             Parent root = fxmlLoader.load();
@@ -104,6 +105,7 @@ public class dashboardUserController {
             e.printStackTrace();
         }
     }
+
     public void setSymptomButton(ActionEvent event)
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HormoneTracker.fxml")); // Adjust the path

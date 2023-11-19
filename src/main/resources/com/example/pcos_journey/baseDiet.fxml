@@ -103,7 +103,7 @@
                 </TitledPane>
             <AnchorPane prefHeight="196.0" prefWidth="1540.0" style="-fx-background-color: #ffffff;">
                <children>
-                  <Button layoutX="1165.0" layoutY="73.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #b74767;" text="LOG IN  " textFill="WHITE">
+                  <Button fx:id="LoginButton" layoutX="1165.0" layoutY="73.0" mnemonicParsing="false" onAction="#setLoginButton" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #b74767;" text="LOG IN  " textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="27.0" />
                      </font>
@@ -144,7 +144,7 @@
                         <Image url="@../lock-16.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
+                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
                      <font>
                         <Font name="Arial Bold" size="25.0" />
                      </font>

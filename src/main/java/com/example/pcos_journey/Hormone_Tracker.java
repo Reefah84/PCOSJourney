@@ -58,6 +58,7 @@ public class Hormone_Tracker implements HormoneTracker {
         URL url = null;
         ResourceBundle resourceBundle = null;
         initialize(url,resourceBundle);
+        String userEmail = UserSession.getInstance().getUserEmail();
     }
     public void initialize(URL url, ResourceBundle resourceBundle) {
         item1.setOnAction(event -> {
@@ -196,7 +197,7 @@ public class Hormone_Tracker implements HormoneTracker {
     public void setHomeButton(MouseEvent event)
     {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard_user.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) homeButton.getScene().getWindow();
             stage.setScene(new Scene(root));

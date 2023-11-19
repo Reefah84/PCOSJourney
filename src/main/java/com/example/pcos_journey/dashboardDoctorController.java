@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -139,18 +140,18 @@ public class dashboardDoctorController {
     }
     public void setLogout(ActionEvent event)
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("homepage_attempt2.fxml"));
-        Scene scene = null;
+        UserSession.logout();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml")); // Adjust the path
         try {
-            scene = new Scene(fxmlLoader.load(), 1540, 790);
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage)logout.getScene().getWindow();
+            Scene scene = new Scene(root);
+            // If you have a stylesheet
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            stage.setScene(scene);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
-        Stage stage=new Stage();
-        stage.setTitle("homepage");
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
     }
     public void setBackHome(MouseEvent event) {
         try {

@@ -21,6 +21,10 @@ public class WeightTrackerController {
     public Label BMIresult;
     public Label Advice;
     public Button submit;
+    public void initialize() {
+        String userEmail = UserSession.getInstance().getUserEmail();
+        // Use userEmail to load user-specific data
+    }
     public void calculateBMI(ActionEvent event) {
         try {
             float weightValue = Float.parseFloat(weight.getText());
@@ -62,7 +66,7 @@ public class WeightTrackerController {
     public void setBackHome(MouseEvent event) {
         try {
             // Load the new FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard_user.fxml"));
             Parent root = loader.load();
 
             // Get the current stage
