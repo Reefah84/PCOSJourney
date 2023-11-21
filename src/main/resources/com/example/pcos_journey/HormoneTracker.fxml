@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.Hormone_Tracker">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1540.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.Hormone_Tracker">
    <children>
       <ImageView fitHeight="1043.0" fitWidth="1563.0" layoutX="-13.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -24,9 +24,9 @@
       </Label>
       <MenuButton fx:id="menuButton" layoutX="78.0" layoutY="254.0" mnemonicParsing="false" onAction="#initialize" prefHeight="74.0" prefWidth="798.0" style="-fx-background-color: #ebb3be;" text="Select the Hormone You Want to Track" wrapText="true">
         <items>
-          <MenuItem fx:id="item1" mnemonicParsing="false" onAction="#initialize" style="-fx-background-color: #ebb3be; -fx-border-color: #ebb3be;" text="Testosteron" />
-            <MenuItem fx:id="item2" mnemonicParsing="false" onAction="#initialize" style="-fx-background-color: #ebb3be;" text="Prolactin" />
-          <MenuItem fx:id="item3" mnemonicParsing="false" onAction="#initialize" style="-fx-background-color: #ebb3be;" text="TSH" />
+          <MenuItem fx:id="item1" mnemonicParsing="false" onAction="#initialize" styleClass="menu-item-style" text="Testosteron" />
+            <MenuItem fx:id="item2" mnemonicParsing="false" onAction="#initialize" styleClass="menu-item-style" text="Prolactin" />
+          <MenuItem fx:id="item3" mnemonicParsing="false" onAction="#initialize" styleClass="menu-item-style" text="TSH" />
         </items>
          <font>
             <Font name="System Bold" size="36.0" />

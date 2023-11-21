@@ -34,6 +34,7 @@ public class dashboardUserController {
     public ImageView home;
     public ListView <String> messageFrom;
     private String userEmail;
+    public Button delete;
     public void initialize() {
         // Access the logged-in user from UserSession
         User loggedInUser = UserSession.getLoggedInUser();
@@ -51,6 +52,11 @@ public class dashboardUserController {
                 if (selectedReply != null) {
                     openPatientMessagePopup(selectedReply);
                 }
+            }
+        });
+        welcome.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 1) {
+                openProfile();
             }
         });
     }
@@ -90,6 +96,20 @@ public class dashboardUserController {
         }
 
     }
+    private void openProfile() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("myProfile.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Profile");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle exceptions (e.g., show an error dialog)
+        }
+    }
     public void setLogout(ActionEvent event)
     {
         UserSession.logout();
@@ -115,6 +135,7 @@ public class dashboardUserController {
             Scene scene = new Scene(root);
             // If you have a stylesheet
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -174,5 +195,26 @@ public class dashboardUserController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void onDelete(ActionEvent event) {
+        deleteUserFolder(userEmail);
+        UserSession.logout(); // Logout the user session
+        setLogout(event);
+    }
+
+    private void deleteUserFolder(String userEmail) {
+        String userFolderPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + userEmail;
+        File userFolder = new File(userFolderPath);
+        deleteDirectory(userFolder);
+    }
+
+    private void deleteDirectory(File directoryToBeDeleted) {
+        File[] allContents = directoryToBeDeleted.listFiles();
+        if (allContents != null) {
+            for (File file : allContents) {
+                deleteDirectory(file);
+            }
+        }
+        directoryToBeDeleted.delete();
     }
 }

@@ -102,12 +102,6 @@ public class loginController {
             emptyusername.setVisible(true);
             return;
         }
-        // Check if the email is a valid Gmail address
-        if (!enteredUsername.endsWith("@gmail.com")) {
-            emptyusername.setText("Invalid email. Please provide a correct Gmail address.");
-            emptyusername.setVisible(true);
-            return;
-        }
         // Check the selected checkboxes
         boolean isUserSelected = usercheck.isSelected();
         boolean isDoctorSelected = doctorcheck.isSelected();
@@ -141,8 +135,12 @@ public class loginController {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(dashboardFxml));
             Parent root = null;
             try {
+                validateEmail(enteredUsername);
                 root = fxmlLoader.load();
-            } catch (IOException e) {
+            } catch (EmailException e) {
+                emptyusername.setText(e.getMessage());
+                emptyusername.setVisible(true);
+            }catch (IOException e) {
                 throw new RuntimeException(e);
             }
             Stage stage = (Stage)loginbutton.getScene().getWindow();
@@ -152,6 +150,11 @@ public class loginController {
         } else {
             emptyusername.setText("Wrong credentials or user type. Please try again or click forgot password.");
             emptyusername.setVisible(true);
+        }
+    }
+    private void validateEmail(String email) throws EmailException {
+        if (!email.endsWith("@gmail.com")) {
+            throw new EmailException("Invalid email. Please provide a correct Gmail address.");
         }
     }
 

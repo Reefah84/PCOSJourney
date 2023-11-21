@@ -75,12 +75,10 @@ public class forgotpasswordController extends sharedOTP{
     }
 
     // Method to validate the email and send OTP
-    private boolean validateAndSendOTP() {
+    private boolean validateAndSendOTP() throws EmailException {
         String email = enteremail.getText();
-        if(email.isEmpty() || !email.endsWith("@gmail.com")) {
-            incorrect.setText("Please enter a valid Gmail address.");
-            incorrect.setVisible(true);
-            return false;
+        if (email.isEmpty() || !email.endsWith("@gmail.com")) {
+            throw new EmailException("Please enter a valid Gmail address.");
         } else {
             generatedOTP = generateOTP();
             sharedOTP.setCurrentOTP(generatedOTP);
@@ -93,7 +91,7 @@ public class forgotpasswordController extends sharedOTP{
     }
 
     // Event handler for the next button
-    public void setSendotp(ActionEvent event) {
+    public void setSendotp(ActionEvent event) throws EmailException {
         if (!isEmailRegistered(enteremail.getText())) {
             incorrect.setText("User account not found");
             incorrect.setVisible(true);

@@ -52,11 +52,11 @@
                         <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
-                    <font>
-                        <Font name="Arial Bold" size="25.0" />
-                    </font>
-                </Button>
+            <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
     </top>
@@ -68,24 +68,24 @@
                         <Font name="Bodoni MT" size="55.0" />
                     </font>
                 </Label>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcbddf" height="429.0" layoutX="72.0" layoutY="149.0" stroke="#ffdde8" strokeType="INSIDE" width="877.0" />
-                <Label layoutX="106.0" layoutY="185.0" prefHeight="54.0" prefWidth="318.0" text="My Patient's Messages:">
-                    <font>
-                        <Font size="30.0" />
-                    </font>
-                </Label>
-                <ListView fx:id="patientMessage" layoutX="110.0" layoutY="249.0" prefHeight="310.0" prefWidth="782.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcbddf" height="429.0" layoutX="72.0" layoutY="149.0" stroke="#ffdde8" strokeType="INSIDE" width="877.0" />
+            <Label layoutX="106.0" layoutY="185.0" prefHeight="54.0" prefWidth="318.0" text="My Patient's Messages:">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ListView fx:id="patientMessage" layoutX="110.0" layoutY="249.0" prefHeight="310.0" prefWidth="782.0" />
             </children></AnchorPane>
     </left>
     <right>
         <AnchorPane prefHeight="594.0" prefWidth="534.0" style="-fx-background-color: #eec1eb;" BorderPane.alignment="CENTER">
-            <children>
-                <ListView fx:id="myReply" layoutX="68.0" layoutY="100.0" prefHeight="471.0" prefWidth="392.0" />
-                <Label layoutX="73.0" layoutY="23.0" prefHeight="54.0" prefWidth="318.0" text="My Replies:">
-                    <font>
-                        <Font size="30.0" />
-                    </font>
-                </Label>
-            </children></AnchorPane>
+         <children>
+            <ListView fx:id="myReply" layoutX="68.0" layoutY="100.0" prefHeight="471.0" prefWidth="392.0" />
+            <Label layoutX="73.0" layoutY="23.0" prefHeight="54.0" prefWidth="318.0" text="My Replies:">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
     </right>
 </BorderPane>

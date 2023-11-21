@@ -53,11 +53,11 @@
                                 <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
                             </image>
                         </ImageView>
-                        <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
-                            <font>
-                                <Font name="Arial Bold" size="25.0" />
-                            </font>
-                        </Button>
+                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </Button>
                     </children>
                 </AnchorPane>
                 <ImageView fitHeight="1250.0" fitWidth="919.0" layoutX="742.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
@@ -88,12 +88,12 @@
                             </font>
                         </Label>
                     </children></AnchorPane>
-                <ListView fx:id="doctorsListView" layoutX="90.0" layoutY="347.0" onMouseClicked="#handleDoctorSelection" prefHeight="1136.0" prefWidth="728.0" />
-                <Label layoutX="104.0" layoutY="261.0" text="List of Doctors in this site:">
-                    <font>
-                        <Font size="38.0" />
-                    </font>
-                </Label>
+            <ListView fx:id="doctorsListView" layoutX="90.0" layoutY="347.0" onMouseClicked="#handleDoctorSelection" prefHeight="1136.0" prefWidth="728.0" />
+            <Label layoutX="104.0" layoutY="261.0" text="List of Doctors in this site:">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
             </children></AnchorPane>
     </content>
 </ScrollPane>

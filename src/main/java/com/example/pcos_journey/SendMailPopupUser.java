@@ -119,10 +119,12 @@ public class SendMailPopupUser {
         }
     }
     @FXML
-    private void handleSendButtonAction(ActionEvent event) throws IOException {
+    private void handleSendButtonAction(ActionEvent event) throws IOException,EmailException {
         userMessage = message.getText();
         userEmail = user.getText();
-
+        if (!userEmail.endsWith("@gmail.com")) {
+            throw new EmailException("Invalid email. Please provide a correct Gmail address.");
+        }
         // Define the folder paths for doctor and user
         String doctorFolder = "E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/DRData/" + doctorEmail;
         String userFolder = "E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/UserData/" + userEmail;

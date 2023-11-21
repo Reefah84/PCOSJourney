@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #f588ab;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.myProfile">
+    <children>
+        <ImageView fitHeight="551.0" fitWidth="919.0" layoutX="-57.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../sl_112222_54110_25.jpg" />
+            </image>
+        </ImageView>
+        <Button fx:id="save" layoutX="324.0" layoutY="421.0" mnemonicParsing="false" onAction="#onSave" prefHeight="50.0" prefWidth="151.0" style="-fx-background-color: #ffdddc; -fx-border-color: #9d1cb7; -fx-border-radius: 20; -fx-background-radius: 20;" text="Save" textFill="#9d1cb7">
+            <font>
+                <Font name="Arial Bold" size="25.0" />
+            </font>
+        </Button>
+      <Circle fill="#ffdaf6" layoutX="638.0" layoutY="100.0" radius="75.0" stroke="#dc4196" strokeType="INSIDE" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="563.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Picture1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="600.0" layoutY="190.0" text="USER" textFill="#b23fc1">
+         <font>
+            <Font name="Arial Unicode MS" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="577.0" layoutY="243.0" text="PROFILE" textFill="#b23fc1">
+         <font>
+            <Font name="Arial Unicode MS" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="65.0" text="Username:">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="125.0" text="Change Password:">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="175.0" text="Testostrone level:">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="225.0" text="Prolactin Level:">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="275.0" text="TSH Level:">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="325.0" text="Weight:">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="375.0" text="Height:">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font>
+      </Label>
+      <Line endX="-5.0000152587890625" endY="338.4000244140625" layoutX="245.0" layoutY="65.0" startX="-5.0000152587890625" startY="-0.5990982055664062" />
+      <Label fx:id="username" layoutX="250.0" layoutY="65.0" prefHeight="30.0" prefWidth="234.0" style="visibility: true;">
+         <font>
+            <Font name="Arial Italic" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="tsh" layoutX="250.0" layoutY="272.0" prefHeight="30.0" prefWidth="234.0">
+         <font>
+            <Font name="Arial Italic" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="testosterone" layoutX="250.0" layoutY="171.0" prefHeight="30.0" prefWidth="234.0">
+         <font>
+            <Font name="Arial Italic" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="prolactine" layoutX="250.0" layoutY="221.0" prefHeight="30.0" prefWidth="234.0">
+         <font>
+            <Font name="Arial Italic" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="weight" layoutX="250.0" layoutY="321.0" prefHeight="30.0" prefWidth="234.0">
+         <font>
+            <Font name="Arial Italic" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="height" layoutX="250.0" layoutY="371.0" prefHeight="30.0" prefWidth="234.0">
+         <font>
+            <Font name="Arial Italic" size="19.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="pass" layoutX="250.0" layoutY="121.0" prefHeight="30.0" prefWidth="234.0" />
+    </children>
+</AnchorPane>

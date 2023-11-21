@@ -11,7 +11,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class WeightTrackerController {
 
@@ -21,8 +26,9 @@ public class WeightTrackerController {
     public Label BMIresult;
     public Label Advice;
     public Button submit;
+    private String userEmail;
     public void initialize() {
-        String userEmail = UserSession.getInstance().getUserEmail();
+        userEmail = UserSession.getInstance().getUserEmail();
         // Use userEmail to load user-specific data
     }
     public void calculateBMI(ActionEvent event) {
@@ -32,10 +38,15 @@ public class WeightTrackerController {
             if (weightValue <= 0 || heightValue <= 0) {
                 throw new IllegalArgumentException();
             }
-
             float bmi = weightValue / (heightValue * heightValue);
             BMIresult.setText(String.format("Your BMI is: %.2f", bmi));
             giveAdvice(bmi);
+            if (userEmail != null && !userEmail.isEmpty()) {
+                saveHeightAndWeight(weightValue, heightValue);
+                System.out.println(" Is logged in"+userEmail);
+            }else {
+                System.out.println("User is not logged in or is a doctor.");
+            }
         } catch (NumberFormatException e) {
             BMIresult.setText("Please enter correct values");
             Advice.setText("");
@@ -60,6 +71,24 @@ public class WeightTrackerController {
         } else {
             Advice.setText("Obesity: It's important to consult with a healthcare provider for guidance.");
             Advice.setVisible(true);
+        }
+    }
+    private void saveHeightAndWeight(float weight, float height) {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH-mm-ss");
+        String timestamp = now.format(formatter);
+        String fileName = "weight_and_height_" + timestamp + ".txt";
+        String userDirectoryPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + userEmail;
+        File userDirectory = new File(userDirectoryPath);
+        File outputFile = new File(userDirectory, fileName);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile, true))) {
+            writer.write("Weight: " + weight + " kg\n");
+            writer.write("Height: " + height * 100 + " cm\n"); // Convert back to cm for storage
+            writer.write("Timestamp: " + timestamp + "\n\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception (e.g., show an error message)
         }
     }
 

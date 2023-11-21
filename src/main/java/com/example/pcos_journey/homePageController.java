@@ -133,6 +133,7 @@ public class homePageController {
             Scene scene = new Scene(root);
             // If you have a stylesheet
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();

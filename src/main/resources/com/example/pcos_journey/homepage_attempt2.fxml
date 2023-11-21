@@ -11,8 +11,8 @@
 <?import javafx.scene.text.Font?>
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1710.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.homePageController">
-   <content>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1710.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1710.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;">
          <children>
             <AnchorPane layoutX="-8.0" layoutY="-2.0" prefHeight="196.0" prefWidth="1540.0" style="-fx-background-color: #ffffff;">
                <children>
@@ -142,5 +142,5 @@
                </font>
             </Label>
          </children></AnchorPane>
-   </content>
+  </content>
 </ScrollPane>

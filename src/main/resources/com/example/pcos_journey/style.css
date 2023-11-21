@@ -12,12 +12,12 @@
     -fx-background: #B74767; /* Change the selection color */
     -fx-text-fill: white; /* Change the text color on selection */
 }
-.loginbutton, .forgotpasswordbutton, .signupbutton {
+#loginbutton, #forgotpasswordbutton, #signupbutton {
     -fx-background-color: #ff91a6;
     -fx-text-fill: black;
 }
 
-.loginbutton:pressed, .forgotpasswordbutton:pressed, .signupbutton:pressed {
+#loginbutton:pressed, #forgotpasswordbutton:pressed, #signupbutton:pressed {
     -fx-background-color: linear-gradient(#f0f0f0, #e0e0e0);
     -fx-background-insets: 0, 1, 1;
     -fx-background-radius: 5, 4, 3;
@@ -50,4 +50,12 @@
 }
 .patient-message {
     -fx-background-color: linear-gradient(to bottom, #f588ab, #ffdddc);
+}
+.menu-item-style {
+    -fx-font-size: 20px; /* Adjust the size as needed */
+    -fx-background-color: white;
+}
+
+.menu-item-style:hover {
+    -fx-background-color: #ff1d6c; /* Pink color on hover */
 }

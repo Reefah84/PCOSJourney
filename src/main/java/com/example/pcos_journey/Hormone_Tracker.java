@@ -17,9 +17,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+;
 
 
 public class Hormone_Tracker implements HormoneTracker {
@@ -54,10 +60,12 @@ public class Hormone_Tracker implements HormoneTracker {
 
     String enteredvalue;
     float valuee;
+    User loggedInUser;
     public void initialize(ActionEvent actionEvent) {
         URL url = null;
         ResourceBundle resourceBundle = null;
         initialize(url,resourceBundle);
+        loggedInUser = UserSession.getLoggedInUser();
         String userEmail = UserSession.getInstance().getUserEmail();
     }
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -70,8 +78,16 @@ public class Hormone_Tracker implements HormoneTracker {
                 public void handle(ActionEvent event)
                 {
                     enteredvalue = value.getText();
-                    System.out.println(enteredvalue);
+                    String labelContent = label.getText();
+                    String[] parts = labelContent.split(" Tracker:");
+                    String hormone = parts[0];
 
+                    if (loggedInUser != null && !loggedInUser.isDoctor()) {
+                        saveHormoneLevel(loggedInUser.getUsername(), hormone, enteredvalue);
+                        System.out.println(loggedInUser.getUsername() + " logged in");
+                    } else {
+                        System.out.println("User is not logged in or is a doctor.");
+                    }
 
                     if(!enteredvalue.isEmpty())
                     {
@@ -113,8 +129,16 @@ public class Hormone_Tracker implements HormoneTracker {
                 public void handle(ActionEvent event)
                 {
                     enteredvalue = value.getText();
-                    System.out.println(enteredvalue);
+                    String labelContent = label.getText();
+                    String[] parts = labelContent.split(" Tracker:");
+                    String hormone = parts[0];
 
+                    if (loggedInUser != null && !loggedInUser.isDoctor()) {
+                        saveHormoneLevel(loggedInUser.getUsername(), hormone, enteredvalue);
+                        System.out.println(loggedInUser.getUsername() + " logged in");
+                    } else {
+                        System.out.println("User is not logged in or is a doctor.");
+                    }
 
                     if(!enteredvalue.isEmpty())
                     {
@@ -156,8 +180,16 @@ public class Hormone_Tracker implements HormoneTracker {
                 public void handle(ActionEvent event)
                 {
                     enteredvalue = value.getText();
-                    System.out.println(enteredvalue);
+                    String labelContent = label.getText();
+                    String[] parts = labelContent.split(" Tracker:");
+                    String hormone = parts[0];
 
+                    if (loggedInUser != null && !loggedInUser.isDoctor()) {
+                        saveHormoneLevel(loggedInUser.getUsername(), hormone, enteredvalue);
+                        System.out.println(loggedInUser.getUsername() + " logged in");
+                    } else {
+                        System.out.println("User is not logged in or is a doctor.");
+                    }
 
                     if(!enteredvalue.isEmpty())
                     {
@@ -184,20 +216,50 @@ public class Hormone_Tracker implements HormoneTracker {
                     }
 
                 }
-
             });
-
-
         });
-
-
-
-
     }
-    public void setHomeButton(MouseEvent event)
-    {
+    private void saveHormoneLevel(String userEmail, String hormoneName, String hormoneLevel) {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH-mm-ss");
+        String timestamp = now.format(formatter);
+        String fileName = hormoneName.replaceAll("\\s+", "_")+"_levels_" + timestamp + ".txt";
+        String userDirectoryPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + userEmail;
+        File userDirectory = new File(userDirectoryPath);
+        File outputFile = new File(userDirectory, fileName);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile, true))) {
+            writer.write("Hormone: " + hormoneName + "\n");
+            writer.write("Level: " + hormoneLevel + "\n");
+            writer.write("Timestamp: " + timestamp + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception (e.g., show an error message)
+        }
+    }
+    public void setHomeButton(MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard_user.fxml"));
+            // Check if a user is logged in
+            User loggedInUser = UserSession.getLoggedInUser();
+
+            FXMLLoader loader = null;
+            if (loggedInUser != null) {
+                // Check whether the logged-in user is a doctor or a regular user
+                if (loggedInUser.isUser()) {
+                    // Redirect to the user dashboard
+                    loader = new FXMLLoader(getClass().getResource("dashboard_user.fxml"));
+                } 
+                if (loggedInUser.isDoctor()) {
+                    // Redirect to the doctor dashboard
+                    loader = new FXMLLoader(getClass().getResource("dashboard_doctor.fxml"));
+                } else {
+                    System.out.println("Unknown user type detected!");
+                }
+            } else {
+                // Redirect to the home page if no user is logged in
+                loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
+            }
+
             Parent root = loader.load();
             Stage stage = (Stage) homeButton.getScene().getWindow();
             stage.setScene(new Scene(root));

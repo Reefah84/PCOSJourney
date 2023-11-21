@@ -56,6 +56,11 @@
                   <Font name="Arial Bold" size="25.0" />
                </font>
             </Button>
+            <Button fx:id="delete" layoutX="920.0" layoutY="59.0" mnemonicParsing="false" onAction="#onDelete" prefHeight="54.0" prefWidth="210.0" style="-fx-background-color: #ff0000; -fx-border-color: #c13737; -fx-border-radius: 10; -fx-background-radius: 10;" text="Delete Account" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </top>
