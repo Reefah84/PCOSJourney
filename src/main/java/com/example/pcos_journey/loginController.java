@@ -31,12 +31,9 @@ public class loginController {
             // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) backHome.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -146,6 +143,7 @@ public class loginController {
             Stage stage = (Stage)loginbutton.getScene().getWindow();
             Scene scene = new Scene(root);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } else {
             emptyusername.setText("Wrong credentials or user type. Please try again or click forgot password.");
@@ -172,6 +170,7 @@ public class loginController {
         Stage stage = (Stage)signupbutton.getScene().getWindow();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
     }
     public void setForgotpasswordbutton(ActionEvent event)
@@ -186,6 +185,7 @@ public class loginController {
         Stage stage = (Stage)forgotpasswordbutton.getScene().getWindow();
         Scene scene = new Scene(root);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
     }
 }

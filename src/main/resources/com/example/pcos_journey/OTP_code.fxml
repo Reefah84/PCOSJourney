@@ -13,7 +13,7 @@
     <right>
         <AnchorPane prefHeight="790.0" prefWidth="794.0" style="-fx-background-color: #ffdde8;" BorderPane.alignment="CENTER">
             <children>
-            <Button fx:id="resendOTP" layoutX="575.0" layoutY="587.0" mnemonicParsing="false" onAction="#setResendOTP" style="-fx-background-color: #ffdde8;" text="Resend OTP" textFill="#1519ec">
+            <Button fx:id="resendOTP" layoutX="593.0" layoutY="589.0" mnemonicParsing="false" onAction="#setResendOTP" styleClass="resendOTP" stylesheets="@button.css" text="Resend OTP" textFill="#1519ec">
                <font>
                   <Font size="30.0" />
                </font>
@@ -34,7 +34,7 @@
                         <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
                     </image>
                 </ImageView>
-                <Button fx:id="nextbutton" layoutX="443.0" layoutY="466.0" mnemonicParsing="false" onAction="#setNextbutton" prefHeight="56.0" prefWidth="199.0" style="-fx-background-color: #ff91a6; -fx-border-color: #ff2d6a;" text="NEXT">
+                <Button fx:id="nextbutton" layoutX="443.0" layoutY="466.0" mnemonicParsing="false" onAction="#setNextbutton" prefHeight="56.0" prefWidth="199.0" styleClass="nextButton" stylesheets="@button.css" text="NEXT">
                     <font>
                         <Font name="Arial" size="30.0" />
                     </font>

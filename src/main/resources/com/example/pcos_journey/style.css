@@ -1,27 +1,16 @@
-#mentalHealth, #fertility, #exercise, #diet, #gynae, #hospital,#Mental,#fertile,#fit,#nutrition{
+#mentalHealth, #fertility, #exercise, #diet,#Mental,#fertile,#fit,#nutrition{
     -fx-font-size: 22px; /* Change the font size */
     -fx-text-fill: #ff1d6c; /* Change the font color */
 }
 
-#mentalHealth:hover, #fertility:hover, #exercise:hover, #diet:hover, #gynae:hover, #hospital:hover,#Mental:hover,#fertile:hover,#fit:hover,#nutrition:hover{
+#mentalHealth:hover, #fertility:hover, #exercise:hover, #diet:hover,#Mental:hover,#fertile:hover,#fit:hover,#nutrition:hover{
     -fx-background: #FF1D6C; /* Change the hover color */
     -fx-text-fill: white; /* Change the text color on hover */
 }
 
-#mentalHealth:selected, #fertility:selected, #exercise:selected, #diet:selected ,#gynae:selected, #hospital:selected,#Mental:selected,#fertile:selected,#fit:selected,#nutrition:selected{
+#mentalHealth:selected, #fertility:selected, #exercise:selected, #diet:selected ,#Mental:selected,#fertile:selected,#fit:selected,#nutrition:selected{
     -fx-background: #B74767; /* Change the selection color */
     -fx-text-fill: white; /* Change the text color on selection */
-}
-#loginbutton, #forgotpasswordbutton, #signupbutton {
-    -fx-background-color: #ff91a6;
-    -fx-text-fill: black;
-}
-
-#loginbutton:pressed, #forgotpasswordbutton:pressed, #signupbutton:pressed {
-    -fx-background-color: linear-gradient(#f0f0f0, #e0e0e0);
-    -fx-background-insets: 0, 1, 1;
-    -fx-background-radius: 5, 4, 3;
-    -fx-text-fill: black;
 }
 
 .list-view {
@@ -32,7 +21,6 @@
     -fx-font-size: 20px;
     -fx-background-color: #e6b3d2;
 }
-
 .list-cell:filled:selected {
     -fx-background-color: #b74767; /* Optional: Color for selected item */
     -fx-text-fill: #000000; /* Optional: Text color for selected item */
@@ -44,10 +32,6 @@
 .titled-pane > .content {
     -fx-background-color: #FFB6C1 /* Example color for the content region */
 }
-
-.button {
-    -fx-background-color: #90EE90; /* Example color for buttons */
-}
 .patient-message {
     -fx-background-color: linear-gradient(to bottom, #f588ab, #ffdddc);
 }
@@ -55,7 +39,6 @@
     -fx-font-size: 20px; /* Adjust the size as needed */
     -fx-background-color: white;
 }
-
 .menu-item-style:hover {
     -fx-background-color: #ff1d6c; /* Pink color on hover */
 }

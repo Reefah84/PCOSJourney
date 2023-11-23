@@ -219,7 +219,7 @@ public class Hormone_Tracker implements HormoneTracker {
             });
         });
     }
-    private void saveHormoneLevel(String userEmail, String hormoneName, String hormoneLevel) {
+    public void saveHormoneLevel(String userEmail, String hormoneName, String hormoneLevel) {
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH-mm-ss");
         String timestamp = now.format(formatter);

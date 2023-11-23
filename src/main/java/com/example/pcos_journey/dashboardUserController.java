@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class dashboardUserController {
+public class dashboardUserController extends User{
 
     public Button logout;
     public MenuButton healthbutton;
@@ -35,6 +35,11 @@ public class dashboardUserController {
     public ListView <String> messageFrom;
     private String userEmail;
     public Button delete;
+
+    public dashboardUserController(String username) {
+        super(username);
+    }
+
     public void initialize() {
         // Access the logged-in user from UserSession
         User loggedInUser = UserSession.getLoggedInUser();

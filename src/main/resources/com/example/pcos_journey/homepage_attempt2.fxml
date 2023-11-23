@@ -26,7 +26,7 @@
                         <Image url="@../white%20banground%20writing.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="LoginButton" layoutX="1165.0" layoutY="73.0" mnemonicParsing="false" onAction="#setLoginButton" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #b74767;" text="LOG IN  " textFill="WHITE">
+                  <Button fx:id="LoginButton" layoutX="1165.0" layoutY="73.0" mnemonicParsing="false" onAction="#setLoginButton" prefHeight="52.0" prefWidth="206.0" styleClass="LoginButton" stylesheets="@button.css" text="LOG IN  " textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="27.0" />
                      </font>

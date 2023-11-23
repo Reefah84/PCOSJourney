@@ -27,7 +27,7 @@
                                 <Image url="@../white%20banground%20writing.png" />
                             </image>
                         </ImageView>
-                        <Button fx:id="LoginButton" layoutX="1165.0" layoutY="73.0" mnemonicParsing="false" onAction="#setLoginButton" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #b74767;" text="LOG IN  " textFill="WHITE">
+                        <Button fx:id="LoginButton" layoutX="1165.0" layoutY="73.0" mnemonicParsing="false" onAction="#setLoginButton" prefHeight="52.0" prefWidth="206.0" styleClass="LoginButton" stylesheets="@button.css" text="LOG IN  " textFill="WHITE">
                             <font>
                                 <Font name="Arial Bold" size="27.0" />
                             </font>
@@ -37,7 +37,7 @@
                                 <Image url="@../lock-16.png" />
                             </image>
                         </ImageView>
-                        <MenuButton fx:id="Health" layoutX="220.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Health" textFill="#ff1d6c">
+                        <MenuButton fx:id="Health" layoutX="220.0" layoutY="120.0" mnemonicParsing="false" styleClass="Health" stylesheets="@button.css" text="Health" textFill="#ff1d6c">
                             <items>
                                 <MenuItem id="Mental" mnemonicParsing="false" text="Mental Health" />
                                 <MenuItem id="fertile" mnemonicParsing="false" text="Fertility" />
@@ -53,7 +53,7 @@
                                 <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
                             </image>
                         </ImageView>
-                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
+                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" styleClass="gy" stylesheets="@button.css" text="Health Professional" textFill="#ff1d6c">
                      <font>
                         <Font name="Arial Bold" size="25.0" />
                      </font>

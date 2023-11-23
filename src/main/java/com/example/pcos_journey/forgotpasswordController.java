@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import javax.mail.*;
@@ -24,12 +26,8 @@ public class forgotpasswordController extends sharedOTP{
     public Button sendotp;
     public TextField enteremail;
     public Label incorrect;
-    // In your OTP generating method
+    public ImageView home;
     String generatedOTP;
-// Send the OTP via email
-    // to store the generated OTP
-
-    // Method to generate a 6-digit OTP
     private String generateOTP() {
         SecureRandom random = new SecureRandom();
         int otp = 100000 + random.nextInt(900000); // Generate 6-digit OTP
@@ -111,11 +109,29 @@ public class forgotpasswordController extends sharedOTP{
                 Scene scene = new Scene(root);
                 // If you have a stylesheet
                 scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+                scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
                 stage.setScene(scene);
             } catch (IOException e) {
                 e.printStackTrace();
                 incorrect.setText("Failed to load the next screen.");
             }
+        }
+    }
+    public void setHome(MouseEvent event) {
+        try {
+            // Load the new FXML file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) home.getScene().getWindow();
+
+            // Set the new content in the same window
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
