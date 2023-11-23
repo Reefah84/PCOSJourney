@@ -36,12 +36,12 @@
                         <Image url="@../lock-16.png" />
                      </image>
                   </ImageView>
-                  <MenuButton fx:id="Health" layoutX="220.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Health" textFill="#ff1d6c">
+                  <MenuButton fx:id="Health" layoutX="220.0" layoutY="120.0" mnemonicParsing="false" styleClass="Health" stylesheets="@button.css" text="Health" textFill="#ff1d6c">
                      <items>
-                        <MenuItem fx:id="Mental" mnemonicParsing="false" text="Mental Health" />
-                        <MenuItem fx:id="fertile" mnemonicParsing="false" text="Fertility" />
-                        <MenuItem fx:id="fit" mnemonicParsing="false" text="Exercise and Fitness" />
-                        <MenuItem fx:id="nutrition" mnemonicParsing="false" onAction="#setNutrition" text="Diet and Nutrition" />
+                        <MenuItem fx:id="Mental" mnemonicParsing="false" styleClass="Mental" text="Mental Health" />
+                        <MenuItem fx:id="fertile" mnemonicParsing="false" styleClass="fertile" text="Fertility" />
+                        <MenuItem fx:id="fit" mnemonicParsing="false" styleClass="fit" text="Exercise and Fitness" />
+                        <MenuItem fx:id="nutrition" mnemonicParsing="false" onAction="#setNutrition" styleClass="nutrition" text="Diet and Nutrition" />
                      </items>
                      <font>
                         <Font name="Arial Bold" size="25.0" />
@@ -52,14 +52,14 @@
                         <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
+                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" styleClass="Health" stylesheets="@button.css" text="Health Professional" textFill="#ff1d6c">
                      <font>
                         <Font name="Arial Bold" size="25.0" />
                      </font>
                   </Button>
                </children>
             </AnchorPane>
-            <ImageView fitHeight="545.0" fitWidth="540.0" layoutX="18.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="545.0" fitWidth="540.0" layoutX="20.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../home%20page.png" />
                </image>

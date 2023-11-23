@@ -89,7 +89,7 @@
 }
 .Health {
     -fx-background-color: white;
-    -fx-text-fill: #ff1d6c; /* Original text color */
+    -fx-text-fill: dark pink; /* Original text color */
 }
 
 .Health:hover {
@@ -116,4 +116,17 @@
     -fx-background-color: #ffdde8; /* Background color when pressed */
     -fx-text-fill: #ff1d6c; /* Text color when pressed */
 }
+.mentalHealth, .fertility, .exercise, .diet,.Mental,.fertile,.fit,.nutrition{
+    -fx-font-size: 22px; /* Change the font size */
+    -fx-text-fill: #ff1d6c; /* Change the font color */
+}
 
+.mentalHealth:hover, .fertility:hover, .exercise:hover, .diet:hover,.Mental:hover,.fertile:hover,.fit:hover,.nutrition:hover{
+    -fx-background: #FF1D6C; /* Change the hover color */
+    -fx-text-fill: white; /* Change the text color on hover */
+}
+
+.mentalHealth:selected, .fertility:selected, .exercise:selected, .diet:selected ,.Mental:selected,.fertile:selected, .fit:selected, .nutrition:selected{
+    -fx-background: #B74767; /* Change the selection color */
+    -fx-text-fill: white; /* Change the text color on selection */
+}
