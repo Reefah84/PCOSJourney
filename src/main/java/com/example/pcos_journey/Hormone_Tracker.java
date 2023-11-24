@@ -64,11 +64,17 @@ public class Hormone_Tracker implements HormoneTracker {
     public void initialize(ActionEvent actionEvent) {
         URL url = null;
         ResourceBundle resourceBundle = null;
-        initialize(url,resourceBundle);
-        loggedInUser = UserSession.getLoggedInUser();
-        String userEmail = UserSession.getInstance().getUserEmail();
+        initialize2(url,resourceBundle);
     }
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize2(URL url, ResourceBundle resourceBundle) {
+        loggedInUser = UserSession.getLoggedInUser();
+        if (loggedInUser != null && !loggedInUser.isDoctor()) {
+            System.out.println(loggedInUser.getUsername() + " logged in");
+            // Other initialization code...
+        } else {
+            System.out.println("User is not logged in or is a doctor.");
+            // Handle the case where the user is not logged in or is a doctor
+        }
         item1.setOnAction(event -> {
             label.setText("Testosteron Tracker:");
 
@@ -248,10 +254,6 @@ public class Hormone_Tracker implements HormoneTracker {
                 if (loggedInUser.isUser()) {
                     // Redirect to the user dashboard
                     loader = new FXMLLoader(getClass().getResource("dashboard_user.fxml"));
-                } 
-                if (loggedInUser.isDoctor()) {
-                    // Redirect to the doctor dashboard
-                    loader = new FXMLLoader(getClass().getResource("dashboard_doctor.fxml"));
                 } else {
                     System.out.println("Unknown user type detected!");
                 }

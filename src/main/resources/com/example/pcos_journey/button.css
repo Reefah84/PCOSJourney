@@ -89,7 +89,7 @@
 }
 .Health {
     -fx-background-color: white;
-    -fx-text-fill: dark pink; /* Original text color */
+    -fx-text-fill: pink; /* Original text color */
 }
 
 .Health:hover {

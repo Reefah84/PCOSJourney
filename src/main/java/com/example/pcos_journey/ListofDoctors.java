@@ -15,7 +15,8 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ListofDoctors {
 
@@ -26,7 +27,7 @@ public class ListofDoctors {
     public Button gy;
     @FXML
     private ListView<String> doctorsListView;
-
+    private Map<String, String> doctorEmailsMap = new HashMap<>();
     public void initialize() {
         updateLoginButton();
         loadDoctorsList();
@@ -89,11 +90,11 @@ public class ListofDoctors {
         String[] doctorEmails = drDataDir.list();
 
         if (doctorEmails != null) {
-            doctorsListView.getItems().addAll(
-                    Arrays.stream(doctorEmails)
-                            .map(this::formatDoctorName)
-                            .collect(Collectors.toList())
-            );
+            Arrays.stream(doctorEmails).forEach(email -> {
+                String formattedName = formatDoctorName(email);
+                doctorsListView.getItems().add(formattedName);
+                doctorEmailsMap.put(formattedName, email); // Store the original email
+            });
         }
     }
 
@@ -108,8 +109,8 @@ public class ListofDoctors {
         if (selectedDoctor != null) {
             try {
                 // Extract doctor email from the selected item
-                String doctorEmail = extractEmailFromName(selectedDoctor);
-
+                String doctorEmail = doctorEmailsMap.get(selectedDoctor);
+                System.out.println("Calling from list of doctors "+doctorEmail);
                 // Load SendMailPopupUser FXML and pass the doctor email
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("sendMailPopupUser.fxml"));
                 Parent root = loader.load();

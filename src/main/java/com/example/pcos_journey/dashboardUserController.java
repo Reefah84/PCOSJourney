@@ -36,8 +36,8 @@ public class dashboardUserController extends User{
     private String userEmail;
     public Button delete;
 
-    public dashboardUserController(String username) {
-        super(username);
+    public dashboardUserController() {
+        super(null); // or however you want to handle this
     }
 
     public void initialize() {
@@ -140,7 +140,7 @@ public class dashboardUserController extends User{
             Scene scene = new Scene(root);
             // If you have a stylesheet
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
-            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -221,5 +221,21 @@ public class dashboardUserController extends User{
             }
         }
         directoryToBeDeleted.delete();
+    }
+    public void showListOfDoctors(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListofDoctors.fxml"));
+            Parent root = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) gy.getScene().getWindow();
+
+            // Set the new content in the same window
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception
+        }
     }
 }

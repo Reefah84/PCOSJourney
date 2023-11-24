@@ -34,6 +34,7 @@ public class SendMailPopupUser {
     // Method to initialize the popup with the doctor's email
     public void initialize(String doctorEmail) {
         this.doctorEmail = doctorEmail;
+        System.out.println(doctorEmail + "initialize");
     }
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
@@ -43,7 +44,7 @@ public class SendMailPopupUser {
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-    private boolean sendEmail(String message, String subject, String to, String from) {
+    private boolean sendEmail(String message, String subject, String to) {
         String host = "smtp.gmail.com";
         Properties properties = System.getProperties();
         properties.put("mail.smtp.host", host);
@@ -60,7 +61,7 @@ public class SendMailPopupUser {
         session.setDebug(true);
         try {
             MimeMessage m = new MimeMessage(session);
-            m.setFrom(new InternetAddress(from));
+            m.setFrom(new InternetAddress("pcosjourney220@gmail.com"));
             m.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
             m.setSubject(subject);
             m.setText(message);
@@ -119,12 +120,17 @@ public class SendMailPopupUser {
         }
     }
     @FXML
-    private void handleSendButtonAction(ActionEvent event) throws IOException,EmailException {
+    private void handleSendButtonAction(ActionEvent event) throws IOException {
         userMessage = message.getText();
         userEmail = user.getText();
-        if (!userEmail.endsWith("@gmail.com")) {
-            throw new EmailException("Invalid email. Please provide a correct Gmail address.");
-        }
+//        if (!userEmail.endsWith("@gmail.com")) {
+//            System.out.println(doctorEmail+" "+userEmail+"In send button function");
+//            try {
+//                throw new EmailException("Invalid email. Please provide a correct Gmail address.");
+//            } catch (EmailException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
         // Define the folder paths for doctor and user
         String doctorFolder = "E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/DRData/" + doctorEmail;
         String userFolder = "E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/UserData/" + userEmail;
@@ -141,7 +147,8 @@ public class SendMailPopupUser {
         String subject = "You received a new mail from the user " + userEmail;
 
         // Send the email and store the message
-        if (sendEmail(userMessage, subject, doctorEmail, "pcosjourney220@gmail.com")) {
+        if (sendEmail(userMessage, subject, doctorEmail)) {
+            System.out.println(doctorEmail+"mail is sent");
             if (storeMessage(userMessage, userEmail, doctorEmail)) {
                 File repliedToFile = new File(doctorFolder + "/replied_to_" + userEmail + ".txt");
                 System.out.println("Sent mail and storing message");

@@ -63,9 +63,9 @@
     <left>
         <AnchorPane prefHeight="668.0" prefWidth="1007.0" BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="welcome" layoutX="50.0" layoutY="15.0" prefHeight="107.0" prefWidth="912.0" text="WELCOME" visible="false" wrapText="true">
+                <Label fx:id="welcome" layoutX="50.0" layoutY="15.0" prefHeight="107.0" prefWidth="947.0" text="WELCOME" visible="false" wrapText="true">
                     <font>
-                        <Font name="Bodoni MT" size="55.0" />
+                        <Font name="Bodoni MT" size="50.0" />
                     </font>
                 </Label>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fcbddf" height="429.0" layoutX="72.0" layoutY="149.0" stroke="#ffdde8" strokeType="INSIDE" width="877.0" />
