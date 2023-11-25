@@ -94,17 +94,17 @@
                   <Image url="@../medical%20quiz%20icon%203.png" />
                </image>
             </ImageView>
-            <Button fx:id="quiz" layoutX="650.0" layoutY="1405.0" mnemonicParsing="false" onAction="#setQuiz" prefHeight="50.0" prefWidth="281.0" style="-fx-background-color: #ffffff; -fx-border-color: #c200a2;" text="Self Assesment Quiz" textFill="#c200a2">
+            <Button fx:id="quiz" layoutX="650.0" layoutY="1405.0" mnemonicParsing="false" onAction="#setQuiz" prefHeight="50.0" prefWidth="281.0" styleClass="quizHome" stylesheets="@button.css" text="Self Assesment Quiz" textFill="#c200a2">
                <font>
                   <Font name="Georgia" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="doctorList" layoutX="1053.0" layoutY="1405.0" mnemonicParsing="false" onAction="#showListOfDoctors" prefHeight="50.0" prefWidth="260.0" style="-fx-background-color: #ffffff; -fx-border-color: #c200a2;" text="Medical Specialists" textFill="#c200a2">
+            <Button fx:id="doctorList" layoutX="1053.0" layoutY="1405.0" mnemonicParsing="false" onAction="#showListOfDoctors" prefHeight="50.0" prefWidth="260.0" styleClass="docHome" stylesheets="@button.css" text="Medical Specialists" textFill="#c200a2">
                <font>
                   <Font name="Georgia" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="symptomTrack" layoutX="265.0" layoutY="1405.0" mnemonicParsing="false" onAction="#setSymptomTrack" prefHeight="50.0" prefWidth="258.0" style="-fx-background-color: #ffffff; -fx-border-color: #c200a2;" text="Symptom Tracker" textFill="#c200a2">
+            <Button fx:id="symptomTrack" layoutX="265.0" layoutY="1405.0" mnemonicParsing="false" onAction="#setSymptomTrack" prefHeight="50.0" prefWidth="258.0" styleClass="symHome" stylesheets="@button.css" text="Symptom Tracker" textFill="#c200a2">
                <font>
                   <Font name="Georgia" size="25.0" />
                </font>

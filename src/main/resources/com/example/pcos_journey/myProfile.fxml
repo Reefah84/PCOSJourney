@@ -17,7 +17,7 @@
                 <Image url="@../sl_112222_54110_25.jpg" />
             </image>
         </ImageView>
-        <Button fx:id="save" layoutX="324.0" layoutY="421.0" mnemonicParsing="false" onAction="#onSave" prefHeight="50.0" prefWidth="151.0" style="-fx-background-color: #ffdddc; -fx-border-color: #9d1cb7; -fx-border-radius: 20; -fx-background-radius: 20;" text="Save" textFill="#9d1cb7">
+        <Button fx:id="save" layoutX="324.0" layoutY="421.0" mnemonicParsing="false" onAction="#onSave" prefHeight="50.0" prefWidth="151.0" styleClass="saveButton" stylesheets="@button.css" text="Save" textFill="#9d1cb7">
             <font>
                 <Font name="Arial Bold" size="25.0" />
             </font>
@@ -104,6 +104,6 @@
             <Font name="Arial Italic" size="19.0" />
          </font>
       </Label>
-      <PasswordField fx:id="pass" layoutX="250.0" layoutY="121.0" prefHeight="30.0" prefWidth="234.0" />
+      <PasswordField fx:id="pass" layoutX="250.0" layoutY="121.0" prefHeight="30.0" prefWidth="234.0" style="-fx-border-color: #9d1cb7;" />
     </children>
 </AnchorPane>

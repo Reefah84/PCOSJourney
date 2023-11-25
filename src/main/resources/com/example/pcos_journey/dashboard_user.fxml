@@ -25,17 +25,17 @@
                   <Image url="@../white%20banground%20writing.png" />
                </image>
             </ImageView>
-            <Button fx:id="logout" layoutX="1154.0" layoutY="60.0" mnemonicParsing="false" onAction="#setLogout" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #b74767;" text="LOG OUT    " textFill="WHITE">
+            <Button fx:id="logout" layoutX="1154.0" layoutY="60.0" mnemonicParsing="false" onAction="#setLogout" prefHeight="52.0" prefWidth="206.0" styleClass="logout" stylesheets="@button.css" text="LOG OUT    " textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="27.0" />
                </font>
             </Button>
             <MenuButton fx:id="healthbutton" layoutX="220.0" layoutY="120.0" mnemonicParsing="false" styleClass="Health" stylesheets="@button.css" text="Health" textFill="#ff1d6c">
               <items>
-                <MenuItem id="mentalHealth" mnemonicParsing="false" text="Mental Health" />
-                <MenuItem id="fertility" mnemonicParsing="false" text="Fertility" />
-                 <MenuItem id="exercise" mnemonicParsing="false" text="Exercise and Fitness" />
-                 <MenuItem id="diet" mnemonicParsing="false" text="Diet and Nutrition" />
+                <MenuItem fx:id="mentalHealth" mnemonicParsing="false" styleClass="mentalHealth" text="Mental Health" />
+                <MenuItem fx:id="fertility" mnemonicParsing="false" styleClass="fertility" text="Fertility" />
+                 <MenuItem fx:id="exercise" mnemonicParsing="false" styleClass="exercise" text="Exercise and Fitness" />
+                 <MenuItem fx:id="diet" mnemonicParsing="false" styleClass="diet" text="Diet and Nutrition" />
               </items>
                <font>
                   <Font name="Arial Bold" size="25.0" />
@@ -56,9 +56,9 @@
                   <Font name="Arial Bold" size="25.0" />
                </font>
             </Button>
-            <Button fx:id="delete" layoutX="920.0" layoutY="59.0" mnemonicParsing="false" onAction="#onDelete" prefHeight="54.0" prefWidth="210.0" style="-fx-background-color: #ff0000; -fx-border-color: #c13737; -fx-border-radius: 10; -fx-background-radius: 10;" text="Delete Account" textFill="WHITE">
+            <Button fx:id="delete" layoutX="920.0" layoutY="61.0" mnemonicParsing="false" onAction="#onDelete" prefHeight="54.0" prefWidth="210.0" styleClass="delete" stylesheets="@button.css" text="Delete Account" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="Arial Bold" size="20.0" />
                </font>
             </Button>
          </children>
@@ -77,17 +77,17 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Button fx:id="symptomButton" layoutX="50.0" layoutY="248.0" mnemonicParsing="false" onAction="#setSymptomButton" prefHeight="45.0" prefWidth="665.0" style="-fx-background-color: #d4d4ff; -fx-border-color: #dca4ee; -fx-border-radius: 10; -fx-background-radius: 10;" text="Hormone Tracker">
+            <Button fx:id="symptomButton" layoutX="50.0" layoutY="248.0" mnemonicParsing="false" onAction="#setSymptomButton" prefHeight="45.0" prefWidth="665.0" styleClass="symptom-weight-doctor-buttons" stylesheets="@button.css" text="Hormone Tracker">
                <font>
                   <Font size="35.0" />
                </font>
             </Button>
-            <Button fx:id="weightButton" layoutX="50.0" layoutY="353.0" mnemonicParsing="false" onAction="#setWeightButton" prefHeight="45.0" prefWidth="665.0" style="-fx-background-color: #d4d4ff; -fx-border-color: #dca4ee; -fx-border-radius: 10; -fx-background-radius: 10;" text="Weight Tracker">
+            <Button fx:id="weightButton" layoutX="50.0" layoutY="353.0" mnemonicParsing="false" onAction="#setWeightButton" prefHeight="45.0" prefWidth="665.0" styleClass="symptom-weight-doctor-buttons" stylesheets="@button.css" text="Weight Tracker">
                <font>
                   <Font size="35.0" />
                </font>
             </Button>
-            <Button fx:id="DoctorButton" layoutX="50.0" layoutY="472.0" mnemonicParsing="false" onAction="#setDoctorButton" prefHeight="45.0" prefWidth="665.0" style="-fx-background-color: #d4d4ff; -fx-border-color: #dca4ee; -fx-border-radius: 10; -fx-background-radius: 10;" text="My Doctors">
+            <Button fx:id="DoctorButton" layoutX="50.0" layoutY="472.0" mnemonicParsing="false" onAction="#setDoctorButton" prefHeight="45.0" prefWidth="665.0" styleClass="symptom-weight-doctor-buttons" stylesheets="@button.css" text="My Doctors">
                <font>
                   <Font size="35.0" />
                </font>

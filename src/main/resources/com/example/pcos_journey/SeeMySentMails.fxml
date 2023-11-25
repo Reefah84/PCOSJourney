@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.SeeMySentMails">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -30,7 +29,7 @@
                   <Image url="@../kisspng-bird-feather-watercolor-painting-canvas-beautiful-hand-painted-watercolor-single-feather-5a8a8b1cd361d1.3668223715190290208658.png" />
                </image>
             </ImageView>
-            <Button fx:id="close" layoutX="348.0" onAction="#handleCloseButtonAction" layoutY="658.0" mnemonicParsing="false" style="-fx-background-color: #c9eded; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #c426af;" text="Close" textFill="#c426af">
+            <Button fx:id="close" layoutX="348.0" layoutY="658.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" styleClass="close" stylesheets="@button.css" text="Close" textFill="#c426af">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>

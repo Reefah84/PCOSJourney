@@ -19,7 +19,7 @@
             <Font name="Calibri Italic" size="35.0" />
          </font>
       </Label>
-      <Button layoutX="691.0" layoutY="643.0" mnemonicParsing="false" onAction="#switchToScene3" style="-fx-background-color: #fa9bb0;" text="Go home">
+      <Button layoutX="691.0" layoutY="643.0" mnemonicParsing="false" onAction="#switchToScene3" styleClass="agreeButton" stylesheets="@button.css" text="Go home">
          <font>
             <Font size="30.0" />
          </font></Button>

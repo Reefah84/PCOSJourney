@@ -31,7 +31,7 @@
             <Image url="@../2345932-middle-removebg-preview.png" />
          </image>
       </ImageView>
-      <Button fx:id="reply" layoutX="423.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleReplyAction" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: #ffdddc; -fx-border-color: #ffdddc;" text="Reply" textFill="#9d1cb7">
+      <Button fx:id="reply" layoutX="423.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleReplyAction" prefHeight="50.0" prefWidth="104.0" styleClass="saveButton" stylesheets="@button.css" text="Reply" textFill="#9d1cb7">
          <font>
             <Font name="Arial Bold" size="25.0" />
          </font>
@@ -41,7 +41,7 @@
             <Image url="@../m2i8G6H7H7G6K9A0.png" />
          </image>
       </ImageView>
-      <Button fx:id="back" layoutX="255.0" layoutY="427.0" mnemonicParsing="false" onAction="#handleBackAction" prefHeight="50.0" prefWidth="151.0" style="-fx-background-color: #ffdddc; -fx-border-color: #ffdddc;" text="Go Back" textFill="#9d1cb7">
+      <Button fx:id="back" layoutX="255.0" layoutY="427.0" mnemonicParsing="false" onAction="#handleBackAction" prefHeight="50.0" prefWidth="151.0" styleClass="saveButton" stylesheets="@button.css" text="Go Back" textFill="#9d1cb7">
          <font>
             <Font name="Arial Bold" size="25.0" />
          </font>

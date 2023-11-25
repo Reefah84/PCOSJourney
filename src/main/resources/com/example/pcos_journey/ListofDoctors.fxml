@@ -42,7 +42,7 @@
                                 <MenuItem fx:id="Mental" mnemonicParsing="false" styleClass="Mental" text="Mental Health" />
                                 <MenuItem fx:id="fertile" mnemonicParsing="false" styleClass="fertile" text="Fertility" />
                                 <MenuItem fx:id="fit" mnemonicParsing="false" styleClass="fit" text="Exercise and Fitness" />
-                                <MenuItem fx:id="nutrition" mnemonicParsing="false" styleClass="nutrition" text="Diet and Nutrition" />
+                                <MenuItem fx:id="nutrition" mnemonicParsing="false" onAction="#setNutrition" styleClass="nutrition" text="Diet and Nutrition" />
                             </items>
                             <font>
                                 <Font name="Arial Bold" size="25.0" />

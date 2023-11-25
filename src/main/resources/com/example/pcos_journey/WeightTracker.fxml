@@ -40,13 +40,13 @@
             <Font name="Arial Bold" size="35.0" />
          </font>
       </Label>
-      <TextField fx:id="weight" layoutX="880.0" layoutY="260.0" prefHeight="68.0" prefWidth="127.0" />
+      <TextField fx:id="weight" layoutX="880.0" layoutY="260.0" prefHeight="68.0" prefWidth="127.0" promptText="kg" style="-fx-border-color: #d300a9;" />
       <Label layoutX="435.0" layoutY="380.0" text="Enter your height (in cm):" textFill="#d300a9">
          <font>
             <Font name="Arial Bold" size="35.0" />
          </font>
       </Label>
-      <TextField fx:id="height" layoutX="880.0" layoutY="370.0" prefHeight="66.0" prefWidth="127.0" />
+      <TextField fx:id="height" layoutX="880.0" layoutY="370.0" prefHeight="66.0" prefWidth="127.0" promptText="cm" style="-fx-border-color: #d300a9;" />
       <Label fx:id="BMIresult" layoutX="642.0" layoutY="558.0" text="Please give correct Input" textFill="#d326ea" visible="false">
          <font>
             <Font size="35.0" />
@@ -57,7 +57,7 @@
             <Font size="35.0" />
          </font>
       </Label>
-      <Button fx:id="submit" layoutX="750.0" layoutY="480.0" mnemonicParsing="false" onAction="#calculateBMI" style="-fx-background-color: #ffe7e6; -fx-border-color: #ffa7b5;" text="SUBMIT" textFill="#e730a7">
+      <Button fx:id="submit" layoutX="750.0" layoutY="480.0" mnemonicParsing="false" onAction="#calculateBMI" styleClass="weight" stylesheets="@button.css" text="SUBMIT" textFill="#e730a7">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>

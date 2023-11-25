@@ -17,7 +17,7 @@
          </image>
       </ImageView>
       <TextArea fx:id="message" layoutX="140.0" layoutY="235.0" prefHeight="189.0" prefWidth="542.0" style="-fx-border-color: #ea5a85;" />
-      <Button fx:id="sendButton" layoutX="358.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleSendButtonAction" style="-fx-background-color: #ffcbd1; -fx-border-color: #ea5a85; -fx-border-radius: 20; -fx-background-radius: 20;" text="SEND" textFill="#ea5a85">
+      <Button fx:id="sendButton" layoutX="358.0" layoutY="439.0" mnemonicParsing="false" onAction="#handleSendButtonAction" styleClass="send" stylesheets="@button.css" text="SEND" textFill="#ea5a85">
          <font>
             <Font name="Arial Bold" size="20.0" />
          </font>
@@ -33,12 +33,12 @@
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="backhome" layoutX="27.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleGoBackButtonAction" style="-fx-background-color: #ea5a85; -fx-background-radius: 20; -fx-border-color: #ea5a85; -fx-border-radius: 20;" text="Go Back" textFill="WHITE">
+      <Button fx:id="backhome" layoutX="27.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleGoBackButtonAction" styleClass="back" stylesheets="@button.css" text="Go Back" textFill="WHITE">
          <font>
             <Font name="Arial Rounded MT Bold" size="20.0" />
          </font>
       </Button>
-      <Label fx:id="errorMessage" visible="false" layoutX="235.0" layoutY="489.0" prefHeight="30.0" prefWidth="330.0">
+      <Label fx:id="errorMessage" layoutX="235.0" layoutY="489.0" prefHeight="30.0" prefWidth="330.0" visible="false">
          <font>
             <Font size="20.0" />
          </font>

@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.SwitchScene">
    <center>
       <AnchorPane prefHeight="495.0" prefWidth="685.0" BorderPane.alignment="CENTER">
@@ -28,12 +27,12 @@
                   <Font name="System Bold" size="45.0" />
                </font>
             </Label>
-            <Button fx:id="goBackButton" layoutX="74.0" layoutY="176.0" mnemonicParsing="false" onAction="#switchToScene1" style="-fx-background-color: #ee94a8; -fx-border-color: #fa9bb0;" text="Go Back">
+            <Button fx:id="goBackButton" layoutX="74.0" layoutY="176.0" mnemonicParsing="false" onAction="#switchToScene1" styleClass="goBackButton" stylesheets="@button.css" text="Go Back">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="agreeButton" layoutX="1307.0" layoutY="785.0" mnemonicParsing="false" onAction="#switchToScene2" prefWidth="160.0" style="-fx-background-color: #ee94a8; -fx-border-color: #fa9bb0;" text="I Agree">
+            <Button fx:id="agreeButton" layoutX="1307.0" layoutY="785.0" mnemonicParsing="false" onAction="#switchToScene2" prefWidth="160.0" styleClass="agreeButton" stylesheets="@button.css" text="I Agree">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>

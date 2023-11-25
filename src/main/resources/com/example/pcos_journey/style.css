@@ -13,7 +13,13 @@
 .titled-pane .title {
     -fx-background-color:#ff7aa1; /* Example color for the title region */
 }
-
+.titled-pane .title:hover {
+    -fx-background-color: #e6688c; /* Darker shade for hover */
+}
+/* Style for the title pane when its content is showing */
+.titled-pane:expanded .title {
+    -fx-background-color: #e6688c; /* Darker shade when expanded */
+}
 .titled-pane > .content {
     -fx-background-color: #FFB6C1 /* Example color for the content region */
 }
@@ -26,4 +32,11 @@
 }
 .menu-item-style:hover {
     -fx-background-color: #ff1d6c; /* Pink color on hover */
+}
+.menu-item-style {
+    -fx-font-size: 20px; /* Adjust the size as needed */
+    -fx-background-color: white;
+}
+.menu-item-style:pressed {
+    -fx-background-color: #B74767; /* Pink color on hover */
 }

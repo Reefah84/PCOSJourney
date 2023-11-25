@@ -4,10 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
@@ -33,6 +30,10 @@ public class dashboardDoctorController {
     public ListView<String> myReply;
     public Button gy;
     public ImageView home;
+    public MenuItem mentalHealth;
+    public MenuItem fertility;
+    public MenuItem exercise;
+    public MenuItem diet;
     private String doctoremail;
     public void initialize() {
         User loggedInUser = UserSession.getLoggedInUser();

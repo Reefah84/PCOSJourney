@@ -22,7 +22,7 @@
             <Font name="System Bold Italic" size="51.0" />
          </font>
       </Label>
-      <MenuButton fx:id="menuButton" layoutX="78.0" layoutY="254.0" mnemonicParsing="false" onAction="#initialize" prefHeight="74.0" prefWidth="798.0" style="-fx-background-color: #ebb3be;" text="Select the Hormone You Want to Track" wrapText="true">
+      <MenuButton fx:id="menuButton" layoutX="78.0" layoutY="254.0" mnemonicParsing="false" onAction="#initialize" prefHeight="74.0" prefWidth="798.0" styleClass="menuButton" stylesheets="@button.css" text="Select the Hormone You Want to Track" wrapText="true">
         <items>
           <MenuItem fx:id="item1" mnemonicParsing="false" onAction="#initialize" styleClass="menu-item-style" text="Testosteron" />
             <MenuItem fx:id="item2" mnemonicParsing="false" onAction="#initialize" styleClass="menu-item-style" text="Prolactin" />
@@ -37,7 +37,7 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="value" layoutX="961.0" layoutY="485.0" onAction="#initialize" prefHeight="59.0" prefWidth="286.0" promptText="hormone level">
+      <TextField fx:id="value" layoutX="961.0" layoutY="485.0" onAction="#initialize" prefHeight="59.0" prefWidth="286.0" promptText="hormone level" style="-fx-border-color: #ebb3be;">
          <font>
             <Font size="28.0" />
          </font></TextField>
@@ -50,7 +50,7 @@
             <Font name="System Bold" size="35.0" />
          </font>
       </Label>
-      <Button fx:id="submit" layoutX="1275.0" layoutY="483.0" mnemonicParsing="false" onAction="#initialize" prefHeight="65.0" prefWidth="143.0" style="-fx-background-color: #ebb3be;" text="Submit">
+      <Button fx:id="submit" layoutX="1275.0" layoutY="483.0" mnemonicParsing="false" onAction="#initialize" prefHeight="65.0" prefWidth="143.0" styleClass="submit" stylesheets="@button.css" text="Submit">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>

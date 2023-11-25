@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ListofDoctors {
 
@@ -25,6 +27,10 @@ public class ListofDoctors {
     public MenuButton allDoctors;
     public ImageView home;
     public Button gy;
+    public MenuItem Mental;
+    public MenuItem fertile;
+    public MenuItem fit;
+    public MenuItem nutrition;
     @FXML
     private ListView<String> doctorsListView;
     private Map<String, String> doctorEmailsMap = new HashMap<>();
@@ -32,7 +38,22 @@ public class ListofDoctors {
         updateLoginButton();
         loadDoctorsList();
     }
+    public void setNutrition(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("baseDiet.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) nutrition.getParentPopup().getOwnerWindow();
 
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception
+        }
+    }
     private void updateLoginButton() {
         if (UserSession.getInstance().isUserLoggedIn()) {
             User loggedInUser = UserSession.getLoggedInUser();

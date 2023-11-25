@@ -40,7 +40,7 @@
                     </children></AnchorPane>
                 <AnchorPane layoutX="1.0" layoutY="156.0" prefHeight="106.0" prefWidth="779.0" style="-fx-background-color: #d4d4ff;">
                     <children>
-                        <Label layoutX="21.0" layoutY="49.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1540.0" text="Diet &amp; Nutrition" textFill="#b96b84">
+                        <Label layoutX="35.0" layoutY="49.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1540.0" text="Diet &amp; Nutrition" textFill="#b96b84">
                             <font>
                                 <Font name="Arial Black" size="50.0" />
                             </font>
@@ -103,17 +103,17 @@
                 </TitledPane>
             <AnchorPane prefHeight="196.0" prefWidth="1540.0" style="-fx-background-color: #ffffff;">
                <children>
-                  <Button fx:id="LoginButton" layoutX="1165.0" layoutY="73.0" mnemonicParsing="false" onAction="#setLoginButton" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #b74767;" text="LOG IN  " textFill="WHITE">
+                  <Button fx:id="LoginButton" layoutX="1165.0" layoutY="73.0" mnemonicParsing="false" onAction="#setLoginButton" prefHeight="52.0" prefWidth="206.0" styleClass="LoginButton" stylesheets="@button.css" text="LOG IN  " textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="27.0" />
                      </font>
                   </Button>
-                  <MenuButton layoutX="220.0" layoutY="120.0" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Health" textFill="#ff1d6c">
+                  <MenuButton layoutX="220.0" layoutY="120.0" mnemonicParsing="false" styleClass="Health" stylesheets="@button.css" text="Health" textFill="#ff1d6c">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Mental Health" />
-                        <MenuItem mnemonicParsing="false" text="Fertility" />
-                        <MenuItem mnemonicParsing="false" text="Exercise and Fitness" />
-                        <MenuItem mnemonicParsing="false" text="Diet and Nutrition" />
+                        <MenuItem mnemonicParsing="false" styleClass="mentalHealth" text="Mental Health" />
+                        <MenuItem mnemonicParsing="false" styleClass="fertility" text="Fertility" />
+                        <MenuItem mnemonicParsing="false" styleClass="fit" text="Exercise and Fitness" />
+                        <MenuItem mnemonicParsing="false" styleClass="diet" text="Diet and Nutrition" />
                      </items>
                      <font>
                         <Font name="Arial Bold" size="25.0" />
@@ -144,7 +144,7 @@
                         <Image url="@../lock-16.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
+                  <Button fx:id="gy" layoutX="400.0" layoutY="120.0" mnemonicParsing="false" onAction="#showListOfDoctors" styleClass="gy" stylesheets="@button.css" text="Health Professional" textFill="#ff1d6c">
                      <font>
                         <Font name="Arial Bold" size="25.0" />
                      </font>
