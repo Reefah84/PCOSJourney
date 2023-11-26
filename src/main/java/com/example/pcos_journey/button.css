@@ -1,0 +1,132 @@
+
+.LoginButton{
+    -fx-background-color: #b74767;
+    -fx-text-fill: white;
+}
+.LoginButton:hover{
+    -fx-background-color: pink;
+    -fx-text-fill: blue;
+}
+.LoginButton:pressed {
+    -fx-background-color: #b74767;
+    -fx-text-fill: white;
+}
+.loginbutton{
+    -fx-background-color: #FF91A6FF;
+    -fx-text-fill: black;
+    -fx-border-color: #ff2d6a
+}
+.forgotpasswordbutton{
+    -fx-background-color: #ffdde8;
+    -fx-text-fill: #d400aa;
+}
+.signupbutton{
+    -fx-background-color: #ffdde8;
+    -fx-text-fill: #0f26d4;
+}
+.loginbutton:hover{
+    -fx-background-color: #ff1c6b; /* New background color when pressed */
+    -fx-text-fill: white; /* Text color when pressed */
+}
+.forgotpasswordbutton:hover, .signupbutton:hover{
+    -fx-background-color:  #f3d3dd; /* New background color when pressed */
+    -fx-text-fill: blue;
+}
+.loginbutton:pressed, .forgotpasswordbutton:pressed, .signupbutton:pressed{
+    -fx-background-color: #b74767; /* New background color when selected */
+    -fx-text-fill: white; /* Text color when selected */
+}
+.sendOTP{
+    -fx-background-color:  #ff91a6;
+    -fx-border-color:  #ff2d6a;
+    -fx-text-fill: black;
+}
+.sendOTP:hover{
+    -fx-background-color: #ff1c6b; /* New background color when pressed */
+    -fx-text-fill: white /* Text color when pressed */
+}
+.sendOTP:pressed{
+    -fx-background-color: #b74767; /* New background color when selected */
+    -fx-text-fill: white; /* Text color when selected */
+}
+.nextButton{
+    -fx-background-color:   #ff91a6;
+    -fx-border-color:   #ff2d6a;
+    -fx-text-fill: black;
+}
+.nextButton:hover{
+    -fx-background-color: #ff1c6b;
+    -fx-text-fill: white;
+}
+.nextButton:pressed{
+    -fx-background-color: #b74767;
+    -fx-text-fill: white;
+}
+.resendOTP,.LOGIN{
+    -fx-background-color:  #ffdde8;
+    -fx-text-fill: blue;
+}
+.resendOTP:hover,.LOGIN:hover{
+    -fx-background-color: #f3d3dd;
+    -fx-text-fill: blue;
+}
+.resendOTP:pressed,.LOGIN:pressed{
+    -fx-background-color:  #b74767;
+    -fx-text-fill: white;
+}
+.SaveButton,.SignupButton{
+    -fx-background-color:  #ff91a6;
+    -fx-border-color:   #ff2d6a;
+    -fx-text-fill: black;
+}
+.SaveButton:hover,.SignupButton:hover{
+    -fx-background-color: #ff1c6b;
+    -fx-text-fill: white;
+}
+.SaveButton:pressed,.SignupButton:pressed{
+    -fx-background-color: #b74767;
+    -fx-text-fill: white;
+}
+.Health {
+    -fx-background-color: white;
+    -fx-text-fill: pink; /* Original text color */
+}
+
+.Health:hover {
+    -fx-background-color: #f3f3f3; /* Lighter background on hover */
+    -fx-text-fill: #ff1d6c; /* Text color change on hover */
+}
+
+.Health:showing { /* Similar to 'pressed' for MenuButton */
+    -fx-background-color: #ffdde8; /* Background color when active/pressed */
+    -fx-text-fill: #ff1d6c; /* Text color when active/pressed */
+}
+
+.gy {
+    -fx-background-color: white;
+    -fx-text-fill: #ff1d6c; /* Original text color */
+}
+
+.gy:hover {
+    -fx-background-color: #f3f3f3; /* Lighter background on hover */
+    -fx-text-fill: #ff1d6c; /* Text color change on hover */
+}
+
+.gy:pressed {
+    -fx-background-color: #ffdde8; /* Background color when pressed */
+    -fx-text-fill: #ff1d6c; /* Text color when pressed */
+}
+.mentalHealth, .fertility, .exercise, .diet,.Mental,.fertile,.fit,.nutrition{
+    -fx-font-size: 22px; /* Change the font size */
+    -fx-text-fill: #ff1d6c; /* Change the font color */
+}
+
+.mentalHealth:hover, .fertility:hover, .exercise:hover, .diet:hover,.Mental:hover,.fertile:hover,.fit:hover,.nutrition:hover{
+    -fx-background: #FF1D6C; /* Change the hover color */
+    -fx-text-fill: white; /* Change the text color on hover */
+}
+
+.mentalHealth:selected, .fertility:selected, .exercise:selected, .diet:selected ,.Mental:selected,.fertile:selected, .fit:selected, .nutrition:selected{
+    -fx-background: #B74767; /* Change the selection color */
+    -fx-text-fill: white; /* Change the text color on selection */
+}

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1710.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.newpcos.BaseFertility">
+    <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1710.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;">
+            <children>
+                <AnchorPane layoutX="-1.0" layoutY="1495.0" prefHeight="212.0" prefWidth="1540.0" style="-fx-background-color: #ff7aa1;">
+                    <children>
+                        <Label layoutX="1219.0" layoutY="21.0" text="Email us for any concerns:" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="1219.0" layoutY="67.0" text="admin@mail.com" textFill="WHITE">
+                            <font>
+                                <Font name="System Italic" size="20.0" />
+                            </font>
+                        </Label>
+                  <Label layoutX="50.0" layoutY="17.0" text="DISCLAIMER:" textFill="#fff9f9">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="50.0" layoutY="49.0" prefHeight="146.0" prefWidth="944.0" text="This content is for educational purposes and does not offer personalized medical advice or replace professional healthcare guidance. Medical information evolves rapidly, and we cannot ensure comprehensive coverage of all treatment aspects. Your use of information from this source is at your own risk, and neither we nor our authors accept liability for any harm, including fatalities, resulting from product use, information application, or services provided.     All rights reserved © 2023" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                    </children></AnchorPane>
+                <AnchorPane layoutY="173.0" prefHeight="146.0" prefWidth="1570.0" style="-fx-background-color: #d4d4ff;">
+                    <children>
+                        <Button fx:id="fback" layoutX="19.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#fbackbtn" prefHeight="38.0" prefWidth="110.0" style="-fx-background-color: #d4d4ff;" text=" &lt; HEALTH">
+                            <font>
+                                <Font name="Arial Black" size="15.0" />
+                            </font>
+                        </Button>
+                        <Label layoutX="19.0" layoutY="40.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1540.0" text="Fertility" textFill="#b96b84">
+                            <font>
+                                <Font name="Arial Black" size="50.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <Label layoutX="21.0" layoutY="305.0" prefHeight="246.0" prefWidth="1494.0" text="Polycystic Ovary Syndrome (PCOS) often intersects with fertility concerns. Due to irregular menstrual cycles and anovulation, conceiving can be more challenging for individuals with PCOS. Hormonal imbalances, notably elevated androgen levels, can disrupt ovulation and affect egg quality. Additionally, insulin resistance, a common feature of PCOS, may lead to heightened insulin levels, further complicating fertility. It’s important to emphasize that while PCOS can pose fertility challenges, many individuals successfully conceive with appropriate medical guidance and lifestyle adjustments. Treatment options may encompass medication to induce ovulation, lifestyle modifications to enhance insulin sensitivity, and in some cases, assisted reproductive technologies like in vitro fertilization (IVF). Seeking specialized care from a reproductive health expert is pivotal for tailored advice and fertility management for those with PCOS." wrapText="true">
+                    <font>
+                        <Font name="Arial" size="20.0" />
+                    </font>
+                </Label>
+                <TitledPane fx:id="titledPane1" animated="false" layoutX="93.0" layoutY="619.0" prefHeight="200.0" prefWidth="1285.0" style="-fx-background-color: #ffdde8;" text="Avoiding Pregnancy" textFill="#b96b84" wrapText="true">
+                    <content>
+                        <Label layoutX="35.0" prefHeight="148.0" prefWidth="1324.0" text="For those not currently seeking pregnancy, managing PCOS typically involves regulating hormonal imbalances and addressing associated symptoms. This can be achieved through lifestyle modifications, medication, and regular monitoring with a healthcare provider." wrapText="true">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
+                    </content>
+                    <font>
+                        <Font name="Arial Black" size="23.0" />
+                    </font>
+                </TitledPane>
+                <TitledPane fx:id="titledPane2" animated="false" layoutX="92.0" layoutY="826.0" prefHeight="200.0" prefWidth="1287.0" text="Having Trouble Conceiving" textFill="#b96b84">
+                    <font>
+                        <Font name="Arial Black" size="23.0" />
+                    </font>
+                    <content>
+                        <Label prefHeight="148.0" prefWidth="1385.0" text="PCOS can lead to irregular ovulation, making conception more challenging. It’s important to consult a healthcare professional who can provide personalized guidance on optimizing fertility, which may include lifestyle changes and, if needed, fertility treatments." wrapText="true">
+                     <font>
+                        <Font size="25.0" />
+                     </font></Label>
+                    </content>
+                </TitledPane>
+                <TitledPane fx:id="titledPane3" animated="false" layoutX="92.0" layoutY="1037.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="1287.0" text="Infertility Treatment" textFill="#b96b84">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="8.0" layoutY="-2.0" prefHeight="200.0" prefWidth="1400.0" text="Individuals with PCOS facing difficulties conceiving may explore various fertility treatments. These can range from ovulation-inducing medications to more advanced interventions like in vitro fertilization (IVF), tailored to the specific needs of each individual." wrapText="true">
+                           <font>
+                              <Font size="25.0" />
+                           </font></Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                    <font>
+                        <Font name="Arial Black" size="23.0" />
+                    </font>
+                </TitledPane>
+                <TitledPane fx:id="titledPane4" animated="false" layoutX="91.0" layoutY="1248.0" prefHeight="200.0" prefWidth="1290.0" text="Fertility Problems &amp; Emotions" textFill="#b96b84">
+                    <font>
+                        <Font name="Arial Black" size="25.0" />
+                    </font>
+                    <content>
+                        <Label prefHeight="145.0" prefWidth="1386.0" text="PCOS often leads to fertility challenges due to irregular menstrual cycles and hormonal imbalances. Coping with these concerns can evoke a range of emotions, from frustration and anxiety to hope and determination. Seeking support from healthcare providers, counselors, or support groups can be invaluable in navigating these emotions and developing effective strategies for managing PCOS and fertility. With proper medical guidance and treatment, many individuals with PCOS can overcome these challenges and successfully conceive." wrapText="true">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                    </content>
+                </TitledPane>
+            <AnchorPane prefHeight="139.0" prefWidth="1540.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Button layoutX="1165.0" layoutY="73.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="206.0" style="-fx-background-color: #b74767;" text="LOG IN  " textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Button>
+                  <MenuButton layoutX="220.0" layoutY="115.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="152.0" style="-fx-background-color: #ffffff;" text="Health" textFill="#ff1d6c">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Mental Health" />
+                        <MenuItem mnemonicParsing="false" text="Fertility" />
+                        <MenuItem mnemonicParsing="false" text="Exercise and Fitness" />
+                        <MenuItem mnemonicParsing="false" text="Diet and Nutrition" />
+                     </items>
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </MenuButton>
+                  <MenuButton layoutX="400.0" layoutY="118.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="318.0" style="-fx-background-color: #ffffff;" text="Health Professional" textFill="#ff1d6c">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Gynaecologist" />
+                        <MenuItem mnemonicParsing="false" text="Hospital" />
+                     </items>
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </MenuButton>
+                  <ImageView fitHeight="165.0" fitWidth="149.0" layoutX="1377.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@free-vector-pink-flower_098507_pink_flower.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="147.0" fitWidth="170.0" layoutX="45.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="548.0" layoutX="192.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@white%20banground%20writing.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            </children></AnchorPane>
+    </content>
+</ScrollPane>
