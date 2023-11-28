@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -13,23 +12,17 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class BaseDietController {
+public class HealthController {
     public Button FAQ;
-    public TitledPane titledPane1;
-    public TitledPane titledPane2;
-    public TitledPane titledPane3;
-    public TitledPane titledPane4;
-    public ImageView home;
-    public Button gy;
     public Button LoginButton;
     public Button Health;
-    public Button back;
-
+    public Button gy;
+    public ImageView home;
+    public Button pcos;
+    public Button mental;
+    public Button fertility;
+    public Button diet;
     public void initialize() {
-        titledPane1.setExpanded(false);
-        titledPane2.setExpanded(false);
-        titledPane3.setExpanded(false);
-        titledPane4.setExpanded(false);
         updateLoginButton();
     }
 
@@ -120,8 +113,51 @@ public class BaseDietController {
         stage.setScene(scene);
     }
 
+    public void pcosBtn(MouseEvent mouseEvent) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("basePCOS.fxml")); // Adjust the path
+        try {
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) pcos.getScene().getWindow();
+            Scene scene = new Scene(root);
+            // If you have a stylesheet
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-    public void dbackbtn(MouseEvent mouseEvent) {
+    public void dietbtn(MouseEvent mouseEvent) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("baseDiet.fxml")); // Adjust the path
+        try {
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) diet.getScene().getWindow();
+            Scene scene = new Scene(root);
+            // If you have a stylesheet
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void fertilitybtn(MouseEvent mouseEvent) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("baseFertility.fxml")); // Adjust the path
+        try {
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) fertility.getScene().getWindow();
+            Scene scene = new Scene(root);
+            // If you have a stylesheet
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void setHealth(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("baseHEALTH.fxml")); // Adjust the path
         try {
             Parent root = fxmlLoader.load();
@@ -135,12 +171,11 @@ public class BaseDietController {
             e.printStackTrace();
         }
     }
-
-    public void setHealth(ActionEvent event) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("baseHEALTH.fxml")); // Adjust the path
+    public void mentbtn(MouseEvent mouseEvent) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("mentalHealth.fxml")); // Adjust the path
         try {
             Parent root = fxmlLoader.load();
-            Stage stage = (Stage) Health.getScene().getWindow();
+            Stage stage = (Stage) mental.getScene().getWindow();
             Scene scene = new Scene(root);
             // If you have a stylesheet
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());

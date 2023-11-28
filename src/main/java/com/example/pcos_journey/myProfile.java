@@ -1,8 +1,13 @@
 package com.example.pcos_journey;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -24,6 +29,7 @@ public class myProfile {
     public Label weight;
     public Label height;
     public PasswordField pass;
+    public Button medicine;
     User loggedInUser = UserSession.getLoggedInUser();
     String email;
 
@@ -118,7 +124,23 @@ public class myProfile {
         Stage stage = (Stage) save.getScene().getWindow();
         stage.close();
     }
+    public void showPopup(ActionEvent event) throws IOException {
+        // Load the new FXML file for the popup
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("seeMyMedicine.fxml"));
+        Parent root = loader.load();
 
+        // Create a new stage for the popup
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL); // To block interaction with other windows
+        popupStage.setTitle("Medicine View");
+
+        // Set the scene for the popup stage
+        Scene scene = new Scene(root);
+        popupStage.setScene(scene);
+
+        // Show the popup and wait for it to be closed before returning to the main window
+        popupStage.showAndWait();
+    }
 }
 
 

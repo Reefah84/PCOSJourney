@@ -8,7 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -23,36 +22,17 @@ import java.util.Objects;
 public class ListofDoctors {
 
     public Button LoginButton;
-    public MenuButton Health;
+    public Button Health;
     public MenuButton allDoctors;
     public ImageView home;
     public Button gy;
-    public MenuItem Mental;
-    public MenuItem fertile;
-    public MenuItem fit;
-    public MenuItem nutrition;
+    public Button FAQ;
     @FXML
     private ListView<String> doctorsListView;
     private Map<String, String> doctorEmailsMap = new HashMap<>();
     public void initialize() {
         updateLoginButton();
         loadDoctorsList();
-    }
-    public void setNutrition(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("baseDiet.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) nutrition.getParentPopup().getOwnerWindow();
-
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Handle the exception
-        }
     }
     private void updateLoginButton() {
         if (UserSession.getInstance().isUserLoggedIn()) {
@@ -189,5 +169,19 @@ public class ListofDoctors {
             e.printStackTrace();
             // Handle the exception
         }
+    }
+    public void setFAQ(ActionEvent event) throws IOException {
+        // Load the FXML file
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("chatBot.fxml"));
+        Parent root = fxmlLoader.load();
+
+// Get the current stage (window)
+        Stage stage = (Stage)FAQ.getScene().getWindow();
+// Set the new content in the same window
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+        stage.setScene(scene);
+
     }
 }

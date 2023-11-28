@@ -31,17 +31,16 @@
                         <Font name="Arial Bold" size="27.0" />
                     </font>
                 </Button>
-                <MenuButton fx:id="healthbutton" layoutX="220.0" layoutY="120.0" mnemonicParsing="false" styleClass="Health" stylesheets="@button.css" text="Health" textFill="#ff1d6c">
-                    <items>
-                        <MenuItem fx:id="mentalHealth" mnemonicParsing="false" styleClass="mentalHealth" text="Mental Health" />
-                        <MenuItem fx:id="fertility" mnemonicParsing="false" styleClass="fertility" text="Fertility" />
-                        <MenuItem fx:id="exercise" mnemonicParsing="false" styleClass="exercise" text="Exercise and Fitness" />
-                        <MenuItem fx:id="diet" mnemonicParsing="false" styleClass="diet" text="Diet and Nutrition" />
-                    </items>
+                <Button fx:id="Health" layoutX="250.0" layoutY="120.0" mnemonicParsing="false" styleClass="Health" stylesheets="@button.css" text="Health" textFill="#ff1d6c">
+                    <font>
+                        <Font name="System Bold" size="25.0" />
+                    </font>
+                </Button>
+                <Button fx:id="FAQ" layoutX="671.0" layoutY="120.0" mnemonicParsing="false" onAction="#setFAQ" styleClass="Health" stylesheets="@button.css" text="FAQ" textFill="#ff1d6c">
                     <font>
                         <Font name="Arial Bold" size="25.0" />
                     </font>
-                </MenuButton>
+                </Button>
                 <ImageView fitHeight="42.0" fitWidth="34.0" layoutX="1313.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../lock-16.png" />

@@ -24,16 +24,13 @@ import java.util.stream.Collectors;
 public class dashboardDoctorController {
 
     public Button logout;
-    public MenuButton healthbutton;
+    public Button Health;
     public Label welcome;
     public ListView<String>patientMessage;
     public ListView<String> myReply;
     public Button gy;
     public ImageView home;
-    public MenuItem mentalHealth;
-    public MenuItem fertility;
-    public MenuItem exercise;
-    public MenuItem diet;
+    public Button FAQ;
     private String doctoremail;
     public void initialize() {
         User loggedInUser = UserSession.getLoggedInUser();
@@ -187,5 +184,16 @@ public class dashboardDoctorController {
             // Handle the exception
         }
     }
+    public void setFAQ(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chatBot.fxml"));
+        Parent root = fxmlLoader.load();
 
+// Get the current stage (window)
+        Stage stage = (Stage)FAQ.getScene().getWindow();
+// Set the new content in the same window
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+        stage.setScene(scene);
+    }
 }

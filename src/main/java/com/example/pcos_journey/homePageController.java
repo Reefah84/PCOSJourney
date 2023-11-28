@@ -5,8 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,16 +13,14 @@ import java.util.Objects;
 public class homePageController {
 
     public Button LoginButton;
-    public MenuButton Health;
+    public Button Health;
 
     public Button quiz;
     public Button doctorList;
     public Button symptomTrack;
-    public MenuItem nutrition;
-    public MenuItem fertile;
-    public MenuItem fit;
-    public MenuItem Mental;
     public Button gy;
+    public Button FAQ;
+
     public void initialize() {
         updateLoginButton();
     }
@@ -83,6 +79,20 @@ public class homePageController {
         stage.setScene(scene);
 
     }
+    public void setFAQ(ActionEvent event) throws IOException {
+        // Load the FXML file
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("chatBot.fxml"));
+        Parent root = fxmlLoader.load();
+
+// Get the current stage (window)
+        Stage stage = (Stage)FAQ.getScene().getWindow();
+// Set the new content in the same window
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+        stage.setScene(scene);
+
+    }
     public void setQuiz(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Quiz_Disclaimer.fxml"));
         Parent root = loader.load();
@@ -111,28 +121,25 @@ public class homePageController {
             // Handle the exception
         }
     }
-    public void setNutrition(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("baseDiet.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) nutrition.getParentPopup().getOwnerWindow();
-
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Handle the exception
-        }
-    }
-
     public void setSymptomTrack(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HormoneTracker.fxml")); // Adjust the path
         try {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) symptomTrack.getScene().getWindow();
+            Scene scene = new Scene(root);
+            // If you have a stylesheet
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void setHealth(ActionEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("baseHEALTH.fxml")); // Adjust the path
+        try {
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) Health.getScene().getWindow();
             Scene scene = new Scene(root);
             // If you have a stylesheet
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());

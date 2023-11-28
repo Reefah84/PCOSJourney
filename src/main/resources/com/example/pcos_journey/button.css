@@ -98,7 +98,7 @@
     //-fx-text-fill: #ff1d6c; /* Text color change on hover */
 }
 
-.Health:showing { /* Similar to 'pressed' for MenuButton */
+.Health:pressed { /* Similar to 'pressed' for MenuButton */
     -fx-background-color: #ffdde8; /* Background color when active/pressed */
     //-fx-text-fill: #ff1d6c; /* Text color when active/pressed */
 }
@@ -330,4 +330,19 @@
 .weight:pressed {
     -fx-background-color: #ff9291; /* Even darker shade for pressed */
     -fx-text-fill: #be1b85; /* Even darker text color for pressed state */
+}
+.pcos{
+    -fx-background-color:  #d4d4ff; /* Original button color */
+    -fx-border-color:  #b228e0;
+    -fx-text-fill:  #b228e0;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+}
+.pcos:hover {
+    -fx-background-color: #c0c0ff; /* Darker shade for hover */
+    -fx-text-fill: #a21989; /* Slightly darker text color for hover */
+}
+.pcos:pressed{
+    -fx-background-color: #acaaff; /* Even darker shade for pressed */
+    -fx-text-fill: #8b1070; /* Even darker text color for pressed state */
 }

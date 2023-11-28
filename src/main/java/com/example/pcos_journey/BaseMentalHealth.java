@@ -13,17 +13,18 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
-public class BaseDietController {
+public class BaseMentalHealth {
+
     public Button FAQ;
+    public Button mentalhback;
     public TitledPane titledPane1;
     public TitledPane titledPane2;
     public TitledPane titledPane3;
     public TitledPane titledPane4;
-    public ImageView home;
-    public Button gy;
     public Button LoginButton;
     public Button Health;
-    public Button back;
+    public Button gy;
+    public ImageView home;
 
     public void initialize() {
         titledPane1.setExpanded(false);
@@ -125,7 +126,7 @@ public class BaseDietController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("baseHEALTH.fxml")); // Adjust the path
         try {
             Parent root = fxmlLoader.load();
-            Stage stage = (Stage) Health.getScene().getWindow();
+            Stage stage = (Stage) mentalhback.getScene().getWindow();
             Scene scene = new Scene(root);
             // If you have a stylesheet
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());

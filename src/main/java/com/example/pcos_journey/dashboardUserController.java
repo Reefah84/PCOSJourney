@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class dashboardUserController extends User{
 
     public Button logout;
-    public MenuButton healthbutton;
+    public Button Health;
 
     public Label welcome;
     public Button symptomButton;
@@ -30,10 +30,7 @@ public class dashboardUserController extends User{
     public Button gy;
     public ImageView home;
     public ListView <String> messageFrom;
-    public MenuItem mentalHealth;
-    public MenuItem fertility;
-    public MenuItem exercise;
-    public MenuItem diet;
+    public Button FAQ;
     private String userEmail;
     public Button delete;
 
@@ -134,7 +131,7 @@ public class dashboardUserController extends User{
 
     public void setSymptomButton(ActionEvent event)
     {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HormoneTracker.fxml")); // Adjust the path
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("trackerlanding.fxml")); // Adjust the path
         try {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage)symptomButton.getScene().getWindow();
@@ -238,5 +235,23 @@ public class dashboardUserController extends User{
             e.printStackTrace();
             // Handle the exception
         }
+    }
+    public void setFAQ(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chatBot.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage)FAQ.getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+        stage.setScene(scene);
+    }
+    public void setHealth(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("baseHEALTH.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage)Health.getScene().getWindow();
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+        stage.setScene(scene);
     }
 }
