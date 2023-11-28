@@ -144,7 +144,7 @@ public class ChatBot {
 
             // Get and add bot response label
             String response = getResponse(message);
-            Label botMessageLabel = createLabel("PCOS Journey:\n" + response, "-fx-background-color: lightblue; -fx-text-fill: #03fcfc; -fx-border-color: #b58aff;", 22);
+            Label botMessageLabel = createLabel("PCOS Journey:\n" + response, "-fx-background-color: lightblue; -fx-text-fill: black; -fx-border-color: #b58aff;", 22);
             messages.getChildren().add(botMessageLabel);
 
             // Scroll to the bottom of the VBox to make the latest message visible
