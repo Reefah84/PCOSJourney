@@ -92,7 +92,7 @@
                         <Font name="Arial Black" size="23.0" />
                     </font>
                 </TitledPane>
-                <TitledPane fx:id="titledPane4" animated="false" layoutX="103.0" layoutY="1256.0" prefHeight="200.0" prefWidth="1332.0" stylesheets="@style.css" text="Limit Processed Foods" textFill="#b96b84">
+                <TitledPane fx:id="titledPane4" animated="false" layoutX="103.0" layoutY="1256.0" prefHeight="200.0" prefWidth="1332.0" stylesheets="@style.css" text="Limit Processed Foods" textFill="WHITE">
                     <font>
                         <Font name="Arial Black" size="23.0" />
                     </font>

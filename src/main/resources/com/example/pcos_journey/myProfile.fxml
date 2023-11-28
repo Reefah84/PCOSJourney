@@ -10,14 +10,14 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #f588ab;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.myProfile">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="800.0" style="-fx-background-color: #f588ab;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.myProfile">
     <children>
-        <ImageView fitHeight="551.0" fitWidth="919.0" layoutX="-57.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="586.0" fitWidth="967.0" layoutX="-57.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../sl_112222_54110_25.jpg" />
             </image>
         </ImageView>
-        <Button fx:id="save" layoutX="567.0" layoutY="421.0" mnemonicParsing="false" onAction="#onSave" prefHeight="50.0" prefWidth="151.0" styleClass="saveButton" stylesheets="@button.css" text="Save" textFill="#9d1cb7">
+        <Button fx:id="save" layoutX="567.0" layoutY="454.0" mnemonicParsing="false" onAction="#onSave" prefHeight="50.0" prefWidth="151.0" styleClass="saveButton" stylesheets="@button.css" text="Save" textFill="#9d1cb7">
             <font>
                 <Font name="Arial Bold" size="25.0" />
             </font>
@@ -43,72 +43,83 @@
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="125.0" text="Change Password:">
+      <Label layoutX="65.0" layoutY="113.0" text="Change Password:">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="175.0" text="Testostrone level:">
+      <Label layoutX="70.0" layoutY="206.0" text="Testostrone level:">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="225.0" text="Prolactin Level:">
+      <Label layoutX="70.0" layoutY="256.0" text="Prolactin Level:">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="275.0" text="TSH Level:">
+      <Label layoutX="70.0" layoutY="306.0" text="TSH Level:">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="325.0" text="Weight:">
+      <Label layoutX="70.0" layoutY="356.0" text="Weight:">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="375.0" text="Height:">
+      <Label layoutX="70.0" layoutY="406.0" text="Height:">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
-      <Line endX="-5.0000152587890625" endY="338.4000244140625" layoutX="245.0" layoutY="65.0" startX="-5.0000152587890625" startY="-0.5990982055664062" />
+      <Line endX="-5.0000152587890625" endY="338.4000244140625" layoutX="245.0" layoutY="96.0" startX="-5.0000152587890625" startY="-44.00000762939453" />
       <Label fx:id="username" layoutX="250.0" layoutY="65.0" prefHeight="30.0" prefWidth="234.0" style="visibility: true;">
          <font>
             <Font name="Arial Italic" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="tsh" layoutX="250.0" layoutY="272.0" prefHeight="30.0" prefWidth="234.0">
+      <Label fx:id="tsh" layoutX="250.0" layoutY="303.0" prefHeight="30.0" prefWidth="234.0">
          <font>
             <Font name="Arial Italic" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="testosterone" layoutX="250.0" layoutY="171.0" prefHeight="30.0" prefWidth="234.0">
+      <Label fx:id="testosterone" layoutX="250.0" layoutY="202.0" prefHeight="30.0" prefWidth="234.0">
          <font>
             <Font name="Arial Italic" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="prolactine" layoutX="250.0" layoutY="221.0" prefHeight="30.0" prefWidth="234.0">
+      <Label fx:id="prolactine" layoutX="250.0" layoutY="252.0" prefHeight="30.0" prefWidth="234.0">
          <font>
             <Font name="Arial Italic" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="weight" layoutX="250.0" layoutY="321.0" prefHeight="30.0" prefWidth="234.0">
+      <Label fx:id="weight" layoutX="250.0" layoutY="352.0" prefHeight="30.0" prefWidth="234.0">
          <font>
             <Font name="Arial Italic" size="19.0" />
          </font>
       </Label>
-      <Label fx:id="height" layoutX="250.0" layoutY="371.0" prefHeight="30.0" prefWidth="234.0">
+      <Label fx:id="height" layoutX="250.0" layoutY="402.0" prefHeight="30.0" prefWidth="234.0">
          <font>
             <Font name="Arial Italic" size="19.0" />
          </font>
       </Label>
-      <PasswordField fx:id="pass" layoutX="250.0" layoutY="121.0" prefHeight="30.0" prefWidth="234.0" style="-fx-border-color: #9d1cb7;" />
-      <Button fx:id="medicine" onAction="#showPopup" layoutX="70.0" layoutY="430.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #9d1cb7;" styleClass="resendOTP" stylesheets="@button.css" text="My Medicine" textFill="#9d1cb7">
+      <PasswordField fx:id="pass" layoutX="250.0" layoutY="109.0" prefHeight="30.0" prefWidth="234.0" style="-fx-border-color: #9d1cb7;" />
+      <Button fx:id="medicine" layoutX="70.0" layoutY="463.0" mnemonicParsing="false" onAction="#showPopup" prefHeight="30.0" prefWidth="226.0" style="-fx-border-color: #9d1cb7;" styleClass="resendOTP" stylesheets="@button.css" text="My Medicine" textFill="#9d1cb7">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font>
       </Button>
+      <PasswordField fx:id="confirmpass" layoutX="250.0" layoutY="160.0" prefHeight="30.0" prefWidth="234.0" style="-fx-border-color: #9d1cb7;" />
+      <Label layoutX="36.0" layoutY="164.0" prefHeight="22.0" prefWidth="198.0" text="Confirm Old Password:">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="incorrect" layoutX="516.0" layoutY="389.0" prefHeight="58.0" prefWidth="214.0" style="visibility: true;" text="Please give correct password" textFill="RED" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

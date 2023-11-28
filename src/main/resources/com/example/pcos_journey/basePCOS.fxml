@@ -59,12 +59,12 @@
                                 <Font name="System Italic" size="20.0" />
                             </font>
                         </Label>
-                  <Label layoutX="43.0" layoutY="16.0" text="DISCLAIMER:" textFill="#fff9f9">
+                  <Label layoutX="88.0" layoutY="13.0" text="DISCLAIMER:" textFill="#fff9f9">
                      <font>
                         <Font name="System Bold" size="22.0" />
                      </font>
                   </Label>
-                  <Label layoutX="36.0" layoutY="48.0" prefHeight="146.0" prefWidth="944.0" text="This content is for educational purposes and does not offer personalized medical advice or replace professional healthcare guidance. Medical information evolves rapidly, and we cannot ensure comprehensive coverage of all treatment aspects. Your use of information from this source is at your own risk, and neither we nor our authors accept liability for any harm, including fatalities, resulting from product use, information application, or services provided.     All rights reserved © 2023" textFill="WHITE" wrapText="true">
+                  <Label layoutX="87.0" layoutY="42.0" prefHeight="146.0" prefWidth="944.0" text="This content is for educational purposes and does not offer personalized medical advice or replace professional healthcare guidance. Medical information evolves rapidly, and we cannot ensure comprehensive coverage of all treatment aspects. Your use of information from this source is at your own risk, and neither we nor our authors accept liability for any harm, including fatalities, resulting from product use, information application, or services provided.     All rights reserved © 2023" textFill="WHITE" wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -84,14 +84,14 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Label layoutX="32.0" layoutY="341.0" prefHeight="252.0" prefWidth="1432.0" text="Polycystic Ovary Syndrome (PCOS) is a common hormonal disorder affecting individuals with ovaries. It is characterized by irregular menstrual cycles, excess levels of androgens (male hormones), and the presence of small cysts on the ovaries. PCOS often manifests in reproductive-aged individuals, though it can also affect adolescents. Symptoms may include irregular periods, acne, excessive hair growth, and weight fluctuations. Additionally, PCOS is associated with long-term health risks like insulin resistance, diabetes, and cardiovascular issues. While there is no cure, early diagnosis and lifestyle modifications, such as a balanced diet and regular exercise, can help manage PCOS and improve quality of life." wrapText="true">
+            <Label layoutX="102.0" layoutY="327.0" prefHeight="252.0" prefWidth="1346.0" text="Polycystic Ovary Syndrome (PCOS) is a common hormonal disorder affecting individuals with ovaries. It is characterized by irregular menstrual cycles, excess levels of androgens (male hormones), and the presence of small cysts on the ovaries. PCOS often manifests in reproductive-aged individuals, though it can also affect adolescents. Symptoms may include irregular periods, acne, excessive hair growth, and weight fluctuations. Additionally, PCOS is associated with long-term health risks like insulin resistance, diabetes, and cardiovascular issues. While there is no cure, early diagnosis and lifestyle modifications, such as a balanced diet and regular exercise, can help manage PCOS and improve quality of life." wrapText="true">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </Label>
-            <TitledPane fx:id="titledPane1" animated="false" layoutX="101.0" layoutY="640.0" prefHeight="186.0" prefWidth="1235.0" style="-fx-background-color: #ffdde8;" stylesheets="@style.css" text="Causes" textFill="#b96b84" wrapText="true">
+            <TitledPane fx:id="titledPane1" animated="false" layoutX="105.0" layoutY="590.0" prefHeight="161.0" prefWidth="1235.0" style="-fx-background-color: #ffdde8;" stylesheets="@style.css" text="Causes" textFill="WHITE" wrapText="true">
                <content>
-                  <Label prefHeight="134.0" prefWidth="1214.0" text="The exact cause is unknown, but it is believed to be a combination of genetic and environmental factors. Insulin resistance and hormonal imbalances play a significant role. Elevated levels of insulin can lead to increased androgen production, disrupting the normal ovulation process and leading to the characteristic symptoms of PCOS." wrapText="true">
+                  <Label prefHeight="113.0" prefWidth="1214.0" text="The exact cause is unknown, but it is believed to be a combination of genetic and environmental factors. Insulin resistance and hormonal imbalances play a significant role. Elevated levels of insulin can lead to increased androgen production, disrupting the normal ovulation process and leading to the characteristic symptoms of PCOS." wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
@@ -100,7 +100,7 @@
                   <Font name="Arial Black" size="23.0" />
                </font>
             </TitledPane>
-            <TitledPane fx:id="titledPane2" animated="false" layoutX="101.0" layoutY="852.0" prefHeight="200.0" prefWidth="1235.0" stylesheets="@style.css" text="Symptoms" textFill="#b96b84">
+            <TitledPane fx:id="titledPane2" animated="false" layoutX="105.0" layoutY="780.0" prefHeight="154.0" prefWidth="1235.0" stylesheets="@style.css" text="Symptoms" textFill="WHITE">
                <font>
                   <Font name="Arial Black" size="23.0" />
                </font>
@@ -111,13 +111,13 @@
                      </font></Label>
                </content>
             </TitledPane>
-            <TitledPane fx:id="titledPane3" animated="false" layoutX="101.0" layoutY="1268.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="1237.0" stylesheets="@style.css" text="Diagnosis" textFill="#b96b84">
+            <TitledPane fx:id="titledPane3" animated="false" layoutX="105.0" layoutY="1210.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="178.0" prefWidth="1238.0" stylesheets="@style.css" text="Diagnosis" textFill="WHITE">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@style.css">
                      <children>
-                        <Label layoutX="6.0" layoutY="6.0" prefHeight="79.0" prefWidth="1218.0" text="If you think you have polycystic ovary syndrome (PCOS), it’s important you see your doctor. You might be referred to a specialist, such as an endocrinologist (hormone specialist) or gynaecologist for more detailed assessments. An early diagnosis and support from a team of specialists can help manage the symptoms of PCOS and reduce the risk of long-term health problems." wrapText="true">
+                        <Label layoutX="6.0" layoutY="6.0" prefHeight="120.0" prefWidth="1218.0" text="If you think you have polycystic ovary syndrome (PCOS), it’s important you see your doctor. You might be referred to a specialist, such as an endocrinologist (hormone specialist) or gynaecologist for more detailed assessments. An early diagnosis and support from a team of specialists can help manage the symptoms of PCOS and reduce the risk of long-term health problems." wrapText="true">
                            <font>
-                              <Font size="16.0" />
+                              <Font size="18.0" />
                            </font></Label>
                      </children>
                   </AnchorPane>
@@ -126,14 +126,14 @@
                   <Font name="Arial Black" size="23.0" />
                </font>
             </TitledPane>
-            <TitledPane fx:id="titledPane4" animated="false" layoutX="101.0" layoutY="1081.0" prefHeight="166.0" prefWidth="1234.0" stylesheets="@style.css" text=" Treatment &amp; Management" textFill="#b96b84">
+            <TitledPane fx:id="titledPane4" animated="false" layoutX="105.0" layoutY="970.0" prefHeight="202.0" prefWidth="1234.0" stylesheets="@style.css" text=" Treatment &amp; Management" textFill="WHITE">
                <font>
                   <Font name="Arial Black" size="23.0" />
                </font>
                <content>
-                  <Label prefHeight="99.0" prefWidth="1211.0" text="If you are diagnosed with polycystic ovary syndrome (PCOS), it’s important to work with your doctor and a medical team to manage your symptoms and improve your long-term health outcomes. Women with PCOS may have a range of symptoms that require different treatments. Depending on your symptoms, you can seek help from a range of healthcare professionals, including an endocrinologist, gynaecologist, dietitian, dermatologist, exercise physiologist, fertility specialist and psychologist. Your doctor can help coordinate your care and refer you to specialists where needed. " wrapText="true">
+                  <Label prefHeight="122.0" prefWidth="1211.0" text="If you are diagnosed with polycystic ovary syndrome (PCOS), it’s important to work with your doctor and a medical team to manage your symptoms and improve your long-term health outcomes. Women with PCOS may have a range of symptoms that require different treatments. Depending on your symptoms, you can seek help from a range of healthcare professionals, including an endocrinologist, gynaecologist, dietitian, dermatologist, exercise physiologist, fertility specialist and psychologist. Your doctor can help coordinate your care and refer you to specialists where needed. " wrapText="true">
                      <font>
-                        <Font size="16.0" />
+                        <Font size="18.0" />
                      </font></Label>
                </content>
             </TitledPane>

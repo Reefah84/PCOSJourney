@@ -111,7 +111,7 @@ public class ListofDoctors {
             try {
                 // Extract doctor email from the selected item
                 String doctorEmail = doctorEmailsMap.get(selectedDoctor);
-                System.out.println("Calling from list of doctors "+doctorEmail);
+                //System.out.println("Calling from list of doctors "+doctorEmail);
                 // Load SendMailPopupUser FXML and pass the doctor email
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("sendMailPopupUser.fxml"));
                 Parent root = loader.load();

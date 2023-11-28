@@ -27,7 +27,21 @@ public class signupController {
     public CheckBox doctorcheck;
     public CheckBox usercheck;
     public ImageView homepage;
-
+    public RadioButton showPass;
+    public RadioButton showPassword;
+    public TextField plainTextField;
+    public void initialize() {
+        enterpass.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!showPassword.isSelected()) {
+                plainTextField.setText(newValue);
+            }
+        });
+        plainTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (showPassword.isSelected()) {
+                enterpass.setText(newValue);
+            }
+        });
+    }
     private void showError(String errorMessage) {
         errorlabel.setText(errorMessage);
         errorlabel.setVisible(true);
@@ -99,6 +113,23 @@ public class signupController {
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    public void toggleShowPassword(ActionEvent event) {
+        if (showPassword.isSelected()) {
+            // Show plain text field and hide password field
+            plainTextField.setVisible(true);
+            plainTextField.setManaged(true);
+
+            enterpass.setVisible(false);
+            enterpass.setManaged(false);
+        } else {
+            // Show password field and hide plain text field
+            enterpass.setVisible(true);
+            enterpass.setManaged(true);
+
+            plainTextField.setVisible(false);
+            plainTextField.setManaged(false);
         }
     }
 }

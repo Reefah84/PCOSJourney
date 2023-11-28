@@ -30,6 +30,8 @@ public class myProfile {
     public Label height;
     public PasswordField pass;
     public Button medicine;
+    public PasswordField confirmpass;
+    public Label incorrect;
     User loggedInUser = UserSession.getLoggedInUser();
     String email;
 
@@ -89,13 +91,38 @@ public class myProfile {
             }
         }
     }
+    private boolean isCurrentPasswordValid(String enteredPassword) {
+        String userInfoPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + email + "\\USER_info.txt";
+        File userInfoFile = new File(userInfoPath);
+
+        try {
+            List<String> lines = Files.readAllLines(userInfoFile.toPath());
+            for (String line : lines) {
+                if (line.startsWith("Password:")) {
+                    String currentPassword = line.substring("Password:".length()).trim();
+                    return currentPassword.equals(enteredPassword);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     public void onSave() {
-        if (!pass.getText().isEmpty()) {
-            updatePassword(pass.getText());
+        if (!confirmpass.getText().isEmpty() && isCurrentPasswordValid(confirmpass.getText())) {
+            if (!pass.getText().isEmpty()) {
+                updatePassword(pass.getText());
+                incorrect.setText("Password changed successfully");
+                incorrect.setVisible(true);
+            }
+            closeWindow();
+        } else {
+            incorrect.setText("Please enter your current password correctly");
+            incorrect.setVisible(true);
         }
-        closeWindow();
     }
+
 
     private void updatePassword(String newPassword) {
         String userInfoPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + email + "\\USER_info.txt";

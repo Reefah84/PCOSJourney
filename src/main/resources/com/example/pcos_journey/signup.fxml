@@ -5,6 +5,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -52,19 +53,19 @@
                   <Font name="Arial" size="27.0" />
                </font>
             </Label>
-            <Label layoutX="76.0" layoutY="430.0" text="Date of Birth:">
+            <Label layoutX="76.0" layoutY="450.0" text="Date of Birth:">
                <font>
                   <Font name="Arial" size="27.0" />
                </font>
             </Label>
-            <DatePicker fx:id="enterdob" layoutX="76.0" layoutY="468.0" prefHeight="48.0" prefWidth="402.0" promptText="MM-DD--YYYY" style="-fx-border-color: #ff7aa1;" />
+            <DatePicker fx:id="enterdob" layoutX="76.0" layoutY="494.0" prefHeight="48.0" prefWidth="402.0" promptText="MM-DD--YYYY" style="-fx-border-color: #ff7aa1;" />
             <TextField fx:id="enteremail" layoutX="76.0" layoutY="260.0" prefHeight="46.0" prefWidth="720.0" style="-fx-border-color: #ff7aa1;" />
             <PasswordField fx:id="enterpass" layoutX="76.0" layoutY="370.0" prefHeight="46.0" prefWidth="720.0" style="-fx-border-color: #ff7aa1;" />
-            <CheckBox fx:id="terms" layoutX="76.0" layoutY="529.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="728.0" text="I agree to the Terms &amp; Condtitions of PCOS Journey">
+            <CheckBox fx:id="terms" layoutX="76.0" layoutY="552.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="728.0" text="I agree to the Terms &amp; Condtitions of PCOS Journey">
                <font>
                   <Font size="22.0" />
                </font></CheckBox>
-            <Button fx:id="signupbutton" layoutX="343.0" layoutY="621.0" mnemonicParsing="false" onAction="#setSignupbutton" prefHeight="58.0" prefWidth="172.0" styleClass="SignupButton" stylesheets="@button.css" text="SIGN UP">
+            <Button fx:id="signupbutton" layoutX="347.0" layoutY="646.0" mnemonicParsing="false" onAction="#setSignupbutton" prefHeight="58.0" prefWidth="172.0" styleClass="SignupButton" stylesheets="@button.css" text="SIGN UP">
                <font>
                   <Font name="Arial" size="28.0" />
                </font>
@@ -79,7 +80,7 @@
                   <Font name="Arial" size="26.0" />
                </font>
             </Label>
-            <Label fx:id="errorlabel" layoutX="274.0" layoutY="567.0" text="Please enter all fields" textFill="#ff1212" visible="false">
+            <Label fx:id="errorlabel" layoutX="284.0" layoutY="589.0" style="visibility: false;" text="Please enter all fields" textFill="#ff1212" visible="false">
                <font>
                   <Font size="31.0" />
                </font>
@@ -99,6 +100,12 @@
                   <Font name="Arial Rounded MT Bold" size="27.0" />
                </font>
             </Label>
+            <RadioButton fx:id="showPassword" layoutX="76.0" layoutY="420.0" mnemonicParsing="false" onAction="#toggleShowPassword" text="Show Password">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </RadioButton>
+            <TextField fx:id="plainTextField" layoutX="75.0" layoutY="370.0" prefHeight="45.0" prefWidth="721.0" style="-fx-border-color: #ff7aa1; visibility: false;" />
          </children>
       </AnchorPane>
    </left>

@@ -103,24 +103,6 @@ public class ChatBot {
             // Handle the exception
         }
     }
-
-    public void setNutrition(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("baseDiet.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) nutrition.getParentPopup().getOwnerWindow();
-
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Handle the exception
-        }
-    }
-
     public void setLoginButton(ActionEvent event) throws IOException {
         // Load the FXML file
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
@@ -144,7 +126,7 @@ public class ChatBot {
 
             // Get and add bot response label
             String response = getResponse(message);
-            Label botMessageLabel = createLabel("PCOS Journey:\n" + response, "-fx-background-color: lightblue; -fx-text-fill: #03fcfc; -fx-border-color: #b58aff;", 22);
+            Label botMessageLabel = createLabel("PCOS Journey:\n" + response, "-fx-background-color: lightblue; -fx-text-fill: black; -fx-border-color: #b58aff;", 22);
             messages.getChildren().add(botMessageLabel);
 
             // Scroll to the bottom of the VBox to make the latest message visible

@@ -4,6 +4,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -36,6 +37,7 @@
    <right>
       <AnchorPane prefHeight="1080.0" prefWidth="1061.0" style="-fx-background-color: #ffdde8;" BorderPane.alignment="CENTER">
          <children>
+            <TextField fx:id="plainTextField" layoutX="72.0" layoutY="422.0" prefHeight="49.0" prefWidth="708.0" style="-fx-border-color: #e71554;" />
             <Label layoutX="338.0" layoutY="49.0" prefHeight="111.0" prefWidth="222.0" text="LOGIN" textFill="#d400aa">
                <font>
                   <Font name="Arial Rounded MT Bold" size="65.0" />
@@ -46,9 +48,9 @@
                   <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
                </image>
             </ImageView>
-            <TextField fx:id="username" layoutX="73.0" layoutY="319.0" prefHeight="49.0" prefWidth="706.0" />
-            <PasswordField fx:id="password" layoutX="73.0" layoutY="422.0" prefHeight="49.0" prefWidth="706.0" />
-            <Label layoutX="73.0" layoutY="260.0" prefHeight="50.0" prefWidth="195.0" text="USERNAME:">
+            <TextField fx:id="username" layoutX="73.0" layoutY="319.0" prefHeight="49.0" prefWidth="706.0" promptText="\@gmail.com" style="-fx-border-color: #e71554;" />
+            <PasswordField fx:id="password" layoutX="73.0" layoutY="422.0" prefHeight="49.0" prefWidth="706.0" style="-fx-border-color: #e71554;" />
+            <Label layoutX="73.0" layoutY="260.0" prefHeight="50.0" prefWidth="195.0" text="EMAIL:">
                <font>
                   <Font name="Arial" size="27.0" />
                </font>
@@ -58,30 +60,30 @@
                   <Font name="Arial" size="27.0" />
                </font>
             </Label>
-            <Button fx:id="loginbutton" layoutX="373.0" layoutY="538.0" mnemonicParsing="false" onAction="#setLoginbutton" styleClass="loginbutton" stylesheets="@button.css" text="LOGIN">
+            <Button fx:id="loginbutton" layoutX="373.0" layoutY="580.0" mnemonicParsing="false" onAction="#setLoginbutton" styleClass="loginbutton" stylesheets="@button.css" text="LOGIN">
                <font>
                   <Font size="26.0" />
                </font>
             </Button>
-            <Button fx:id="signupbutton" layoutX="526.0" layoutY="607.0" mnemonicParsing="false" onAction="#setSignupbutton" styleClass="signupbutton" stylesheets="@button.css" text="Sign Up" textFill="#0f26d4">
+            <Button fx:id="signupbutton" layoutX="526.0" layoutY="635.0" mnemonicParsing="false" onAction="#setSignupbutton" styleClass="signupbutton" stylesheets="@button.css" text="Sign Up" textFill="#0f26d4">
                <font>
                   <Font size="26.0" />
                </font>
             </Button>
-            <Label layoutX="176.0" layoutY="619.0" text="Don't have an account yet?">
+            <Label layoutX="176.0" layoutY="645.0" text="Don't have an account yet?">
                <font>
                   <Font name="Arial" size="28.0" />
                </font>
             </Label>
-            <Button fx:id="forgotpasswordbutton" layoutX="307.0" layoutY="668.0" mnemonicParsing="false" onAction="#setForgotpasswordbutton" styleClass="forgotpasswordbutton" stylesheets="@button.css" text="Forgot Password?" textFill="#d400aa">
+            <Button fx:id="forgotpasswordbutton" layoutX="307.0" layoutY="690.0" mnemonicParsing="false" onAction="#setForgotpasswordbutton" styleClass="forgotpasswordbutton" stylesheets="@button.css" text="Forgot Password?" textFill="#d400aa">
                <font>
                   <Font size="28.0" />
                </font>
             </Button>
-            <Label layoutX="412.0" layoutY="480.0" />
-            <Label fx:id="emptyusername" layoutX="73.0" layoutY="485.0" text="Please enter username and password first" textFill="#ff0b0b" visible="false">
+            <Label layoutX="412.0" layoutY="480.0" prefHeight="18.0" prefWidth="0.0" />
+            <Label fx:id="emptyusername" layoutX="75.0" layoutY="511.0" prefHeight="66.0" prefWidth="775.0" style="visibility: false;" text="Please enter username and password first" textFill="#ff0b0b" visible="false" wrapText="true">
                <font>
-                  <Font size="26.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
             <CheckBox fx:id="doctorcheck" layoutX="550.0" layoutY="195.0" mnemonicParsing="false" text="Doctor user">
@@ -99,6 +101,11 @@
                   <Font name="Arial Rounded MT Bold" size="27.0" />
                </font>
             </Label>
+            <RadioButton fx:id="showPassword" layoutX="73.0" layoutY="478.0" mnemonicParsing="false" onAction="#toggleShowPassword" prefHeight="35.0" prefWidth="147.0" text="Show Password">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </RadioButton>
          </children>
       </AnchorPane>
    </right>

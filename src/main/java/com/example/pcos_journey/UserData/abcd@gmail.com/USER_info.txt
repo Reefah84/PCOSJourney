@@ -1,0 +1,4 @@
+USER
+Email: abcd@gmail.com
+Password: abcd
+Date of Birth: 2002-05-04

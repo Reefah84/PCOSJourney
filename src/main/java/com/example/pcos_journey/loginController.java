@@ -17,6 +17,8 @@ public class loginController {
     public CheckBox doctorcheck;
     public CheckBox usercheck;
     public ImageView backHome;
+    public RadioButton showPassword;
+    public TextField plainTextField;
     @FXML
     private TextField username;
     @FXML
@@ -26,6 +28,18 @@ public class loginController {
     public  Button loginbutton;
     public Button forgotpasswordbutton;
     public Label emptyusername;
+    public void initialize() {
+        password.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!showPassword.isSelected()) {
+                plainTextField.setText(newValue);
+            }
+        });
+        plainTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (showPassword.isSelected()) {
+                password.setText(newValue);
+            }
+        });
+    }
     public void setBackHome(MouseEvent event) {
         try {
             // Load the new FXML file
@@ -187,5 +201,23 @@ public class loginController {
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
+    }
+    public void toggleShowPassword(ActionEvent event) {
+        if (showPassword.isSelected()) {
+            // When the radio button is selected, show the plain text and hide the password field
+            plainTextField.setText(password.getText());
+            plainTextField.setVisible(true);
+            plainTextField.setManaged(true);
+            password.setVisible(false);
+            password.setManaged(false);
+        } else {
+            // When the radio button is deselected, show the password field and hide the plain text
+            password.setText(plainTextField.getText());
+            password.setVisible(true);
+            password.setManaged(true);
+
+            plainTextField.setVisible(false);
+            plainTextField.setManaged(false);
+        }
     }
 }

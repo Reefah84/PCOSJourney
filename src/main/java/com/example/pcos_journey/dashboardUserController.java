@@ -18,12 +18,12 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class dashboardUserController extends User{
+public class dashboardUserController{
 
     public Button logout;
     public Button Health;
 
-    public Label welcome;
+    public Label welcome=new Label("Welcome");
     public Button symptomButton;
     public Button weightButton;
     public Button DoctorButton;
@@ -34,16 +34,11 @@ public class dashboardUserController extends User{
     private String userEmail;
     public Button delete;
 
-    public dashboardUserController() {
-        super(null); // or however you want to handle this
-    }
-
     public void initialize() {
         // Access the logged-in user from UserSession
         User loggedInUser = UserSession.getLoggedInUser();
         UserSession.getInstance().setUserEmail(loggedInUser.getUsername());
         if (loggedInUser != null) {
-            // Display the username in the usernameLabel
             welcome.setText("Welcome " + loggedInUser.getUsername());
             userEmail=loggedInUser.getUsername();
             welcome.setVisible(true);
@@ -106,6 +101,7 @@ public class dashboardUserController extends User{
             Stage stage = new Stage();
             stage.setTitle("Profile");
             stage.setScene(new Scene(root));
+            stage.setResizable(false);
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();
         } catch (IOException e) {
@@ -200,12 +196,26 @@ public class dashboardUserController extends User{
         }
     }
     public void onDelete(ActionEvent event) {
-        deleteUserFolder(userEmail);
-        UserSession.logout(); // Logout the user session
-        setLogout(event);
+        try {
+            // Open the DeleteAccount popup
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("DeleteAccount.fxml"));
+            Parent root = loader.load();
+
+            // Pass the user email to the DeleteAccount controller
+            DeleteAccount controller = loader.getController();
+            controller.setUserEmail(userEmail);
+
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.setScene(new Scene(root));
+            popupStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle exceptions
+        }
     }
 
-    private void deleteUserFolder(String userEmail) {
+    public void deleteUserFolder(String userEmail) {
         String userFolderPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + userEmail;
         File userFolder = new File(userFolderPath);
         deleteDirectory(userFolder);

@@ -21,14 +21,54 @@ public class tracker {
     public Button gy;
     public Button hormoneButton;
     public Button medicine;
-    private String userEmail;
+
     public void initialize() {
         // Access the logged-in user from UserSession
         User loggedInUser = UserSession.getLoggedInUser();
         UserSession.getInstance().setUserEmail(loggedInUser.getUsername());
         if (loggedInUser != null) {
             // Display the username in the usernameLabel
-            userEmail = loggedInUser.getUsername();
+            String userEmail = loggedInUser.getUsername();
+        }
+        updateLoginButton();
+    }
+    private void updateLoginButton() {
+        if (UserSession.getInstance().isUserLoggedIn()) {
+            User loggedInUser = UserSession.getLoggedInUser();
+            if (loggedInUser.isUser()) {
+                logout.setText("USER");
+               logout.setOnAction(this::openDashboardUser);
+            } else if (loggedInUser.isDoctor()) {
+                logout.setText("DOCTOR");
+                logout.setOnAction(this::openDashboardDoctor);
+            }
+        } else {
+            logout.setText("LOGIN");
+            logout.setOnAction(this::openLogin);
+        }
+    }
+
+    private void openDashboardUser(ActionEvent event) {
+        navigateTo("dashboard_user.fxml", event);
+    }
+
+    private void openDashboardDoctor(ActionEvent event) {
+        navigateTo("dashboard_doctor.fxml", event);
+    }
+
+    private void openLogin(ActionEvent event) {
+        navigateTo("login.fxml", event);
+    }
+
+    private void navigateTo(String fxmlFile, ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
     public void setHome(MouseEvent mouseEvent) {
