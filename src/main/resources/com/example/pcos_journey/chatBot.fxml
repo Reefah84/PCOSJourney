@@ -12,13 +12,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="790.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.ChatBot">
+<AnchorPane prefHeight="790.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.ChatBot">
    <children>
       <AnchorPane layoutX="-13.0" layoutY="-4.0" prefHeight="790.0" prefWidth="434.0" style="-fx-background-color: #ffffff;">
          <children>
-            <ImageView fx:id="home" fitHeight="201.0" fitWidth="229.0" layoutX="114.0" layoutY="67.0" onMousePressed="#setBackHome" pickOnBounds="true" preserveRatio="true">
+            <ImageView  fitHeight="201.0" fitWidth="229.0" layoutX="114.0" layoutY="67.0"  pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resized%20home2.png" />
                </image>
@@ -53,6 +54,7 @@
                   <Font name="System Bold" size="25.0" />
                </font>
             </Button>
+            <Circle fx:id="home" onMousePressed="#setBackHome" fill="#fe2868" layoutX="215.0" layoutY="168.0" radius="101.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="circle" />
          </children>
          <effect>
             <DropShadow height="210.5" radius="60.885" width="35.04">

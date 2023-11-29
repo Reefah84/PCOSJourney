@@ -59,6 +59,8 @@ public class homePageController {
             Parent root = loader.load();
             Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
@@ -69,11 +71,9 @@ public class homePageController {
         // Load the FXML file
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
         Parent root = fxmlLoader.load();
-
-// Get the current stage (window)
         Stage stage = (Stage)LoginButton.getScene().getWindow();
-// Set the new content in the same window
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
@@ -83,11 +83,9 @@ public class homePageController {
         // Load the FXML file
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("chatBot.fxml"));
         Parent root = fxmlLoader.load();
-
-// Get the current stage (window)
         Stage stage = (Stage)FAQ.getScene().getWindow();
-// Set the new content in the same window
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
@@ -96,24 +94,21 @@ public class homePageController {
     public void setQuiz(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Quiz_Disclaimer.fxml"));
         Parent root = loader.load();
-
-        // Get the current stage
         Stage stage = (Stage) quiz.getScene().getWindow();
-
-        // Set the new content in the same window
         Scene scene = new Scene(root);
+        stage.setResizable(false);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
     }
     public void showListOfDoctors(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ListofDoctors.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) gy.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
@@ -127,7 +122,7 @@ public class homePageController {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) symptomTrack.getScene().getWindow();
             Scene scene = new Scene(root);
-            // If you have a stylesheet
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
@@ -141,7 +136,7 @@ public class homePageController {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) Health.getScene().getWindow();
             Scene scene = new Scene(root);
-            // If you have a stylesheet
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);

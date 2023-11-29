@@ -1,18 +1,21 @@
 package com.example.pcos_journey;
 
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Objects;
 
 
 public class signupController {
@@ -26,7 +29,7 @@ public class signupController {
     public Label errorlabel;
     public CheckBox doctorcheck;
     public CheckBox usercheck;
-    public ImageView homepage;
+    public Circle homepage;
     public RadioButton showPass;
     public RadioButton showPassword;
     public TextField plainTextField;
@@ -86,17 +89,34 @@ public class signupController {
             }
 
             showError("User account is created");
+            PauseTransition pause = new PauseTransition(Duration.seconds(2));
+            pause.setOnFinished(event2 -> switchToLogin());
+            pause.play();
+        }
+    }
+    private void switchToLogin() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml")); // Update this path
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) errorlabel.getScene().getWindow(); // Replace showError with any other control in your scene if needed
+            Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle exception here
         }
     }
     public void setLoginbutton(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
         Parent root = fxmlLoader.load();
-
-// Get the current stage (window)
         Stage stage = (Stage)loginbutton.getScene().getWindow();
-
-// Set the new content in the same window
         Scene scene = new Scene(root);
+        stage.setResizable(false);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
     }
     public void setBackHome(MouseEvent event) {
@@ -104,12 +124,11 @@ public class signupController {
             // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) homepage.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();

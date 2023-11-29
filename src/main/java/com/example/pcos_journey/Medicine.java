@@ -10,4 +10,5 @@ public interface Medicine {
     public default void handleSendEmailAction(ActionEvent event) {
 
     }
+    public void initialize();
 }

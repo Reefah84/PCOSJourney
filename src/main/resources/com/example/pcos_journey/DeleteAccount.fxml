@@ -25,7 +25,7 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Button fx:id="delete" onAction="#onDeleteAccount" layoutX="325.0" layoutY="299.0" mnemonicParsing="false" styleClass="delete" stylesheets="@button.css" text="Delete" />
+      <Button fx:id="deletebutton" onAction="#onDeleteAccount" layoutX="325.0" layoutY="299.0" mnemonicParsing="false" styleClass="delete" stylesheets="@button.css" text="Delete" />
       <Button fx:id="back" onAction="#onGoBack" layoutX="198.0" layoutY="299.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="102.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: red;" styleClass="goBackButton" stylesheets="@button.css" text="Go Back">
          <font>
             <Font size="19.0" />

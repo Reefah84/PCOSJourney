@@ -8,8 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class BaseFertility {
     public Button LoginButton;
     public Button Health;
     public Button gy;
-    public ImageView home;
+    public Circle home;
     @FXML
     private Button fback;
 
@@ -79,6 +79,9 @@ public class BaseFertility {
             Parent root = loader.load();
             Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -90,6 +93,9 @@ public class BaseFertility {
         Parent root = fxmlLoader.load();
         Stage stage = (Stage)LoginButton.getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
 
     }
@@ -99,23 +105,23 @@ public class BaseFertility {
             Parent root = loader.load();
             Stage stage = (Stage) gy.getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
-            // Handle the exception
         }
     }
     public void setHome(MouseEvent event){
         try {
-            // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) home.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -127,6 +133,7 @@ public class BaseFertility {
         Parent root = fxmlLoader.load();
         Stage stage = (Stage)FAQ.getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
@@ -138,7 +145,7 @@ public class BaseFertility {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) fback.getScene().getWindow();
             Scene scene = new Scene(root);
-            // If you have a stylesheet
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
@@ -153,7 +160,7 @@ public class BaseFertility {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) Health.getScene().getWindow();
             Scene scene = new Scene(root);
-            // If you have a stylesheet
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);

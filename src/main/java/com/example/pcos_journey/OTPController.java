@@ -43,7 +43,9 @@ public class OTPController {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage)nextbutton.getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();

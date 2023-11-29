@@ -1,15 +1,18 @@
 package com.example.pcos_journey;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -23,17 +26,23 @@ public class ListofDoctors {
 
     public Button LoginButton;
     public Button Health;
-    public MenuButton allDoctors;
-    public ImageView home;
+    public Circle home;
     public Button gy;
     public Button FAQ;
+    public Button search;
+    public ImageView searchim;
+    public Label error;
     @FXML
     private ListView<String> doctorsListView;
+    @FXML
+    private TextField searchField;
+    private ObservableList<String> doctorsList = FXCollections.observableArrayList();
     private Map<String, String> doctorEmailsMap = new HashMap<>();
     public void initialize() {
         updateLoginButton();
         loadDoctorsList();
     }
+
     private void updateLoginButton() {
         if (UserSession.getInstance().isUserLoggedIn()) {
             User loggedInUser = UserSession.getLoggedInUser();
@@ -68,6 +77,9 @@ public class ListofDoctors {
             Parent root = loader.load();
             Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -77,26 +89,49 @@ public class ListofDoctors {
         // Load the FXML file
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
         Parent root = fxmlLoader.load();
-
-// Get the current stage (window)
         Stage stage = (Stage)LoginButton.getScene().getWindow();
-
-// Set the new content in the same window
         Scene scene = new Scene(root);
+        stage.setResizable(false);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
 
     }
     private void loadDoctorsList() {
         File drDataDir = new File("E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/DRData");
         String[] doctorEmails = drDataDir.list();
-
+        doctorsList.clear();
         if (doctorEmails != null) {
             Arrays.stream(doctorEmails).forEach(email -> {
                 String formattedName = formatDoctorName(email);
-                doctorsListView.getItems().add(formattedName);
-                doctorEmailsMap.put(formattedName, email); // Store the original email
+                doctorsList.add(formattedName); // Add to doctorsList
+                doctorEmailsMap.put(formattedName, email);
             });
         }
+        doctorsListView.setItems(doctorsList);
+    }
+
+    @FXML
+    private void handleSearchButtonAction(ActionEvent event) {
+        String searchText = searchField.getText();
+        ObservableList<String> filteredList = FXCollections.observableArrayList();
+        if (searchText == null || searchText.isEmpty()) {
+            filteredList.addAll(doctorsList);
+            error.setVisible(true);
+        } else {
+            String lowerCaseFilter = searchText.toLowerCase();
+            for (String doctor : doctorsList) {
+                if (doctor.toLowerCase().contains(lowerCaseFilter)) {
+                    filteredList.add(doctor);
+                }
+            }
+        }
+        if (filteredList.isEmpty()) {
+            error.setVisible(true); // Show error label if no results
+        } else {
+            error.setVisible(false); // Hide error label if there are results
+        }
+        doctorsListView.setItems(filteredList);
     }
 
     private String formatDoctorName(String email) {
@@ -109,20 +144,19 @@ public class ListofDoctors {
         String selectedDoctor = doctorsListView.getSelectionModel().getSelectedItem();
         if (selectedDoctor != null) {
             try {
-                // Extract doctor email from the selected item
                 String doctorEmail = doctorEmailsMap.get(selectedDoctor);
-                //System.out.println("Calling from list of doctors "+doctorEmail);
-                // Load SendMailPopupUser FXML and pass the doctor email
+                System.out.println(doctorEmail);
+                System.out.println(selectedDoctor);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("sendMailPopupUser.fxml"));
                 Parent root = loader.load();
 
                 SendMailPopupUser controller = loader.getController();
                 controller.initialize(doctorEmail); // Pass the extracted doctor email
 
-                // Show the new stage
                 Stage stage = new Stage();
                 stage.setTitle(selectedDoctor);
                 stage.setScene(new Scene(root));
+                stage.setResizable(false);
                 stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -138,17 +172,15 @@ public class ListofDoctors {
         return doctorName.replaceAll("\\s+", "") + "@gmail.com"; // Replace spaces and append "@gmail.com"
     }
 
-    public void setHome(MouseEvent mouseEvent) {
+    public void setHome(ActionEvent mouseEvent) {
         try {
-            // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) home.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -158,12 +190,11 @@ public class ListofDoctors {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ListofDoctors.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) gy.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -171,17 +202,28 @@ public class ListofDoctors {
         }
     }
     public void setFAQ(ActionEvent event) throws IOException {
-        // Load the FXML file
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("chatBot.fxml"));
         Parent root = fxmlLoader.load();
-
-// Get the current stage (window)
         Stage stage = (Stage)FAQ.getScene().getWindow();
-// Set the new content in the same window
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
 
+    }
+    public void setHealth(ActionEvent event) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("baseHEALTH.fxml")); // Adjust the path
+        try {
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) Health.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1540.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.Hormone_Tracker">
@@ -55,10 +56,11 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Button>
-      <ImageView fx:id="homeButton" fitHeight="193.0" fitWidth="184.0" layoutX="1312.0" layoutY="15.0" onMouseClicked="#setHomeButton" pickOnBounds="true" preserveRatio="true">
+      <ImageView  fitHeight="193.0" fitWidth="184.0" layoutX="1312.0" layoutY="15.0"  pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Untitled729_20230916214012.png" />
          </image>
       </ImageView>
+      <Circle fx:id="homeButton" onMouseClicked="#setHomeButton" fill="#fe2868" layoutX="1404.0" layoutY="107.0" radius="92.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="circle" />
    </children>
 </AnchorPane>

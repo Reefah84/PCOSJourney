@@ -13,8 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
@@ -25,6 +25,7 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
+
 ;
 
 
@@ -33,9 +34,8 @@ public class Hormone_Tracker implements HormoneTracker {
 
     public Label labelside;
     public Label labeup;
-    public ImageView homeButton;
-    @FXML
-    private MenuButton menuButton;
+    public Circle homeButton;
+    public MenuButton menuButton;
 
     @FXML
     private Label label;
@@ -265,6 +265,7 @@ public class Hormone_Tracker implements HormoneTracker {
             Parent root = loader.load();
             Stage stage = (Stage) homeButton.getScene().getWindow();
             stage.setScene(new Scene(root));
+            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

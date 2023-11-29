@@ -123,14 +123,14 @@ public class SendMailPopupUser {
     private void handleSendButtonAction(ActionEvent event) throws IOException {
         userMessage = message.getText();
         userEmail = user.getText();
-//        if (!userEmail.endsWith("@gmail.com")) {
-//            System.out.println(doctorEmail+" "+userEmail+"In send button function");
-//            try {
-//                throw new EmailException("Invalid email. Please provide a correct Gmail address.");
-//            } catch (EmailException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        if (!userEmail.endsWith("@gmail.com")) {
+            System.out.println(doctorEmail+" "+userEmail+"In send button function");
+            try {
+                throw new EmailException("Invalid email. Please provide a correct Gmail address.");
+            } catch (EmailException e) {
+                throw new RuntimeException(e);
+            }
+        }
         // Define the folder paths for doctor and user
         String doctorFolder = "E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/DRData/" + doctorEmail;
         String userFolder = "E:/Java/PCOS_Journey/src/main/java/com/example/pcos_journey/UserData/" + userEmail;
@@ -176,6 +176,7 @@ public class SendMailPopupUser {
         } else {
             // Handle the case where stage is not set
             Stage currentStage = (Stage) backhome.getScene().getWindow();
+            currentStage.setResizable(false);
             if (currentStage != null) {
                 currentStage.close();
             }

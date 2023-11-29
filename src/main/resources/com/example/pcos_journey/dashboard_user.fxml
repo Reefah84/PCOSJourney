@@ -7,13 +7,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.dashboardUserController">
    <top>
       <AnchorPane prefHeight="196.0" prefWidth="1540.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="home" fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" onMouseClicked="#setHome" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" onMouseClicked="#setHome" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resized%20home2.png" />
                </image>
@@ -58,6 +59,7 @@
                   <Font name="Arial Bold" size="20.0" />
                </font>
             </Button>
+            <Circle fx:id="home" onMouseClicked="#setHome" fill="#fe2868" layoutX="109.0" layoutY="100.0" radius="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="circle" />
          </children>
       </AnchorPane>
    </top>
@@ -94,7 +96,7 @@
    <right>
       <AnchorPane prefHeight="594.0" prefWidth="589.0" style="-fx-background-color: #eec1eb;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="40.0" layoutY="35.0" text="My Messages:" textFill="#59188e">
+            <Label layoutX="40.0" layoutY="35.0" text="Messages from Doctors:" textFill="#59188e">
                <font>
                   <Font name="Arial Bold" size="28.0" />
                </font>

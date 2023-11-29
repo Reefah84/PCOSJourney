@@ -7,8 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
@@ -17,10 +17,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class WeightTrackerController {
 
-    public ImageView home;
+    public Circle home;
     public TextField weight;
     public TextField height;
     public Label BMIresult;
@@ -94,15 +95,13 @@ public class WeightTrackerController {
 
     public void setBackHome(MouseEvent event) {
         try {
-            // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard_user.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) home.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();

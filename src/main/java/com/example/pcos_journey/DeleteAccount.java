@@ -1,54 +1,54 @@
 package com.example.pcos_journey;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Comparator;
 
 public class DeleteAccount extends dashboardUserController{
-    public Button delete;
+    @FXML
+    public Button deletebutton;
+    @FXML
     public Button back;
-    private String userEmail;
 
-    public void setUserEmail(String userEmail) {
-            this.userEmail = userEmail;
-    }
-    public void onDeleteAccount(ActionEvent event) {
-            deleteUserFolder(userEmail);
-            UserSession.logout(); // Logout the user session
-            setLogout(event);
-            closePopup();
+    private String userEmail = UserSession.getLoggedInUser().getUsername();
+    private String userDirectoryPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + userEmail;
+
+    @FXML
+    private void onDeleteAccount(ActionEvent event) {
+        try {
+            Path directory = Paths.get(userDirectoryPath);
+            Files.walk(directory)
+                    .sorted(Comparator.reverseOrder())
+                    .map(Path::toFile)
+                    .forEach(File::delete);
             redirectToLogin();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle exceptions (e.g., show an error dialog)
+        }
     }
 
-    // Existing setLogout function
-    public void setLogout(ActionEvent event) {
-        // Your existing logic to switch to the login screen
+    @FXML
+    private void onGoBack(ActionEvent event) {
         closePopup();
     }
+
     private void redirectToLogin() {
-            try {
-                Stage stage = (Stage) delete.getScene().getWindow();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-                stage.setScene(new Scene(loader.load()));
-            } catch (IOException e) {
-                e.printStackTrace();
-                // Handle exceptions
-            }
-        }
+        closePopup();
+    }
 
-        public void onGoBack(ActionEvent event){
-            closePopup();
+    private void closePopup() {
+        Stage stage = (Stage) back.getScene().getWindow();
+        if (stage != null) {
+            stage.close();
         }
-
-        private void closePopup() {
-            Stage stage = (Stage) back.getScene().getWindow();
-            if (stage != null) {
-                stage.close();
-            }
-        }
-
+    }
 }

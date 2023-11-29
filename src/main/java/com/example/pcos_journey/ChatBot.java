@@ -5,9 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -26,7 +26,7 @@ public class ChatBot {
     public Button LoginButton;
     public Button Health;
     public Button gy;
-    public ImageView home;
+    public Circle home;
     public MenuItem nutrition;
     public void initialize() {
         messages.setPrefWidth(942);
@@ -67,6 +67,8 @@ public class ChatBot {
             Parent root = loader.load();
             Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
@@ -75,11 +77,12 @@ public class ChatBot {
     }
     public void setBackHome(MouseEvent event) {
         try {
-            // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) home.getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
@@ -90,28 +93,22 @@ public class ChatBot {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ListofDoctors.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) gy.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
-            stage.setScene(scene);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
             // Handle the exception
         }
     }
     public void setLoginButton(ActionEvent event) throws IOException {
-        // Load the FXML file
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
         Parent root = fxmlLoader.load();
-
-// Get the current stage (window)
         Stage stage = (Stage)LoginButton.getScene().getWindow();
-// Set the new content in the same window
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);

@@ -61,6 +61,7 @@ public class seeMyMedicine {
             Stage stage = new Stage();
             stage.setTitle("My Medicine");
             stage.setScene(new Scene(root));
+            stage.setResizable(false);
             stage.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();

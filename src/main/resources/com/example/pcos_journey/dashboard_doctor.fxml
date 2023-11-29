@@ -3,12 +3,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -16,7 +15,7 @@
     <top>
         <AnchorPane prefHeight="196.0" prefWidth="1540.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fx:id="home" fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" onMouseClicked="#setBackHome" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../resized%20home2.png" />
                     </image>
@@ -31,7 +30,7 @@
                         <Font name="Arial Bold" size="27.0" />
                     </font>
                 </Button>
-                <Button fx:id="Health" layoutX="250.0" layoutY="120.0" mnemonicParsing="false" styleClass="Health" stylesheets="@button.css" text="Health" textFill="#ff1d6c">
+                <Button fx:id="Health" onAction="#setHealth" layoutX="250.0" layoutY="120.0" mnemonicParsing="false" styleClass="Health" stylesheets="@button.css" text="Health" textFill="#ff1d6c">
                     <font>
                         <Font name="System Bold" size="25.0" />
                     </font>
@@ -56,6 +55,7 @@
                   <Font name="Arial Bold" size="25.0" />
                </font>
             </Button>
+            <Circle fx:id="home"  onMousePressed="#setBackHome" fill="#fe2868" layoutX="106.0" layoutY="101.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="circle" />
             </children>
         </AnchorPane>
     </top>

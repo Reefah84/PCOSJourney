@@ -7,8 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import javax.mail.*;
@@ -26,7 +26,7 @@ public class forgotpasswordController extends sharedOTP{
     public Button sendotp;
     public TextField enteremail;
     public Label incorrect;
-    public ImageView home;
+    public Circle home;
     String generatedOTP;
     private String generateOTP() {
         SecureRandom random = new SecureRandom();
@@ -90,6 +90,25 @@ public class forgotpasswordController extends sharedOTP{
 
     // Event handler for the next button
     public void setSendotp(ActionEvent event) throws EmailException {
+        setSaveButton(event);
+    }
+    public void setHome(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) home.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void setSaveButton(ActionEvent event) throws EmailException {
         if (!isEmailRegistered(enteremail.getText())) {
             incorrect.setText("User account not found");
             incorrect.setVisible(true);
@@ -107,7 +126,7 @@ public class forgotpasswordController extends sharedOTP{
                 Parent root = fxmlLoader.load();
                 Stage stage = (Stage)sendotp.getScene().getWindow();
                 Scene scene = new Scene(root);
-                // If you have a stylesheet
+                stage.setResizable(false);
                 scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
                 scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
                 stage.setScene(scene);
@@ -115,23 +134,6 @@ public class forgotpasswordController extends sharedOTP{
                 e.printStackTrace();
                 incorrect.setText("Failed to load the next screen.");
             }
-        }
-    }
-    public void setHome(MouseEvent event) {
-        try {
-            // Load the new FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-            Parent root = loader.load();
-
-            // Get the current stage
-            Stage stage = (Stage) home.getScene().getWindow();
-
-            // Set the new content in the same window
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

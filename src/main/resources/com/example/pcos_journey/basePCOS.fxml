@@ -7,9 +7,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1710.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.BasePCOS">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1710.0" prefWidth="1540.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.BasePCOS">
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1710.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;">
             <children>
@@ -137,11 +138,12 @@
                      </font></Label>
                </content>
             </TitledPane>
-            <ImageView fx:id="home" fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" onMouseClicked="#setHome" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="147.0" fitWidth="170.0" layoutX="35.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resized%20home2.png" />
                </image>
             </ImageView>
+            <Circle fx:id="home" onMouseClicked="#setHome" fill="#fe2868" layoutX="109.0" layoutY="100.0" radius="73.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="circle" />
             </children></AnchorPane>
     </content>
 </ScrollPane>

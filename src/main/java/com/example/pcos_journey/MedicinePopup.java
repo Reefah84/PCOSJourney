@@ -12,7 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class MedicinePopup {
+public class MedicinePopup{
     public AnchorPane medicinedetails;
     public Button back;
     public Label morning;

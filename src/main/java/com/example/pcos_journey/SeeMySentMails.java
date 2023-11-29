@@ -42,9 +42,11 @@ public class SeeMySentMails {
             String filePath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + userEmail + "\\" + fileName.replace("Contacted ", "sent_mail_to_").replace(" ", "_") + ".txt";
             String messageContent = new String(Files.readAllBytes(Paths.get(filePath)));
             controller.setMessage(messageContent);
+            controller.setFromto("Message to Doctor");
             Stage stage = new Stage();
             stage.setTitle("Doctor's Message");
             stage.setScene(new Scene(root));
+            stage.setResizable(false);
             stage.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();

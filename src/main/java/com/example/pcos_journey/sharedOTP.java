@@ -1,12 +1,14 @@
 package com.example.pcos_journey;
 
-public class sharedOTP {
+import javafx.event.ActionEvent;
+
+public abstract class sharedOTP {
     private static String currentOTP;
     private static String email;
     public static String getCurrentOTP() {
         return currentOTP;
     }
-
+    public abstract void setSaveButton(ActionEvent event) throws EmailException;
     public static void setCurrentOTP(String currentOTP) {
         sharedOTP.currentOTP = currentOTP;
     }

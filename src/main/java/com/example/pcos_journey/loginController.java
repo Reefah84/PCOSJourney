@@ -1,14 +1,14 @@
 package com.example.pcos_journey;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.*;
-import javafx.event.ActionEvent;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.util.Objects;
@@ -16,7 +16,7 @@ import java.util.Objects;
 public class loginController {
     public CheckBox doctorcheck;
     public CheckBox usercheck;
-    public ImageView backHome;
+    public Circle backHome;
     public RadioButton showPassword;
     public TextField plainTextField;
     @FXML
@@ -47,6 +47,8 @@ public class loginController {
             Parent root = loader.load();
             Stage stage = (Stage) backHome.getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
@@ -156,6 +158,7 @@ public class loginController {
             }
             Stage stage = (Stage)loginbutton.getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
@@ -183,6 +186,7 @@ public class loginController {
         }
         Stage stage = (Stage)signupbutton.getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
@@ -198,6 +202,7 @@ public class loginController {
         }
         Stage stage = (Stage)forgotpasswordbutton.getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);

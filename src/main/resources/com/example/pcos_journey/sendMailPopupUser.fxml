@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.SendMailPopupUser">
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.SendMailPopupUser">
    <children>
       <ImageView fitHeight="583.0" fitWidth="800.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
          <image>

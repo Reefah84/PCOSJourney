@@ -6,9 +6,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1710.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.homePageController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1710.0" prefWidth="1540.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.homePageController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1710.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;">
          <children>
@@ -54,6 +55,7 @@
                         <Font name="Arial Bold" size="25.0" />
                      </font>
                   </Button>
+                  <Circle fill="#fe2868" layoutX="109.0" layoutY="99.0" radius="74.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="circle" />
                </children>
             </AnchorPane>
             <ImageView fitHeight="545.0" fitWidth="540.0" layoutX="20.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">

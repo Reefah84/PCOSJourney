@@ -164,7 +164,7 @@ public class myProfile {
         // Set the scene for the popup stage
         Scene scene = new Scene(root);
         popupStage.setScene(scene);
-
+        popupStage.setResizable(false);
         // Show the popup and wait for it to be closed before returning to the main window
         popupStage.showAndWait();
     }

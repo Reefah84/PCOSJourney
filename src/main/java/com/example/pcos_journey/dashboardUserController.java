@@ -4,9 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -28,8 +30,8 @@ public class dashboardUserController{
     public Button weightButton;
     public Button DoctorButton;
     public Button gy;
-    public ImageView home;
-    public ListView <String> messageFrom;
+    public Circle home;
+    public ListView <String> messageFrom=new ListView<>();
     public Button FAQ;
     private String userEmail;
     public Button delete;
@@ -38,12 +40,15 @@ public class dashboardUserController{
         // Access the logged-in user from UserSession
         User loggedInUser = UserSession.getLoggedInUser();
         UserSession.getInstance().setUserEmail(loggedInUser.getUsername());
-        if (loggedInUser != null) {
+        if (UserSession.isUserLoggedIn()) {
+            loggedInUser = UserSession.getLoggedInUser();
+            userEmail = loggedInUser.getUsername();
             welcome.setText("Welcome " + loggedInUser.getUsername());
-            userEmail=loggedInUser.getUsername();
             welcome.setVisible(true);
+            loadMessagefrom();
+        } else {
+            resetUIComponents(); // Call a method to reset or disable UI components
         }
-        loadMessagefrom();
         messageFrom.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
                 String selectedReply = messageFrom.getSelectionModel().getSelectedItem();
@@ -58,6 +63,19 @@ public class dashboardUserController{
             }
         });
     }
+
+    private void resetUIComponents() {
+        welcome.setVisible(false);
+        messageFrom.getItems().clear();
+        messageFrom.setDisable(true);
+        symptomButton.setDisable(true);
+        weightButton.setDisable(true);
+        DoctorButton.setDisable(true);
+        gy.setDisable(true);
+        FAQ.setDisable(true);
+        Health.setDisable(true);
+    }
+
     private void loadMessagefrom() {
         String userDirectoryPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\"+userEmail;
         File userDirectory = new File(userDirectoryPath);
@@ -85,7 +103,9 @@ public class dashboardUserController{
             String filePath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + userEmail + "\\" + fileName.replace("Message from ", "reply_from_").replace(" ", "_") + ".txt";
             String messageContent = new String(Files.readAllBytes(Paths.get(filePath)));
             controller.setMessage(messageContent);
+            controller.setFromto("Message from Doctor:");
             Stage stage = new Stage();
+            stage.setResizable(false);
             stage.setTitle("Doctor's Message");
             stage.setScene(new Scene(root));
             stage.showAndWait();
@@ -99,6 +119,7 @@ public class dashboardUserController{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("myProfile.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
+            stage.setResizable(false);
             stage.setTitle("Profile");
             stage.setScene(new Scene(root));
             stage.setResizable(false);
@@ -117,8 +138,9 @@ public class dashboardUserController{
             Parent root = fxmlLoader.load();
             Stage stage = (Stage)logout.getScene().getWindow();
             Scene scene = new Scene(root);
-            // If you have a stylesheet
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -133,8 +155,9 @@ public class dashboardUserController{
             Stage stage = (Stage)symptomButton.getScene().getWindow();
             Scene scene = new Scene(root);
             // If you have a stylesheet
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
-            //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -149,9 +172,11 @@ public class dashboardUserController{
 
             // Get the current stage
             Stage stage = (Stage) weightButton.getScene().getWindow();
-
             // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -165,9 +190,11 @@ public class dashboardUserController{
 
             // Get the current stage
             Stage stage = (Stage) home.getScene().getWindow();
-
             // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -184,7 +211,7 @@ public class dashboardUserController{
             Stage popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL); // Set the popup to block interaction with other windows
             popupStage.setTitle("Sent Messages");
-
+            popupStage.setResizable(false);
             // Set the scene for the popup stage
             Scene scene = new Scene(root);
             popupStage.setScene(scene);
@@ -200,35 +227,39 @@ public class dashboardUserController{
             // Open the DeleteAccount popup
             FXMLLoader loader = new FXMLLoader(getClass().getResource("DeleteAccount.fxml"));
             Parent root = loader.load();
-
-            // Pass the user email to the DeleteAccount controller
-            DeleteAccount controller = loader.getController();
-            controller.setUserEmail(userEmail);
-
             Stage popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.setScene(new Scene(root));
+            popupStage.setResizable(false);
+            // Show the popup and wait until it is closed
             popupStage.showAndWait();
+
+            // After the popup is closed, check if the user has been logged out
+            if (UserSession.isUserLoggedIn()) {
+                // User is logged out, redirect to login.fxml
+                UserSession.logout();
+                redirectToLogin();
+            }
         } catch (IOException e) {
             e.printStackTrace();
             // Handle exceptions
         }
     }
 
-    public void deleteUserFolder(String userEmail) {
-        String userFolderPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + userEmail;
-        File userFolder = new File(userFolderPath);
-        deleteDirectory(userFolder);
-    }
-
-    private void deleteDirectory(File directoryToBeDeleted) {
-        File[] allContents = directoryToBeDeleted.listFiles();
-        if (allContents != null) {
-            for (File file : allContents) {
-                deleteDirectory(file);
-            }
+    private void redirectToLogin() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) logout.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception
         }
-        directoryToBeDeleted.delete();
     }
     public void showListOfDoctors(ActionEvent event) {
         try {
@@ -237,9 +268,11 @@ public class dashboardUserController{
 
             // Get the current stage
             Stage stage = (Stage) gy.getScene().getWindow();
-
+            stage.setResizable(false);
             // Set the new content in the same window
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -251,6 +284,7 @@ public class dashboardUserController{
         Parent root = fxmlLoader.load();
         Stage stage = (Stage)FAQ.getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
@@ -260,6 +294,7 @@ public class dashboardUserController{
         Parent root = fxmlLoader.load();
         Stage stage = (Stage)Health.getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);

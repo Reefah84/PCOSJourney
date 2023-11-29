@@ -7,8 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -20,10 +20,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.Calendar;
-import java.util.Properties;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class MedicineTracker implements Medicine{
@@ -32,7 +29,7 @@ public class MedicineTracker implements Medicine{
     public TextField medicineFrequency;
     public TextField dosage;
     public Button view;
-    public ImageView home;
+    public Circle home;
     User loggedInUser;
     String userEmail;
     public void initialize() {
@@ -103,6 +100,7 @@ public class MedicineTracker implements Medicine{
 
         // Create a new stage for the popup
         Stage popupStage = new Stage();
+        popupStage.setResizable(false);
         popupStage.initModality(Modality.APPLICATION_MODAL); // To block interaction with other windows
         popupStage.setTitle("Medicine View");
 
@@ -117,6 +115,7 @@ public class MedicineTracker implements Medicine{
     private static final int MORNING_TIME_OFFSET = (int) TimeUnit.HOURS.toMillis(8); // 8 AM
     private static final int AFTERNOON_TIME_OFFSET = (int) TimeUnit.HOURS.toMillis(14); // 2 PM
     private static final int EVENING_TIME_OFFSET = (int) TimeUnit.HOURS.toMillis(20); // 8 PM
+    //private static final int EVENING_TIME_OFFSET = (int) TimeUnit.HOURS.toMillis(24); // 12 AM
 
     // Method to calculate the schedule
     private void calculateSchedule(int dosage, int frequency) {
@@ -128,14 +127,17 @@ public class MedicineTracker implements Medicine{
         // Schedule the emails based on dosage and frequency
         if (dosage == 1) {
             // Morning email
+            System.out.println("Sending 3 dosage");
             scheduleEmail(timer, userEmail, medicineName.getText(), Integer.parseInt(String.valueOf(dosage)), MORNING_TIME_OFFSET, frequencyIntervalMillis);
         }
         if (dosage == 2) {
             // Evening email
+            System.out.println("Sending 3 dosage");
             scheduleEmail(timer, userEmail, medicineName.getText(), Integer.parseInt(String.valueOf(dosage)), EVENING_TIME_OFFSET, frequencyIntervalMillis);
         }
         if (dosage == 3) {
             // Afternoon email
+            System.out.println("Sending 3 dosage");
             scheduleEmail(timer, userEmail, medicineName.getText(), Integer.parseInt(String.valueOf(dosage)), AFTERNOON_TIME_OFFSET, frequencyIntervalMillis);
         }
     }
@@ -154,12 +156,13 @@ public class MedicineTracker implements Medicine{
         if (calendar.getTimeInMillis() < System.currentTimeMillis()) {
             calendar.add(Calendar.DAY_OF_MONTH, 1);
         }
-
+        System.out.println("System time: "+System.currentTimeMillis());
+        System.out.println("Calender time: "+calendar.getTimeInMillis());
         // TimerTask for sending email
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                String message = "Time to take your medicine: " + medicineName + "tablet\nDosage: 1";
+                String message = "Time to take your medicine: " + medicineName + " tablet\nDosage: 1";
                 String subject = "Medicine Reminder";
                 sendEmail(message, subject, userEmail, "pcosjourney220@gmail.com");
             }
@@ -232,12 +235,11 @@ public class MedicineTracker implements Medicine{
             // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard_user.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) home.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();

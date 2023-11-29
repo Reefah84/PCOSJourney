@@ -4,9 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -29,7 +31,7 @@ public class dashboardDoctorController {
     public ListView<String>patientMessage;
     public ListView<String> myReply;
     public Button gy;
-    public ImageView home;
+    public Circle home;
     public Button FAQ;
     private String doctoremail;
     public void initialize() {
@@ -112,12 +114,12 @@ public class dashboardDoctorController {
             controller.setMessage(messageContent);
 
             // Extract user email if needed
-            if (!isReply) {
-                String userEmail = extractUserEmailFromMessage(Paths.get(filePath));
-                //controller.setUserEmail(userEmail); // Assuming you have a method in SeePatientMessage to set user email
+            if (isReply) {
+                controller.setFromto("Message to " + extractUserEmailFromMessage(Paths.get(filePath)));
             }
 
             Stage stage = new Stage();
+            stage.setResizable(false);
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Patient Message");
             stage.setScene(new Scene(root));
@@ -143,9 +145,9 @@ public class dashboardDoctorController {
         try {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage)logout.getScene().getWindow();
-            Scene scene = new Scene(root);
-            // If you have a stylesheet
+            Scene scene = new Scene(root);stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -153,15 +155,13 @@ public class dashboardDoctorController {
     }
     public void setBackHome(MouseEvent event) {
         try {
-            // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) home.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -172,12 +172,11 @@ public class dashboardDoctorController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ListofDoctors.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) gy.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -187,11 +186,19 @@ public class dashboardDoctorController {
     public void setFAQ(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chatBot.fxml"));
         Parent root = fxmlLoader.load();
-
-// Get the current stage (window)
         Stage stage = (Stage)FAQ.getScene().getWindow();
-// Set the new content in the same window
         Scene scene = new Scene(root);
+        stage.setResizable(false);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+        stage.setScene(scene);
+    }
+    public void setHealth(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("baseHEALTH.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage)Health.getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);

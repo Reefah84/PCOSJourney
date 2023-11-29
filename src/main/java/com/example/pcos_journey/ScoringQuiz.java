@@ -40,6 +40,9 @@ public class ScoringQuiz {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homepage_attempt2.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

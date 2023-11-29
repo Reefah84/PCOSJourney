@@ -11,13 +11,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.signupController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1540.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.signupController">
    <right>
       <AnchorPane prefHeight="790.0" prefWidth="674.0" style="-fx-background-color: #eec1eb;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="homepage" fitHeight="227.0" fitWidth="219.0" layoutX="31.0" layoutY="77.0" onMouseClicked="#setBackHome" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="227.0" fitWidth="219.0" layoutX="31.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Untitled729_20230916213949.png" />
                </image>
@@ -32,6 +33,7 @@
                   <Font name="Arial Narrow Bold Italic" size="33.0" />
                </font>
             </Label>
+            <Circle fx:id="homepage" fill="#fe2868" layoutX="141.0" layoutY="187.0" onMouseClicked="#setBackHome" opacity="0.79" radius="108.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="circle" />
          </children>
       </AnchorPane>
    </right>
@@ -59,7 +61,8 @@
                </font>
             </Label>
             <DatePicker fx:id="enterdob" layoutX="76.0" layoutY="494.0" prefHeight="48.0" prefWidth="402.0" promptText="MM-DD--YYYY" style="-fx-border-color: #ff7aa1;" />
-            <TextField fx:id="enteremail" layoutX="76.0" layoutY="260.0" prefHeight="46.0" prefWidth="720.0" style="-fx-border-color: #ff7aa1;" />
+            <TextField fx:id="enteremail" layoutX="76.0" layoutY="260.0" prefHeight="46.0" prefWidth="720.0" promptText="\@gmail.com" style="-fx-border-color: #ff7aa1;" />
+            <TextField fx:id="plainTextField" layoutX="75.0" layoutY="370.0" prefHeight="45.0" prefWidth="721.0" style="-fx-border-color: #ff7aa1;" />
             <PasswordField fx:id="enterpass" layoutX="76.0" layoutY="370.0" prefHeight="46.0" prefWidth="720.0" style="-fx-border-color: #ff7aa1;" />
             <CheckBox fx:id="terms" layoutX="76.0" layoutY="552.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="728.0" text="I agree to the Terms &amp; Condtitions of PCOS Journey">
                <font>
@@ -105,7 +108,6 @@
                   <Font size="17.0" />
                </font>
             </RadioButton>
-            <TextField fx:id="plainTextField" layoutX="75.0" layoutY="370.0" prefHeight="45.0" prefWidth="721.0" style="-fx-border-color: #ff7aa1; visibility: false;" />
          </children>
       </AnchorPane>
    </left>

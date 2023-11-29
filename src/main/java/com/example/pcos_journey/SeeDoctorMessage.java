@@ -10,6 +10,10 @@ public class SeeDoctorMessage {
     public AnchorPane patientmessage;
     public Label message;
     public Button back;
+    public Label fromto;
+    public void setFromto(String fromtoContent) {
+        fromto.setText(fromtoContent);
+    }
     public void setMessage(String messageContent) {
         message.setText(messageContent);
         message.setVisible(true);

@@ -8,11 +8,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1710.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.HealthController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1800.0" prefWidth="1540.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pcos_journey.HealthController">
     <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1710.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1800.0" prefWidth="1540.0" style="-fx-background-color: #ffdde8;">
             <children>
                 <AnchorPane layoutX="-8.0" layoutY="-2.0" prefHeight="212.0" prefWidth="1540.0" style="-fx-background-color: #ffffff;">
                     <children>
@@ -36,7 +37,7 @@
                                 <Font name="Arial Bold" size="25.0" />
                             </font>
                         </Button>
-                        <ImageView fx:id="home" fitHeight="147.0" fitWidth="170.0" layoutX="30.0" layoutY="14.0" onMouseClicked="#setHome" pickOnBounds="true" preserveRatio="true">
+                        <ImageView  fitHeight="147.0" fitWidth="170.0" layoutX="30.0" layoutY="14.0"  pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../resized%20home2.png" />
                             </image>
@@ -51,9 +52,10 @@
                         <Image url="@../free-vector-pink-flower_098507_pink_flower.png" />
                      </image>
                   </ImageView>
+                  <Circle fx:id="home" onMouseClicked="#setHome" fill="#fe2868" layoutX="104.0" layoutY="88.0" radius="73.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="circle" />
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="-1.0" layoutY="1495.0" prefHeight="212.0" prefWidth="1540.0" style="-fx-background-color: #ff7aa1;">
+                <AnchorPane layoutX="-8.0" layoutY="1581.0" prefHeight="212.0" prefWidth="1540.0" style="-fx-background-color: #ff7aa1;">
                     <children>
                         <Label layoutX="1219.0" layoutY="32.0" text="Email us for any concerns:" textFill="WHITE">
                             <font>
@@ -90,7 +92,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <ImageView fitHeight="400.0" fitWidth="500.0" layoutX="220.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="321.0" fitWidth="420.0" layoutX="125.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../PCOSmain3.jpg" />
                </image>
@@ -102,7 +104,7 @@
                   </DropShadow>
                </effect>
             </ImageView>
-            <Button fx:id="pcos" layoutX="219.0" layoutY="718.0" mnemonicParsing="false" onMouseClicked="#pcosBtn" prefHeight="70.0" prefWidth="500.0" styleClass="pcos" stylesheets="@button.css" text="PCOS" textFill="#b228e0">
+            <Button fx:id="pcos" layoutX="126.0" layoutY="645.0" mnemonicParsing="false" onMouseClicked="#pcosBtn" prefHeight="70.0" prefWidth="418.0" styleClass="pcos" stylesheets="@button.css" text="PCOS" textFill="#b228e0">
                <font>
                   <Font name="Arial Rounded MT Bold" size="36.0" />
                </font>
@@ -114,7 +116,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <ImageView fitHeight="421.0" fitWidth="486.0" layoutX="855.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="366.0" fitWidth="432.0" layoutX="1020.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../beigemh2.jpg" />
                </image>
@@ -126,7 +128,7 @@
                   </DropShadow>
                </effect>
             </ImageView>
-            <Button fx:id="mental" cache="true" cacheHint="SCALE" layoutX="848.0" layoutY="718.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#mentbtn" prefHeight="70.0" prefWidth="500.0" styleClass="pcos" stylesheets="@button.css" text="MENTAL HEALTH">
+            <Button fx:id="mental" cache="true" cacheHint="SCALE" layoutX="1015.0" layoutY="645.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#mentbtn" prefHeight="70.0" prefWidth="433.0" styleClass="pcos" stylesheets="@button.css" text="MENTAL HEALTH">
                <font>
                   <Font name="Arial Rounded MT Bold" size="36.0" />
                </font>
@@ -138,7 +140,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <ImageView fitHeight="400.0" fitWidth="500.0" layoutX="220.0" layoutY="900.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="321.0" fitWidth="420.0" layoutX="125.0" layoutY="1200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../fert3.jpg" />
                </image>
@@ -150,7 +152,7 @@
                   </DropShadow>
                </effect>
             </ImageView>
-            <Button fx:id="fertility" layoutX="220.0" layoutY="1250.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#fertilitybtn" prefHeight="70.0" prefWidth="500.0" styleClass="pcos" stylesheets="@button.css" text="FERTILITY">
+            <Button fx:id="fertility" layoutX="125.0" layoutY="1470.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#fertilitybtn" prefHeight="70.0" prefWidth="418.0" styleClass="pcos" stylesheets="@button.css" text="FERTILITY">
                <font>
                   <Font name="Arial Rounded MT Bold" size="36.0" />
                </font>
@@ -162,7 +164,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <ImageView fitHeight="400.0" fitWidth="500.0" layoutX="855.0" layoutY="900.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="322.0" fitWidth="446.0" layoutX="1020.0" layoutY="1200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../diet6.jpg" />
                </image>
@@ -174,7 +176,7 @@
                   </DropShadow>
                </effect>
             </ImageView>
-            <Button fx:id="diet" layoutX="856.0" layoutY="1250.0" mnemonicParsing="false" onMouseClicked="#dietbtn" prefHeight="71.0" prefWidth="503.0" styleClass="pcos" stylesheets="@button.css" text="DIET &amp; NUTRITION">
+            <Button fx:id="diet" layoutX="1015.0" layoutY="1470.0" mnemonicParsing="false" onMouseClicked="#dietbtn" prefHeight="71.0" prefWidth="418.0" styleClass="pcos" stylesheets="@button.css" text="DIET &amp; NUTRITION">
                <font>
                   <Font name="Arial Rounded MT Bold" size="36.0" />
                </font>
@@ -182,6 +184,30 @@
                   <DropShadow height="2.28" radius="8.83" spread="0.08" width="35.04">
                      <color>
                         <Color red="0.8470588326454163" green="0.4431372582912445" blue="0.8901960849761963" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <ImageView fitHeight="376.0" fitWidth="496.0" layoutX="544.0" layoutY="747.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../exercise2.jpg" />
+               </image>
+               <effect>
+                  <DropShadow height="30.36" radius="13.51" width="25.68">
+                     <color>
+                        <Color red="0.7052631378173828" green="0.16194932162761688" blue="0.5422689914703369" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </ImageView>
+            <Button fx:id="exercise" cache="true" cacheHint="SCALE" layoutX="542.0" layoutY="1093.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setExercise" onMouseClicked="#mentbtn" prefHeight="70.0" prefWidth="467.0" styleClass="pcos" stylesheets="@button.css" text="EXERCISE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow height="19.83" radius="10.8775" width="25.68">
+                     <color>
+                        <Color red="0.1145029217004776" green="0.6216120719909668" blue="0.9368420839309692" />
                      </color>
                   </DropShadow>
                </effect>

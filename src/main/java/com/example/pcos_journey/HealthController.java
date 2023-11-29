@@ -5,8 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,11 +17,13 @@ public class HealthController {
     public Button LoginButton;
     public Button Health;
     public Button gy;
-    public ImageView home;
+    public Circle home;
     public Button pcos;
     public Button mental;
     public Button fertility;
     public Button diet;
+    public Button exercise;
+
     public void initialize() {
         updateLoginButton();
     }
@@ -60,6 +62,9 @@ public class HealthController {
             Parent root = loader.load();
             Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -71,6 +76,9 @@ public class HealthController {
         Parent root = fxmlLoader.load();
         Stage stage = (Stage)LoginButton.getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
 
     }
@@ -80,6 +88,9 @@ public class HealthController {
             Parent root = loader.load();
             Stage stage = (Stage) gy.getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -91,12 +102,11 @@ public class HealthController {
             // Load the new FXML file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("homepage_attempt2.fxml"));
             Parent root = loader.load();
-
-            // Get the current stage
             Stage stage = (Stage) home.getScene().getWindow();
-
-            // Set the new content in the same window
             Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -108,6 +118,7 @@ public class HealthController {
         Parent root = fxmlLoader.load();
         Stage stage = (Stage)FAQ.getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
@@ -119,7 +130,21 @@ public class HealthController {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) pcos.getScene().getWindow();
             Scene scene = new Scene(root);
-            // If you have a stylesheet
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void setExercise(ActionEvent event){
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("baseExcercise.fxml")); // Adjust the path
+        try {
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) exercise.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
@@ -134,7 +159,7 @@ public class HealthController {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) diet.getScene().getWindow();
             Scene scene = new Scene(root);
-            // If you have a stylesheet
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
@@ -149,7 +174,7 @@ public class HealthController {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) fertility.getScene().getWindow();
             Scene scene = new Scene(root);
-            // If you have a stylesheet
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
@@ -163,7 +188,7 @@ public class HealthController {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) Health.getScene().getWindow();
             Scene scene = new Scene(root);
-            // If you have a stylesheet
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
@@ -177,7 +202,7 @@ public class HealthController {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) mental.getScene().getWindow();
             Scene scene = new Scene(root);
-            // If you have a stylesheet
+            stage.setResizable(false);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
             stage.setScene(scene);
