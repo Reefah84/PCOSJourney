@@ -33,6 +33,7 @@ public class dashboardDoctorController {
     public Button gy;
     public Circle home;
     public Button FAQ;
+    public Button delete;
     private String doctoremail;
     public void initialize() {
         User loggedInUser = UserSession.getLoggedInUser();
@@ -202,5 +203,47 @@ public class dashboardDoctorController {
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
         stage.setScene(scene);
+    }
+    public void onDeleteAccount(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("DeleteAccount.fxml"));
+            Parent root = loader.load();
+
+            DeleteAccount deleteAccountController = loader.getController();
+            User loggedInUser = UserSession.getLoggedInUser();
+            if (loggedInUser.isDoctor()) {
+                deleteAccountController.initializeForDoctor(loggedInUser.getUsername());
+            } else {
+                System.out.println("Error in deleting account");
+            }
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+            if (UserSession.isUserLoggedIn()) {
+                // User is logged out, redirect to login.fxml
+                UserSession.logout();
+                redirectToLogin();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle exception
+        }
+    }
+    private void redirectToLogin() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) logout.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setResizable(false);
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("button.css")).toExternalForm());
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Handle the exception
+        }
     }
 }

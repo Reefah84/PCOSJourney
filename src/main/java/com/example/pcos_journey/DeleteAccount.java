@@ -19,10 +19,17 @@ public class DeleteAccount extends dashboardUserController{
     public Button back;
 
     private String userEmail = UserSession.getLoggedInUser().getUsername();
-    private String userDirectoryPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + userEmail;
+    private String userDirectoryPath;
+    public void initializeForUser(String username) {
+        this.userDirectoryPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\UserData\\" + username;
+    }
 
+    public void initializeForDoctor(String username) {
+        this.userDirectoryPath = "E:\\Java\\PCOS_Journey\\src\\main\\java\\com\\example\\pcos_journey\\DRData\\" + username;
+    }
     @FXML
-    private void onDeleteAccount(ActionEvent event) {
+    @Override
+    public void onDelete(ActionEvent event) {
         try {
             Path directory = Paths.get(userDirectoryPath);
             Files.walk(directory)

@@ -228,6 +228,8 @@ public class dashboardUserController{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("DeleteAccount.fxml"));
             Parent root = loader.load();
             Stage popupStage = new Stage();
+            DeleteAccount controller = loader.getController();
+            controller.initializeForUser(userEmail);
             popupStage.initModality(Modality.APPLICATION_MODAL);
             popupStage.setScene(new Scene(root));
             popupStage.setResizable(false);

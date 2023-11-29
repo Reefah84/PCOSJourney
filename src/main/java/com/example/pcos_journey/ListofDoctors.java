@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
@@ -113,6 +114,14 @@ public class ListofDoctors {
 
     @FXML
     private void handleSearchButtonAction(ActionEvent event) {
+        performSearch();
+    }
+    @FXML
+    private void handleSearchImageClicked(MouseEvent event) {
+        performSearch();
+    }
+
+    private void performSearch() {
         String searchText = searchField.getText();
         ObservableList<String> filteredList = FXCollections.observableArrayList();
         if (searchText == null || searchText.isEmpty()) {
@@ -133,6 +142,7 @@ public class ListofDoctors {
         }
         doctorsListView.setItems(filteredList);
     }
+
 
     private String formatDoctorName(String email) {
         String namePart = email.split("@")[0]; // Split at '@' and take the first part
